@@ -87,7 +87,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <!-- Style -->
+    <!-- <link rel="stylesheet" href="assets/css/variables.css" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/default.css" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/components.css" /> -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body class="">
     <header class="">
@@ -97,25 +101,60 @@
             <h1 class="text-logo">John</h1>
           </a>
         </div>
-        <ul class="menu flex">
+        <ul id="menu" class="menu">
           <li class="menu-item">
-            <a class="menu-link" href="index.html">Home</a>
+            <a class="menu-link" href="index.html">
+              <i class="fas fa-home"></i><span>Home</span>
+            </a>
           </li>
           <li class="menu-item">
-            <a class="menu-link" href="about.html">About</a>
+            <a class="menu-link" href="about.html">
+              <i class="fas fa-user"></i><span>About</span>
+            </a>
           </li>
           <li class="menu-item">
-            <a class="menu-link" href="portfolio.html">Portfolio</a>
+            <a class="menu-link" href="resume.html">
+              <i class="fas fa-book"></i><span>Resume</span>
+            </a>
           </li>
           <li class="menu-item">
-            <a class="menu-link" href="contact.html">Contact</a>
+            <a class="menu-link" href="skill.html">
+              <i class="fas fa-tasks"></i><span>Skill</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="portfolio.html">
+              <i class="fas fa-image"></i><span>Portfolio</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="service.html">
+              <i class="fas fa-user-cog"></i><span>Service</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="testimonial.html">
+              <i class="fas fa-comments"></i><span>Testimony</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="blog.html">
+              <i class="fas fa-globe"></i><span>Blog</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="contact.html">
+              <i class="fas fa-address-book"></i><span>Contact</span>
+            </a>
           </li>
         </ul>
-        <div class="toggle"></div>
+        <div id="toggle" class="toggle">
+          <i class="fas fa-bars"></i>
+        </div>
       </nav>
     </header>
     <main>
-      <section class="home container flex" style="overflow: hidden">
+      <section id="home" class="home container flex" style="overflow: hidden">
         <div class="profile">
           <p>Hello, I'm</p>
           <h1 class="name" id="name">John Doe</h1>
@@ -149,7 +188,6 @@
           </ul>
           <button class="btn">Download CV</button>
         </div>
-
         <div class="avatar">
           <div class="photo">
             <!-- svg rect -->
@@ -158,13 +196,13 @@
           </div>
         </div>
       </section>
-      <section class="about container">
+      <section id="about" class="about container">
         <h3 class="title">About Me</h3>
-        <div class="about-data flex">
+        <div class="about-data">
           <div class="about-image">
             <img src="assets/img/sergio.jpg" alt="" />
           </div>
-          <ul class="about-detail">
+          <ul class="about-info">
             <li class="about-item">
               <span>Nama</span>
               <span>John Doe</span>
@@ -179,161 +217,475 @@
               <span>+012345678</span>
             </li>
             <li class="about-item">
-              <span>Adress</span>
-              <span>20, Adress</span>
+              <span>Address</span>
+              <span>20, Address</span>
             </li>
           </ul>
           <div class="about-description">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              similique voluptates atque debitis in dolore? Magni vitae at
-              magnam mollitia.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              facere tenetur temporibus excepturi quis accusantium architecto
+              nam consequuntur cum itaque! magnam mollitia.
             </p>
           </div>
         </div>
       </section>
-      <section class="resume container">
+      <section id="resume" class="resume container">
         <h3 class="title">Resume</h3>
-        <div class="education"></div>
-        <div class="experience"></div>
-        <div class="skill"></div>
+        <div class="resume-data">
+          <div class="education">
+            <h4 class="resume-title">Education</h4>
+            <div class="education-list">
+              <div class="education-item">
+                <h5>Cognitive Sciences</h5>
+                <h6>University of Maine</h6>
+                <span>2018 - 2020</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Distinctio, nostrum!
+                </p>
+              </div>
+              <div class="education-item">
+                <h5>Cognitive Sciences</h5>
+                <h6>University of Maine</h6>
+                <span>2018 - 2020</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Distinctio, nostrum!
+                </p>
+              </div>
+              <div class="education-item">
+                <h5>Cognitive Sciences</h5>
+                <h6>University of Maine</h6>
+                <span>2018 - 2020</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Distinctio, nostrum!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="experience">
+            <h4 class="resume-title">Experience</h4>
+
+            <div class="experience-list">
+              <div class="experience-item">
+                <h5>Cognitive Sciences</h5>
+                <h6>University of Maine</h6>
+                <span>2018 - 2020</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Distinctio, nostrum!
+                </p>
+              </div>
+              <div class="experience-item">
+                <h5>Cognitive Sciences</h5>
+                <h6>University of Maine</h6>
+                <span>2018 - 2020</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Distinctio, nostrum!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <h4 class="resume-title">Skill</h4>
+
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="label">VUE</div>
+                <div class="bar" style="--i: 90%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">Laravel</div>
+                <div class="bar" style="--i: 90%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">Javascript</div>
+                <div class="bar" style="--i: 60%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">PHP</div>
+                <div class="bar" style="--i: 80%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">JAVA</div>
+                <div class="bar" style="--i: 60%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">HTML</div>
+                <div class="bar" style="--i: 90%"></div>
+              </li>
+              <li class="skill-item">
+                <div class="label">CSS</div>
+                <div class="bar" style="--i: 90%"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="interest">
+            <h4 class="resume-title">Interest</h4>
+            <ul class="interest-list flex">
+              <li class="interest-item">
+                <div class="label">Music</div>
+              </li>
+              <li class="interest-item">
+                <div class="label">Code</div>
+              </li>
+              <li class="interest-item">
+                <div class="label">Game</div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
-      <section class="portfolio container">
+      <section id="portfolio" class="portfolio container">
         <h3 class="title">Portofolio</h3>
         <div class="portfolio-filter">
-          <ul class="flex">
-            <li><a href="#">all</a></li>
-            <li><a href="#">all</a></li>
-            <li><a href="#">all</a></li>
+          <ul class="filter-list flex">
+            <li class="filter-item active" id="all">all</li>
+            <li class="filter-item" id="resume">Resume</li>
+            <li class="filter-item" id="landing-page">Landing Page</li>
+            <li class="filter-item" id="portfolio">Portfolio</li>
+            <li class="filter-item" id="digital-invitation">
+              digital invitation
+            </li>
+            <li class="filter-item" id="landing-page">personal portfolio</li>
           </ul>
         </div>
         <div class="portfolios">
-          <div class="portfolio-list">
-            <div class="portfolio-item">
-              <img src="" alt="" />
-              <div class="desc"></div>
+          <div class="portfolio-list flex-wrap">
+            <div class="portfolio-item" data-kategory="resume">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/me.jpg" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt,
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item" data-kategory="landing-page">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/preview3.jpg" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt,
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item" data-kategory="portfolio">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/me.jpg" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt, Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Harum praesentium fuga voluptate at quo
+                    impedit reprehenderit sapiente odit itaque in?
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item" data-kategory="portfolio">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/preview2.png" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt, Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Harum praesentium fuga voluptate at quo
+                    impedit reprehenderit sapiente odit itaque in?
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item" data-kategory="resume">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/preview1.png" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt, Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Harum praesentium fuga voluptate at quo
+                    impedit reprehenderit sapiente odit itaque in?
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-item" data-kategory="resume">
+              <div class="card">
+                <div class="portfolio-image">
+                  <img src="assets/img/preview.png" alt="" />
+                </div>
+                <div class="desc">
+                  <p>
+                    Lorem Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Alias numquam obcaecati minus, praesentium fuga,
+                    deleniti deserunt, Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Harum praesentium fuga voluptate at quo
+                    impedit reprehenderit sapiente odit itaque in?
+                  </p>
+                  <button class="btn">detail <i class="fas fa-eye"></i></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="service container">
+      <section id="service" class="service container">
         <h3 class="title">Service</h3>
-        <div class="service-list flex">
+        <div class="service-list flex-wrap">
           <div class="service-item">
-            <img src="" alt="" />
-            <h4>Lorem ipsum dolor sit.</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-              maiores quo accusamus dolorum hic odit! Aliquam quae cum et
-              tempora!
-            </p>
+            <div class="card">
+              <i class="fas fa-plus"></i>
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                dolore n quae cum et tempora!
+              </p>
+            </div>
           </div>
           <div class="service-item">
-            <img src="" alt="" />
-            <h4>Lorem ipsum dolor sit.</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-              maiores quo accusamus dolorum hic odit! Aliquam quae cum et
-              tempora!
-            </p>
+            <div class="card">
+              <i class="fas fa-plus"></i>
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                dolore n quae cum et tempora!
+              </p>
+            </div>
           </div>
           <div class="service-item">
-            <img src="" alt="" />
-            <h4>Lorem ipsum dolor sit.</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-              maiores quo accusamus dolorum hic odit! Aliquam quae cum et
-              tempora!
-            </p>
+            <div class="card">
+              <i class="fas fa-plus"></i>
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                dolore n quae cum et tempora!
+              </p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="card">
+              <i class="fas fa-plus"></i>
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                dolore n quae cum et tempora!
+              </p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="card">
+              <i class="fas fa-plus"></i>
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                dolore n quae cum et tempora!
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="testimonial container">
+      <section id="testimonial" class="testimonial container">
         <h3 class="title">Testimonial</h3>
-        <div class="testimonial-list flex">
+        <div class="testimonial-list flex-wrap">
           <div class="testimonial-item">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ex
-              nostrum perspiciatis! Minus cupiditate ex aliquam excepturi iusto
-              modi voluptas?
-            </p>
-            <img src="" alt="" />
-            <h4>Lorem, ipsum dolor.</h4>
-            <span>Lorem, ipsum.</span>
+            <div class="card">
+              <p class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                ex nostrum perspiciatis! Minus cupiditate ex aliquam excepturi
+                iusto modi voluptas?
+              </p>
+              <img src="assets/img/sergio.jpg" alt="" />
+              <h4>Lorem, ipsum dolor.</h4>
+              <span>Lorem, ipsum.</span>
+              <div class="rate">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+              </div>
+            </div>
           </div>
           <div class="testimonial-item">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ex
-              nostrum perspiciatis! Minus cupiditate ex aliquam excepturi iusto
-              modi voluptas?
-            </p>
-            <img src="" alt="" />
-            <h4>Lorem, ipsum dolor.</h4>
-            <span>Lorem, ipsum.</span>
+            <div class="card">
+              <p class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                ex nostrum perspiciatis! Minus cupiditate ex aliquam excepturi
+                iusto modi voluptas?
+              </p>
+              <img src="assets/img/sergio.jpg" alt="" />
+              <h4>Lorem, ipsum dolor.</h4>
+              <span>Lorem, ipsum.</span>
+              <div class="rate">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+              </div>
+            </div>
           </div>
           <div class="testimonial-item">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ex
-              nostrum perspiciatis! Minus cupiditate ex aliquam excepturi iusto
-              modi voluptas?
-            </p>
-            <img src="" alt="" />
-            <h4>Lorem, ipsum dolor.</h4>
-            <span>Lorem, ipsum.</span>
+            <div class="card">
+              <p class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                ex nostrum perspiciatis! Minus cupiditate ex aliquam excepturi
+                iusto modi voluptas?
+              </p>
+              <img src="assets/img/sergio.jpg" alt="" />
+              <h4>Lorem, ipsum dolor.</h4>
+              <span>Lorem, ipsum.</span>
+              <div class="rate">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="blog container">
+      <section id="blog" class="blog container">
         <h3 class="title">Blog</h3>
-        <div class="blog-list flex">
+        <div class="blog-list flex-wrap">
           <div class="blog-item">
-            <img src="" alt="" />
-            <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
-            <h5>Lorem, ipsum dolor.</h5>
+            <div class="card">
+              <div class="blog-image">
+                <img src="assets/img/preview1.png" alt="" />
+              </div>
+              <div class="info flex">
+                <p class="date">
+                  <i class="fas fa-calendar"></i> 12 December 2021
+                </p>
+                <p class="author"><i class="fas fa-user"></i> Admin</p>
+              </div>
+              <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
+              <p class="caption">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam harum quam a aliquid doloribus dolorum enim inventore
+                deserunt numquam culpa....
+              </p>
+              <button class="btn">
+                Read More <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
           <div class="blog-item">
-            <img src="" alt="" />
-            <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
-            <h5>Lorem, ipsum dolor.</h5>
+            <div class="card">
+              <div class="blog-image">
+                <img src="assets/img/preview1.png" alt="" />
+              </div>
+              <div class="info flex">
+                <p class="date">
+                  <i class="fas fa-calendar"></i> 12 December 2021
+                </p>
+                <p class="author"><i class="fas fa-user"></i> Admin</p>
+              </div>
+              <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
+              <p class="caption">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam harum quam a aliquid doloribus dolorum enim inventore
+                deserunt numquam culpa....
+              </p>
+              <button class="btn">
+                Read More <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
           <div class="blog-item">
-            <img src="" alt="" />
-            <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
-            <h5>Lorem, ipsum dolor.</h5>
+            <div class="card">
+              <div class="blog-image">
+                <img src="assets/img/preview1.png" alt="" />
+              </div>
+              <div class="info flex">
+                <p class="date">
+                  <i class="fas fa-calendar"></i> 12 December 2021
+                </p>
+                <p class="author"><i class="fas fa-user"></i> Admin</p>
+              </div>
+              <h4 class="blog-title">Lorem ipsum dolor sit.</h4>
+              <p class="caption">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam harum quam a aliquid doloribus dolorum enim inventore
+                deserunt numquam culpa....
+              </p>
+              <button class="btn">
+                Read More <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
-      <section class="contact container">
+      <section id="contact" class="contact container">
         <h3 class="title">Contact</h3>
         <div class="contact-data flex">
           <div class="contact-info">
             <ul class="contact-list">
               <li class="contact-item">
-                <span class="icon"></span>
-                <span>Email</span>
+                <i class="fas fa-phone"></i>
+                <span>+0123456789</span>
+              </li>
+              <li class="contact-item">
+                <i class="fas fa-envelope"></i>
                 <span>s.fifinalamsyah@gmail.com</span>
               </li>
               <li class="contact-item">
-                <span class="icon"></span>
-                <span>Email</span>
-                <span>s.fifinalamsyah@gmail.com</span>
-              </li>
-              <li class="contact-item">
-                <span class="icon"></span>
-                <span>Email</span>
-                <span>s.fifinalamsyah@gmail.com</span>
+                <i class="fas fa-map"></i>
+                <span>Address</span>
               </li>
             </ul>
           </div>
           <div class="contact-form">
             <form action="">
-              <input type="text" class="name" name="" id="" />
-              <input type="text" class="email" name="" id="" />
-              <input type="text" class="subject" name="" id="" />
+              <input type="text" placeholder="Name" name="" id="" />
+              <input
+                type="text"
+                placeholder="Email"
+                class="email"
+                name=""
+                id=""
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                class="subject"
+                name=""
+                id=""
+              />
               <textarea
                 name=""
                 class="message"
                 id=""
+                placeholder="Message"
                 cols="30"
                 rows="10"
               ></textarea>
@@ -344,50 +696,72 @@
       </section>
     </main>
     <!-- footer html-->
-    <footer></footer>
-    <script>
-      // create svg rectangular inside circle
-      const svg = document.querySelector(".svg_circle");
-      const svgNS = "http://www.w3.org/2000/svg";
+    <footer class="">
+      <div class="container">
+        <div class="footer-top flex-wrap">
+          <div class="about-footer">
+            <h5>About</h5>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              tempore fugit, itatibus libero perspiciatis quam quae officia quos
+              voluptas eos iste.
+            </p>
+          </div>
+          <div>
+            <h5>Links</h5>
 
-      function svgCircle(svg) {
-        // for loop 8 x 8
-        for (let i = 0; i < 8; i++) {
-          for (let j = 0; j < 8; j++) {
-            let x = j * 15 + 5;
-            let y = i * 15 + 5;
-            const circle = document.createElementNS(svgNS, "circle");
-            circle.setAttribute("r", "4");
-            circle.setAttribute("cx", x);
-            circle.setAttribute("cy", y);
-            svg.appendChild(circle);
-          }
-        }
-      }
-      svgCircle(svg);
+            <ul class="link-footer">
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#resume">Resume</a>
+              </li>
+              <li>
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#service">Service</a>
+              </li>
+              <li>
+                <a href="#blog">Blog</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
 
-      // const name = document.getElementById("name");
-      // let arrName = name.innerText.split("");
-      // let n = arrName.length;
+          <div class="subcribe">
+            <h5>Subscribe</h5>
 
-      // let i = 0;
-      // let str = [];
-      // let increment = true;
-      // setInterval(() => {
-      //   if (str.length == n) increment = false;
-      //   if (str.length == 1) increment = true;
-
-      //   if (increment) {
-      //     str.push(arrName[i]);
-      //     name.innerHTML = str.join("");
-      //     i++;
-      //   } else {
-      //     str.pop();
-      //     name.innerHTML = str.join("");
-      //     i--;
-      //   }
-      //   // console.log(str.length);
-      // }, 400);
-    </script>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              perferendis!
+            </p>
+            <div class="email-subscribe">
+              <input type="email" placeholder="Email" />
+              <button class="">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom flex">
+          <div class="left">
+            <span>Copyright &copy; 2022 All rights reserved |</span>
+            <span>&nbsp;By John Doe</span>
+          </div>
+          <div class="right">
+            <a href="#">Term & Condition</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#" class="btn small">
+              <i class="fas fa-arrow-up"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
