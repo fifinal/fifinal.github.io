@@ -16,7 +16,7 @@
       Pink 300
       Pink 320*/
 
-  --hue-main: 17;
+  --hue-main: 170;
   /* secondary hue main - 180 */
   --hue-secondary: calc(var(--hue-main) - 180);
   /* ac

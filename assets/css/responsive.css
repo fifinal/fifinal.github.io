@@ -138,11 +138,7 @@
     width: 400px;
   }
   .about-data {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-template-areas:
-      "image info"
-      "description info";
+    display: flex;
   }
   .about-item::before {
     content: "";
