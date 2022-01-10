@@ -51,30 +51,29 @@
       Pink 300
       Pink 320*/
 
-  --hue-main: 230;
+  --hue-main: 267;
   /* secondary hue main - 180 */
   --hue-secondary: calc(var(--hue-main) - 180);
   /* ac
   cen hue main - 40 */
   --hue-accent: calc(var(--hue-main) - 40);
-
   --l-1: 5%;
   --l-2: 15%;
   --l-3: 30%;
-  --l-4: 47%;
+  --l-4: 54%;
   --l-5: 70%;
   --l-6: 85%;
   --l-7: 97%;
 
   /* HSL color mode */
-  --primary: var(--hue-main) 48% var(--l-4);
-  --secondary: var(--hue-secondary) 48% var(--l-4);
-  --accent: var(--hue-accent) 48% var(--l-4);
+  --primary: var(--hue-main) 96% var(--l-4);
+  --secondary: var(--hue-secondary) 96% var(--l-4);
+  --accent: var(--hue-accent) 96% var(--l-4);
 
-  --primary-darker: var(--hue-main) 48% var(--l-2);
-  --primary-dark: var(--hue-main) 48% var(--l-3);
-  --primary-light: var(--hue-main) 48% var(--l-5);
-  --primary-lighter: var(--hue-main) 48% var(--l-6);
+  --primary-darker: var(--hue-main) 96% var(--l-2);
+  --primary-dark: var(--hue-main) 96% var(--l-3);
+  --primary-light: var(--hue-main) 96% var(--l-5);
+  --primary-lighter: var(--hue-main) 96% var(--l-6);
 
   --color-body: hsl(var(--hue-main) 60% var(--l-7));
 
@@ -88,13 +87,13 @@
 
   --gradient: linear-gradient(
     90deg,
-    hsl(var(--hue-accent) 48% calc(var(--l-5))) -12%,
-    hsl(var(--hue-accent) 48% calc(var(--l-4))) 109%
+    hsl(var(--hue-accent) 96% calc(var(--l-5))) -12%,
+    hsl(var(--hue-accent) 96% calc(var(--l-4))) 109%
   );
   --gradient-primary: linear-gradient(
     90deg,
-    hsl(var(--hue-main) 48% calc(var(--l-7))),
-    hsl(var(--hue-main) 48% calc(var(--l-6)))
+    hsl(var(--hue-main) 96% calc(var(--l-7))),
+    hsl(var(--hue-main) 96% calc(var(--l-6)))
   );
 
   /*========== Font ==========*/
@@ -583,8 +582,8 @@ nav .logo {
 }
 
 .photo::after {
-  content: "";
   background-image: url("../img/fifin.jpg");
+  content: "";
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -603,7 +602,7 @@ nav .logo {
   position: absolute;
   z-index: 2;
 }
-svg {
+.svg_circle {
   height: 150px;
   width: 150px;
   position: absolute;
@@ -612,7 +611,7 @@ svg {
   animation: up_down 3s ease-in-out infinite;
   z-index: -1;
 }
-svg circle {
+.svg_circle circle {
   fill: hsl(var(--primary-lighter));
 }
 @keyframes up_down {
@@ -850,29 +849,32 @@ svg circle {
   background-color: var(--color-white);
   box-shadow: none;
 }
+.service-item {
+  flex-grow: 1;
+  max-width: 300px;
+  box-shadow: var(--shadow);
+}
 .service-item:hover {
   transition: 0.5s;
 }
-.service-item:hover {
-  box-shadow: var(--shadow);
-}
-
 .service-item .card {
   flex-direction: column;
+  /* color: #a0616a; */
 }
-.service-item i {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 50%;
-  color: hsl(var(--primary));
-  font-size: var(--fs-h2);
+.service-img {
+  width: 200px;
+  height: 200px;
+}
+.service-img svg {
+  width: 100%;
+  height: 100%;
+}
+.path-primary {
+  fill: hsl(var(--primary));
 }
 .service-item h4 {
   margin-top: var(--m-3);
-  font-size: var(--fs-normal);
+  font-size: var(--fs-h3);
   color: hsl(var(--primary-darker));
 }
 .service-item p {
@@ -912,18 +914,28 @@ svg circle {
 .testimonial-item {
   background-color: transparent;
 }
-.testimonial-item .card::before {
+
+.testimonial-item .caption {
+  position: relative;
+}
+.testimonial-item .caption::after,
+.testimonial-item .caption::before {
   position: absolute;
-  font-family: "Font Awesome";
-  content: "f10d";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: hsl(var(--hue-main), 96%, var(--l-5), 0.2);
-  font-size: 5rem;
+  font-family: "Font Awesome 5 Free";
+  color: hsl(var(--hue-main), 96%, var(--l-5), 0.3);
+  font-size: var(--fs-h2);
   font-weight: 800;
   z-index: -1;
+}
+.testimonial-item .caption::after {
+  content: "\f10e";
+  right: 0;
+  bottom: 0;
+}
+.testimonial-item .caption::before {
+  content: "\f10d";
+  top: 0;
+  left: 0;
 }
 .testimonial-item p {
   grid-area: text;
@@ -1217,8 +1229,8 @@ footer a:hover {
   }
   .photo,
   .photo::after {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
   }
   .testimonial .testimonial-item {
     background-color: var(--color-body);
@@ -1288,8 +1300,8 @@ footer a:hover {
 
   .photo,
   .photo::after {
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
   }
   .about-data {
     grid-template-columns: 1fr 2fr;
