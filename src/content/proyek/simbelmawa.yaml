@@ -1,0 +1,57 @@
+urutan: 1
+judul: Simbelmawa — Pengelolaan Hibah Kemahasiswaan Nasional
+tahun: 2026
+ringkas: API inti sistem pengelolaan hibah dan program kemahasiswaan Kementerian Pendidikan Tinggi, Sains,
+  dan Teknologi, melayani delapan jenis pengguna dari mahasiswa hingga pengelola kementerian.
+lead: Satu sistem yang harus melayani mahasiswa pengusul, dosen pendamping, reviewer, operator kampus,
+  dan pengelola kementerian sekaligus — masing-masing dengan pandangan dan kewenangan yang berbeda.
+peran: Pengembang Utama
+periode: 2023 — Sekarang
+tim: 5 kontributor
+tipe: Freelance · Kementerian
+tags:
+- Laravel
+- PHP
+- PostgreSQL
+- JWT
+- Docker
+live: null
+status: Produksi — sistem nasional
+masalah:
+- '[ISI] Sebelum sistem ini ada, bagaimana pengajuan dan penilaian proposal hibah dijalankan? Apa yang
+  paling sering macet?'
+- '[ISI] Kenapa dibangun sebagai API terpisah, bukan aplikasi monolit seperti sistem sebelumnya?'
+- '[ISI] Kendala apa yang khas ketika penggunanya tersebar di ratusan perguruan tinggi se-Indonesia?'
+solusi:
+- '[ISI] Keputusan arsitektur apa yang kamu ambil untuk menangani delapan peran pengguna sekaligus?'
+- '[ISI] Bagaimana kamu memastikan setiap peran hanya bisa mengakses data yang menjadi haknya?'
+proses:
+- '[ISI] Bagaimana kebutuhan dikumpulkan — dari pihak kementerian langsung, atau lewat perantara?'
+- '[ISI] Bagaimana siklus rilisnya, mengingat jadwalnya terikat agenda kegiatan nasional?'
+- '[ISI] Bagian mana yang dikerjakan lebih dulu, dan kenapa?'
+fitur:
+- Pengelolaan program kemahasiswaan dan hibah, dari pengusulan hingga penetapan penerima
+- Delapan peran pengguna dengan rute dan kewenangan terpisah — mahasiswa, dosen, reviewer, operator
+  perguruan tinggi, pimpinan perguruan tinggi, pengelola LLDIKTI, admin kementerian, dan panitia PIMNAS
+- Terhubung dengan Pangkalan Data Perguruan Tinggi untuk verifikasi data mahasiswa dan institusi
+- Penugasan dan penilaian proposal oleh reviewer
+- Basis pengetahuan berjenjang untuk pertanyaan yang sering diajukan, disusun per kategori dan tahapan
+- Autentikasi berbasis token JWT dengan masa berlaku terkendali
+- Berjalan dalam kontainer Docker dengan alur integrasi berkelanjutan
+metrik:
+- angka: '1.265'
+  keterangan: Commit atas nama saya di repositori inti
+- angka: '8'
+  keterangan: Jenis pengguna dengan kewenangan berbeda
+- angka: 3 tahun
+  keterangan: Dikembangkan dan dirawat tanpa putus
+gambar:
+- file: simbelmawa-1.png
+  keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
+- file: simbelmawa-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Bagian tersulit apa yang kamu hadapi? Boleh teknis, boleh soal koordinasi.'
+- '[ISI] Adakah keputusan yang kemudian kamu ubah setelah sistem dipakai sungguhan?'
+belajar: '[ISI] Satu pelajaran yang kamu bawa ke proyek berikutnya setelah tiga tahun mengerjakan ini.'
+kerahasiaan: mahasiswa dan perguruan tinggi

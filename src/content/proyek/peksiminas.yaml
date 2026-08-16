@@ -1,0 +1,52 @@
+urutan: 4
+judul: Peksiminas — Pekan Seni Mahasiswa Nasional
+tahun: 2026
+ringkas: Platform penyelenggaraan ajang seni mahasiswa tingkat nasional, dari pendaftaran peserta di
+  tingkat provinsi sampai penjurian dan penetapan pemenang.
+lead: Ajang nasional punya tenggat yang tidak bisa digeser. Sistemnya harus siap sebelum hari pertama,
+  dan tidak boleh goyah saat semua provinsi memakainya bersamaan.
+peran: Pengembang Utama
+periode: Mei — Agu 2026
+tim: 4 kontributor
+tipe: Freelance · Kementerian
+tags:
+- Laravel
+- Blade
+- SCSS
+- Docker
+live: null
+status: Produksi — sistem nasional
+masalah:
+- '[ISI] Bagaimana penyelenggaraan Peksiminas dikelola sebelum ada sistem ini?'
+- '[ISI] Apa kesulitan khas ketika pendaftaran berjenjang dari provinsi ke tingkat nasional?'
+- '[ISI] Kenapa penjurian perlu sistem tersendiri?'
+solusi:
+- '[ISI] Bagaimana kamu memisahkan kewenangan admin provinsi, panitia, dan juri?'
+- '[ISI] Bagaimana memastikan penilaian juri tidak bisa saling dipengaruhi?'
+proses:
+- '[ISI] Sistem ini dibangun dalam waktu singkat menjelang acara. Bagaimana ruang lingkupnya ditentukan?'
+- '[ISI] Apa yang disiapkan untuk mengantisipasi lonjakan pemakaian saat hari-H?'
+fitur:
+- Pendaftaran peserta berjenjang, dari administrator tingkat provinsi hingga panitia nasional
+- Jalur penjurian terpisah dengan kewenangan khusus bagi juri
+- Pengelolaan tangkai lomba dan penetapan hasil oleh panitia
+- Dukungan banyak bahasa lewat berkas terjemahan terpisah
+- Navigasi berjenjang untuk alur yang bertingkat
+- Berjalan dalam kontainer Docker
+metrik:
+- angka: '155'
+  keterangan: Commit atas nama saya — kontributor terbesar
+- angka: '4'
+  keterangan: Kewenangan pengguna — admin pusat, admin provinsi, panitia, juri
+- angka: 4 bulan
+  keterangan: Dari commit pertama hingga penyelenggaraan
+gambar:
+- file: peksiminas-1.png
+  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'
+- file: peksiminas-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Apa yang paling menegangkan dari membangun sistem dengan tenggat acara yang tidak bisa mundur?'
+- '[ISI] Adakah masalah yang muncul saat acara berlangsung? Bagaimana ditangani?'
+belajar: '[ISI] Apa yang kamu pelajari tentang membangun sistem yang umurnya hanya satu musim acara?'
+kerahasiaan: peserta dan penyelenggara

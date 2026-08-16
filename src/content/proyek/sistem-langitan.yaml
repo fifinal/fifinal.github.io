@@ -1,0 +1,58 @@
+urutan: 2
+judul: Sistem Langitan — Sistem Informasi Akademik Kampus
+tahun: 2026
+ringkas: Sistem informasi akademik yang dipakai seluruh sivitas Universitas Maarif Hasyim Latif, dari
+  pendaftaran mahasiswa baru sampai kelulusan, dengan lima puluh modul yang saling terhubung.
+lead: Merawat dan memodernkan sistem yang sudah berjalan bertahun-tahun — sambil memastikan perkuliahan
+  satu kampus tidak berhenti sehari pun karena pekerjaan itu.
+peran: Pengembang Inti
+periode: 2022 — Sekarang
+tim: 12 kontributor
+tipe: Sistem internal kampus
+tags:
+- PHP
+- Oracle
+- Docker
+- PHPStan
+- Legacy
+live: null
+status: Produksi — sistem internal
+masalah:
+- '[ISI] Dalam keadaan seperti apa sistem ini ketika kamu mulai menanganinya pada 2022?'
+- '[ISI] Kenapa migrasi ke PHP 8 jadi mendesak? Apa yang terancam kalau ditunda?'
+- '[ISI] Apa risiko terbesar mengubah sistem yang dipakai seluruh kampus setiap hari?'
+solusi:
+- '[ISI] Bagaimana strategi migrasinya — bertahap per modul, atau sekaligus?'
+- '[ISI] Kenapa memilih menambahkan pemeriksa kompatibilitas otomatis ketimbang memeriksa manual?'
+proses:
+- '[ISI] Bagaimana kamu memetakan bagian mana saja yang akan rusak di PHP 8?'
+- '[ISI] Bagaimana pengujian dilakukan sebelum perubahan naik ke produksi?'
+- '[ISI] Bagaimana kamu menangani modul yang terlalu berisiko diubah?'
+fitur:
+- Lima puluh modul akademik yang saling terhubung, mencakup pendaftaran mahasiswa baru, perkuliahan,
+  keuangan, hingga wisuda
+- Migrasi bertahap dari PHP versi lama ke PHP 8.1 dan 8.2, disertai catatan perubahan terdokumentasi
+- Perkakas pemeriksa kompatibilitas dan kode usang yang bisa dijalankan berulang sebelum rilis
+- Analisis statis dengan PHPStan dan pemeriksaan gaya kode otomatis
+- Terhubung dengan PDDikti untuk pelaporan data akademik nasional
+- Lingkungan pengembangan terkontainer dengan berkas Docker terpisah untuk tiap versi PHP, termasuk
+  varian ARM64
+- Pembuatan dokumen dan laporan cetak lewat TCPDF
+metrik:
+- angka: '50'
+  keterangan: Modul akademik dalam satu sistem
+- angka: '484'
+  keterangan: Commit atas nama saya
+- angka: 4 tahun
+  keterangan: Terlibat merawat dan memodernkan
+gambar:
+- file: sistem-langitan-1.png
+  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan pegawai asli.'
+- file: sistem-langitan-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Kode warisan seperti apa yang paling sulit disentuh? Apa yang membuatnya begitu?'
+- '[ISI] Pernahkah ada perubahan yang berdampak tak terduga di produksi? Bagaimana menanganinya?'
+belajar: '[ISI] Apa yang berubah dari cara kamu menulis kode setelah bertahun-tahun merawat sistem warisan
+  orang lain?'
+kerahasiaan: sivitas akademika

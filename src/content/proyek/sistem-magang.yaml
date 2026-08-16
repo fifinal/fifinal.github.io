@@ -1,0 +1,56 @@
+urutan: 3
+judul: Sistem Magang Mahasiswa Nasional
+tahun: 2025
+ringkas: Platform penyelenggaraan program magang mahasiswa tingkat nasional yang mempertemukan mahasiswa,
+  kampus, mitra industri, dan mentor dalam satu alur.
+lead: Program magang melibatkan pihak yang jauh lebih banyak daripada sekadar mahasiswa dan perusahaan —
+  dan setiap pihak punya kepentingan berbeda atas data yang sama.
+peran: Pengembang Utama
+periode: Jun — Des 2025
+tim: 2 kontributor
+tipe: Freelance · Kementerian
+tags:
+- Laravel
+- Vue
+- Tailwind
+- Vite
+- Docker
+live: null
+status: Produksi — sistem nasional
+masalah:
+- '[ISI] Persoalan apa yang ingin dipecahkan program ini? Bagaimana magang dikelola sebelumnya?'
+- '[ISI] Kenapa jumlah peran penggunanya sampai selusin — apa yang menuntut sebanyak itu?'
+- '[ISI] Bagaimana keterlibatan LPDP memengaruhi rancangan sistemnya?'
+solusi:
+- '[ISI] Bagaimana kamu menyusun alur agar tidak membingungkan meski melibatkan banyak pihak?'
+- '[ISI] Kenapa memilih Vue dan Tailwind di sini, berbeda dari proyek lain yang memakai Blade?'
+proses:
+- '[ISI] Bagaimana proyek ini dimulai — dari nol, atau melanjutkan sistem yang ada?'
+- '[ISI] Kamu mengerjakannya berdua saja. Bagaimana pembagian kerjanya?'
+- '[ISI] Bagaimana tenggat program nasional memengaruhi urutan pengerjaan?'
+fitur:
+- Dua belas peran pengguna terpisah — mahasiswa, dosen, kepala program studi, mentor, mitra industri,
+  operator, pimpinan, reviewer, dan pengelola kementerian
+- Pengelolaan pendaftaran, penempatan, serta pemantauan mahasiswa selama masa magang
+- Alur penilaian oleh reviewer dengan jalur terpisah untuk penilaian tingkat lanjut
+- Dukungan pengelolaan skema pendanaan beasiswa
+- Pencatatan kebutuhan perjalanan peserta
+- Antarmuka Vue dengan Tailwind, dibangun lewat Vite
+- Berjalan dalam kontainer Docker
+metrik:
+- angka: '664'
+  keterangan: Commit atas nama saya — kontributor terbesar
+- angka: '12'
+  keterangan: Peran pengguna yang dilayani
+- angka: 7 bulan
+  keterangan: Dari commit pertama hingga rilis
+gambar:
+- file: sistem-magang-1.png
+  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan mitra asli.'
+- file: sistem-magang-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Apa yang paling sulit ketika satu data harus tampil berbeda bagi dua belas peran?'
+- '[ISI] Adakah fitur yang sempat dibangun lalu dibuang? Kenapa?'
+belajar: '[ISI] Satu hal yang kamu pelajari dari mengerjakan sistem sebesar ini hanya berdua.'
+kerahasiaan: mahasiswa dan mitra industri

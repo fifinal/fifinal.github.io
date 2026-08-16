@@ -11,7 +11,7 @@ export const profil = {
   status: 'Terbuka untuk peluang baru',
   judulHero: 'Membangun web yang rapi, cepat, dan berguna.',
   ringkasHero:
-    'Halo, saya Fifin — seorang web developer yang fokus pada frontend modern dan pengalaman pengguna. Saya senang mengubah ide jadi produk yang benar-benar dipakai orang.',
+    'Halo, saya Fifin — web developer yang sehari-hari membangun sistem informasi pendidikan tinggi. Empat tahun terakhir saya mengerjakan perangkat lunak yang dipakai perguruan tinggi se-Indonesia, dari pengelolaan hibah mahasiswa sampai sistem akademik kampus.',
   deskripsiSitus:
     'Portofolio Fifin Alamsyah, web developer. Kumpulan proyek, pengalaman, dan kontak.',
 };
@@ -27,51 +27,52 @@ export const navigasi = [
 export const tentang = {
   paragraf: [
     'Saya mulai ngoding karena penasaran bagaimana sebuah tombol di layar bisa mengubah sesuatu di dunia nyata. Rasa penasaran itu belum hilang sampai sekarang.',
-    'Fokus saya ada di <strong>pengembangan frontend</strong> dengan JavaScript dan React, tapi saya juga nyaman bekerja di sisi backend ketika sebuah proyek membutuhkannya. Prinsip yang saya pegang sederhana: kode harus mudah dibaca orang lain, dan antarmuka harus mudah dipakai siapa saja.',
-    'Di luar pekerjaan, saya suka membaca dokumentasi teknologi baru, menulis catatan belajar, dan sesekali berkontribusi di proyek open source.',
+    'Kerja saya sebagian besar <strong>full-stack dengan Laravel dan Vue</strong> — membangun API yang melayani banyak jenis pengguna sekaligus, lalu antarmuka yang membuatnya masuk akal dipakai. Prinsip yang saya pegang sederhana: kode harus mudah dibaca orang lain, dan antarmuka harus mudah dipakai siapa saja.',
+    'Sistem yang saya kerjakan biasanya punya banyak peran pengguna dengan kebutuhan berbeda — mahasiswa, dosen, operator kampus, reviewer, pengelola kementerian. Bagian yang paling menantang jarang soal teknologinya, melainkan menjaga agar setiap peran hanya melihat apa yang memang perlu ia lihat.',
   ],
   fakta: [
-    { label: 'Lokasi', nilai: 'Indonesia' },
+    { label: 'Lokasi', nilai: 'Sidoarjo, Jawa Timur' },
     { label: 'Peran', nilai: 'Web Developer' },
-    { label: 'Fokus', nilai: 'Frontend / React' },
+    { label: 'Fokus', nilai: 'Laravel / Vue' },
     { label: 'Status', nilai: 'Tersedia' },
     { label: 'Email', nilai: 's.fifinalamsyah@gmail.com' },
   ],
 };
 
 export const skill = [
-  { judul: 'Frontend', daftar: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind'] },
-  { judul: 'Backend', daftar: ['Node.js', 'Express', 'REST API', 'MySQL', 'MongoDB'] },
-  { judul: 'Tools', daftar: ['Git', 'GitHub', 'Figma', 'Vercel', 'Docker'] },
+  { judul: 'Frontend', daftar: ['Vue', 'TypeScript', 'JavaScript', 'Blade', 'Tailwind', 'SCSS'] },
+  { judul: 'Backend', daftar: ['PHP', 'Laravel', 'REST API', 'JWT', 'PostgreSQL', 'Redis'] },
+  { judul: 'Tools', daftar: ['Git', 'Docker', 'GitHub Actions', 'Linux'] },
 ];
 
 export const pengalaman = [
   {
-    posisi: 'Frontend Developer',
-    periode: '2024 — Sekarang',
-    tempat: 'Nama Perusahaan · Jakarta',
+    posisi: 'Web Developer',
+    periode: '2022 — Sekarang',
+    tempat: 'Universitas Maarif Hasyim Latif · Sidoarjo',
     rincian: [
-      'Mengembangkan dan merawat antarmuka produk utama yang dipakai ribuan pengguna aktif.',
-      'Membangun design system internal sehingga waktu pembuatan halaman baru berkurang setengahnya.',
-      'Bekerja erat dengan tim desain dan backend dalam siklus rilis dua mingguan.',
+      'Mengembangkan dan merawat Sistem Langitan, sistem informasi akademik yang dipakai seluruh sivitas kampus — dari pendaftaran mahasiswa baru sampai pengelolaan perkuliahan.',
+      'Kontributor terbesar kedua dari dua belas orang di repositori intinya, dengan lebih dari 480 commit.',
+      'Membangun UNSCO, platform kompetisi dan olimpiade tingkat nasional yang diselenggarakan kampus.',
     ],
   },
   {
     posisi: 'Web Developer (Freelance)',
-    periode: '2022 — 2024',
-    tempat: 'Mandiri · Remote',
+    periode: '2023 — Sekarang',
+    tempat: 'Kementerian Pendidikan Tinggi, Sains, dan Teknologi · Remote',
     rincian: [
-      'Menangani lebih dari 10 proyek klien: company profile, landing page, dan toko online.',
-      'Mengurus proyek dari pertemuan awal, desain, pengembangan, hingga peluncuran.',
+      'Pengembang utama Simbelmawa API, tulang punggung sistem pengelolaan hibah dan program kemahasiswaan nasional. Melayani delapan jenis pengguna dengan hak akses berbeda dan terhubung ke Pangkalan Data Perguruan Tinggi.',
+      'Membangun sistem Magang serta platform penyelenggaraan Peksiminas dan MTQMN — ajang nasional yang diikuti perguruan tinggi dari seluruh Indonesia.',
+      'Bekerja dalam tim lintas lembaga dengan alur rilis yang harus menyesuaikan jadwal kegiatan kementerian.',
     ],
   },
   {
     posisi: 'S1 Teknik Informatika',
-    periode: '2018 — 2022',
-    tempat: 'Nama Universitas',
+    periode: 'Lulus 2019',
+    tempat: 'Universitas Maarif Hasyim Latif · Sidoarjo',
     rincian: [
-      'Fokus pada rekayasa perangkat lunak dan interaksi manusia–komputer.',
-      'Tugas akhir tentang optimasi performa aplikasi web berbasis single-page application.',
+      'Skripsi: implementasi deep learning untuk klasifikasi tanaman toga berbasis Android, memakai convolutional neural network.',
+      'Mendalami sistem pakar dan penambangan data lewat serangkaian proyek kuliah — diagnosis penyakit berbasis aturan, metode AHP, dan algoritma Apriori.',
     ],
   },
 ];
