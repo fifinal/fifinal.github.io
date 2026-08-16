@@ -1,0 +1,65 @@
+urutan: 4
+judul: Situs Profil Perusahaan
+tahun: 2024
+ringkas: Company profile dengan CMS ringan agar tim marketing bisa memperbarui konten sendiri tanpa developer.
+lead: Situs perusahaan yang cepat, mudah ditemukan di mesin pencari, dan — yang paling penting bagi klien
+  — bisa mereka perbarui sendiri.
+peran: Web Developer
+periode: Agu — Nov 2024
+tim: 3 orang
+tipe: Proyek klien
+tags:
+- Next.js
+- Headless CMS
+- SEO
+- Vercel
+live: '#'
+status: Situs Live
+masalah:
+- Situs lama klien dibangun bertahun-tahun lalu dan sudah tidak terawat. Setiap kali tim marketing ingin
+  mengganti satu paragraf, mereka harus mengirim email ke vendor dan menunggu beberapa hari.
+- Situs itu juga lambat, tidak nyaman dibuka di ponsel, dan hampir tidak muncul di hasil pencarian untuk
+  kata kunci layanan mereka sendiri.
+- <strong>Target yang disepakati:</strong> situs baru harus bisa diperbarui tanpa developer, terbuka cepat,
+  dan siap ditemukan mesin pencari.
+solusi:
+- Saya menggunakan pendekatan halaman statis yang dibangun ulang otomatis setiap kali konten berubah —
+  cepat seperti situs statis, tapi tetap bisa dikelola lewat CMS.
+- Struktur konten dirancang bersama tim marketing sehingga setiap halaman tersusun dari blok yang bisa
+  mereka susun ulang sendiri, tanpa risiko merusak tampilan.
+proses:
+- <strong>Audit situs lama.</strong> Memetakan halaman mana yang benar-benar dikunjungi dan mana yang
+  bisa dihapus.
+- <strong>Arsitektur konten.</strong> Menyusun model konten dan blok yang bisa dipakai ulang di CMS.
+- <strong>Desain dan pengembangan.</strong> Membangun komponen halaman yang konsisten dan responsif.
+- <strong>Optimasi SEO dan performa.</strong> Menata metadata, data terstruktur, ukuran gambar, dan pemuatan
+  font.
+- <strong>Serah terima.</strong> Melatih tim marketing dan menyusun dokumentasi singkat.
+fitur:
+- Halaman yang tersusun dari blok konten siap pakai
+- CMS dengan pratinjau sebelum konten dipublikasikan
+- Metadata dan data terstruktur otomatis di setiap halaman
+- Optimasi gambar otomatis dengan format modern
+- Formulir kontak dengan perlindungan spam dan notifikasi email
+metrik:
+- angka: '98'
+  keterangan: Skor Lighthouse untuk performa dan aksesibilitas
+- angka: < 1,2 s
+  keterangan: Waktu tampil konten utama
+- angka: Hari → menit
+  keterangan: Waktu yang dibutuhkan untuk memperbarui konten
+gambar:
+- file: situs-profil-perusahaan-1.png
+  keterangan: Halaman beranda yang tersusun dari blok konten siap pakai.
+- file: situs-profil-perusahaan-2.png
+  keterangan: Tampilan CMS saat tim marketing menyunting konten.
+- file: situs-profil-perusahaan-3.png
+  keterangan: Hasil pengukuran performa dan aksesibilitas.
+tantangan:
+- Menyeimbangkan keleluasaan dan keamanan di CMS ternyata sulit. Versi awal memberi tim marketing kebebasan
+  penuh mengatur tata letak, dan hasilnya beberapa halaman jadi berantakan.
+- 'Saya kemudian membatasi pilihan: setiap blok punya variasi tampilan yang sudah ditentukan, sehingga
+  apa pun kombinasinya, halaman tetap rapi. Kebebasan berkurang, tapi kualitas halaman jauh lebih konsisten.'
+belajar: Serah terima proyek bukan garis akhir, melainkan bagian dari desain itu sendiri. Situs yang bagus
+  tapi tidak berani disentuh kliennya akan kembali usang dalam setahun.
+kerahasiaan: klien

@@ -1,0 +1,545 @@
+/* =========================================================
+   Portofolio Fifin Alamsyah — gaya bersama (semua halaman)
+   ========================================================= */
+:root{
+  /* ---- Tema terang (bawaan) ---- */
+  --bg:#ffffff;
+  --bg-soft:#f6f6f4;
+  --bg-kaca:rgba(255,255,255,.82);   /* latar header yang tembus pandang */
+  --text:#16161a;
+  --muted:#6b6b73;
+  --line:#e6e6e2;
+  --line-kuat:#d3d3cc;
+  --di-atas-gelap:#ffffff;           /* warna teks di atas bidang gelap */
+  --bayang:rgba(0,0,0,.45);
+
+  /* ---- Warna aksen: hijau lumut ---- */
+  --aksen:#2F6B4F;
+  --aksen-lembut:#EAF2ED;
+  --aksen-rgb:47,107,79;
+
+  --radius:14px;
+  --max:1080px;
+}
+
+/*
+  Tema gelap.
+  Dipakai bila perangkat pengunjung memakai mode gelap DAN pengunjung
+  belum memilih sendiri, atau bila mereka menekan tombol tema.
+*/
+@media (prefers-color-scheme:dark){
+  :root:not([data-tema="terang"]){
+    --bg:#111113;
+    --bg-soft:#191a1c;
+    --bg-kaca:rgba(17,17,19,.82);
+    --text:#f2f2f0;
+    --muted:#a0a0a6;
+    --line:#2a2b2e;
+    --line-kuat:#3c3d41;
+    --di-atas-gelap:#111113;
+    --bayang:rgba(0,0,0,.75);
+    --aksen:#6FBF95;
+    --aksen-lembut:#1b2a22;
+    --aksen-rgb:111,191,149;
+  }
+}
+:root[data-tema="gelap"]{
+  --bg:#111113;
+  --bg-soft:#191a1c;
+  --bg-kaca:rgba(17,17,19,.82);
+  --text:#f2f2f0;
+  --muted:#a0a0a6;
+  --line:#2a2b2e;
+  --line-kuat:#3c3d41;
+  --di-atas-gelap:#111113;
+  --bayang:rgba(0,0,0,.75);
+  --aksen:#6FBF95;
+  --aksen-lembut:#1b2a22;
+  --aksen-rgb:111,191,149;
+}
+:root{color-scheme:light dark}
+:root[data-tema="terang"]{color-scheme:light}
+:root[data-tema="gelap"]{color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:var(--bg-kaca);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;letter-spacing:-.02em;font-size:1.05rem}
+.logo span{color:var(--muted);font-weight:400}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.menu-btn{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--text)}
+
+/* ---------- HERO ---------- */
+.hero{padding:120px 0 100px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;margin-bottom:28px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--aksen);display:inline-block}
+h1{
+  font-size:clamp(2.4rem,6vw,4rem);
+  font-weight:700;letter-spacing:-.035em;line-height:1.1;
+  max-width:16ch;margin-bottom:24px;
+}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:52ch;margin-bottom:36px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:999px;
+  font-size:.92rem;font-weight:500;
+  border:1px solid var(--text);transition:all .2s;
+}
+.btn-primary{background:var(--text);color:var(--bg)}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--text)}
+
+/* ---------- SECTION ---------- */
+section{padding:88px 0;border-top:1px solid var(--line)}
+.label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;display:block;
+}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:600;letter-spacing:-.025em;margin-bottom:36px}
+h3{font-size:1.1rem;font-weight:600;letter-spacing:-.01em}
+
+/* ---------- TENTANG ---------- */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start}
+.about-grid p{color:var(--muted);margin-bottom:18px}
+.about-grid p strong{color:var(--text);font-weight:500}
+.facts{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--bg-soft)}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.fact:last-child{border:0;padding-bottom:0}
+.fact span:first-child{color:var(--muted)}
+.fact span:last-child{font-weight:500;text-align:right}
+
+/* ---------- SKILL ---------- */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .2s}
+.skill-card:hover{border-color:var(--text)}
+.skill-card h3{margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;
+  background:var(--bg-soft);border:1px solid var(--line);
+  padding:4px 10px;border-radius:6px;color:var(--muted);
+}
+
+/* ---------- KARTU PROYEK ---------- */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;display:flex;flex-direction:column;
+  transition:transform .2s,border-color .2s;
+}
+.project:hover{transform:translateY(-3px);border-color:var(--text)}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+.project-top h3 a{transition:opacity .2s}
+.project-top h3 a:hover{opacity:.6}
+.year{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);white-space:nowrap}
+.project p{color:var(--muted);font-size:.94rem;margin-bottom:20px;flex:1}
+.project .tags{margin-bottom:18px}
+.links{display:flex;gap:18px;font-size:.85rem;font-weight:500;flex-wrap:wrap}
+.links a{border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
+.links a:hover{border-color:var(--text)}
+.links a.strong{border-color:var(--text)}
+
+/* ---------- PENGALAMAN ---------- */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.item{position:relative;padding-bottom:38px}
+.item:last-child{padding-bottom:0}
+.item::before{
+  content:"";position:absolute;left:-28px;top:7px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--text);
+}
+.item-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+.company{color:var(--muted);font-size:.92rem;margin-bottom:10px}
+.item ul{list-style:none;color:var(--muted);font-size:.94rem}
+.item li{position:relative;padding-left:18px;margin-bottom:6px}
+.item li::before{content:"–";position:absolute;left:0;color:var(--line)}
+
+/* ---------- KONTAK ---------- */
+.contact{text-align:center;padding:100px 0}
+.contact h2{margin-bottom:16px}
+.contact p{color:var(--muted);max-width:44ch;margin:0 auto 32px}
+.socials{display:flex;justify-content:center;gap:26px;margin-top:36px;font-size:.9rem;color:var(--muted)}
+.socials a{transition:color .2s}
+.socials a:hover{color:var(--text)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* =========================================================
+   HALAMAN DETAIL PROYEK
+   ========================================================= */
+.breadcrumb{
+  font-size:.85rem;color:var(--muted);
+  display:flex;align-items:center;gap:8px;margin-bottom:28px;
+}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb .sep{color:var(--line)}
+
+.case-hero{padding:64px 0 56px}
+.case-hero h1{font-size:clamp(2rem,4.6vw,3.1rem);max-width:20ch;margin-bottom:20px}
+.case-hero .lead{font-size:1.12rem;color:var(--muted);max-width:60ch;margin-bottom:32px}
+
+/* Meta ringkas */
+.meta{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;background:var(--bg-soft);
+}
+.meta div{padding:20px 22px;border-right:1px solid var(--line)}
+.meta div:last-child{border-right:0}
+.meta dt{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;
+}
+.meta dd{font-size:.92rem;font-weight:500}
+
+/* Pratinjau visual (placeholder) */
+.preview{
+  margin-top:40px;border:1px solid var(--line);border-radius:var(--radius);
+  background:
+    repeating-linear-gradient(45deg,var(--bg-soft) 0 12px,var(--bg) 12px 24px);
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.85rem;text-align:center;padding:24px;
+}
+.preview img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius)}
+
+/* Isi studi kasus */
+.case{max-width:720px}
+.case h2{font-size:clamp(1.4rem,2.8vw,1.8rem);margin-bottom:20px}
+.case p{color:var(--muted);margin-bottom:18px}
+.case p strong{color:var(--text);font-weight:500}
+.case ul,.case ol{color:var(--muted);margin:0 0 18px 0;padding-left:0;list-style:none}
+.case li{position:relative;padding-left:22px;margin-bottom:10px}
+.case ul li::before{content:"—";position:absolute;left:0;color:var(--line)}
+.case ol{counter-reset:step}
+.case ol li{counter-increment:step}
+.case ol li::before{
+  content:counter(step);position:absolute;left:0;top:1px;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:var(--muted);border:1px solid var(--line);border-radius:50%;
+  width:18px;height:18px;display:flex;align-items:center;justify-content:center;
+}
+.case li strong{color:var(--text);font-weight:500}
+
+/* Kutipan / catatan */
+.callout{
+  border-left:2px solid var(--text);padding:4px 0 4px 20px;
+  margin:28px 0;color:var(--muted);font-size:1rem;
+}
+
+/* Metrik hasil */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
+.metric{border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.metric .num{font-size:2rem;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.metric .desc{font-size:.85rem;color:var(--muted)}
+
+/* Navigasi proyek berikutnya */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:56px 0}
+.pager a{
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  transition:border-color .2s;
+}
+.pager a:hover{border-color:var(--text)}
+.pager .dir{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  display:block;margin-bottom:8px;
+}
+.pager .next{text-align:right}
+
+/* ---------- ANIMASI ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- RESPONSIF ---------- */
+@media(max-width:860px){
+  .about-grid,.skills,.projects,.metrics,.pager{grid-template-columns:1fr}
+  .meta{grid-template-columns:1fr 1fr}
+  .meta div:nth-child(2){border-right:0}
+  .meta div:nth-child(1),.meta div:nth-child(2){border-bottom:1px solid var(--line)}
+  .hero{padding:80px 0 64px}
+  .case-hero{padding:44px 0 40px}
+  section{padding:64px 0}
+  .pager .next{text-align:left}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    flex-direction:column;gap:0;padding:8px 24px 20px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:12px 0;font-size:1rem}
+  .menu-btn{display:block}
+}
+
+/* =========================================================
+   STATUS PROYEK & GALERI TANGKAPAN LAYAR
+   ========================================================= */
+.status-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+
+/* Label status untuk proyek yang tidak bisa dibuka publik */
+.chip{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.82rem;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:6px 14px;
+}
+.chip::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--muted);opacity:.55;
+}
+
+/* Tautan ke situs yang benar-benar berjalan */
+.live{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.82rem;font-weight:500;
+  border:1px solid var(--text);border-radius:999px;padding:6px 16px;
+  transition:background .2s,color .2s;
+}
+.live::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--aksen);
+}
+.live:hover{background:var(--aksen);color:var(--di-atas-gelap)}
+.live:hover::before{background:var(--aksen)}
+
+/* Galeri tangkapan layar */
+.gallery{display:grid;gap:24px}
+.gallery figure{margin:0}
+.shot{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:repeating-linear-gradient(45deg,var(--bg-soft) 0 12px,var(--bg) 12px 24px);
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.82rem;text-align:center;padding:24px;line-height:1.5;
+}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery figcaption{
+  margin-top:12px;font-size:.88rem;color:var(--muted);
+  padding-left:14px;border-left:2px solid var(--line);
+}
+.gallery-2{grid-template-columns:1fr 1fr}
+.gallery-2 .shot{aspect-ratio:4/3}
+.note{
+  font-size:.85rem;color:var(--muted);
+  background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 20px;margin-top:28px;
+}
+@media(max-width:860px){
+  .gallery-2{grid-template-columns:1fr}
+}
+
+/* =========================================================
+   ANIMASI & INTERAKSI
+   ========================================================= */
+
+/* Bilah kemajuan gulir di bagian paling atas */
+.progress{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:100;
+  background:linear-gradient(90deg,var(--text),var(--aksen));
+  transform:scaleX(0);transform-origin:0 50%;will-change:transform;
+}
+
+/* ---------- Judul yang tersingkap dari bawah ---------- */
+.mask{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.mask-in{
+  display:block;transform:translateY(110%);
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.mask-in.tampil{transform:none}
+
+/* ---------- Isi hero muncul saat halaman dibuka ---------- */
+@keyframes naik{
+  from{opacity:0;transform:translateY(38px)}
+  to{opacity:1;transform:none}
+}
+.hero > *,
+.case-hero > *{animation:naik .95s cubic-bezier(.16,1,.3,1) both}
+.hero > *:nth-child(1),.case-hero > *:nth-child(1){animation-delay:.05s}
+.hero > *:nth-child(2),.case-hero > *:nth-child(2){animation-delay:.18s}
+.hero > *:nth-child(3),.case-hero > *:nth-child(3){animation-delay:.31s}
+.hero > *:nth-child(4),.case-hero > *:nth-child(4){animation-delay:.44s}
+.hero > *:nth-child(5),.case-hero > *:nth-child(5){animation-delay:.57s}
+.hero > *:nth-child(6),.case-hero > *:nth-child(6){animation-delay:.70s}
+/* judul hero dikecualikan, ia memakai efek tersingkap */
+.hero > h1,.case-hero > h1{animation:none;opacity:1;transform:none}
+
+/* ---------- Label bagian menggeser masuk dari kiri ---------- */
+.label{
+  opacity:0;transform:translateX(-18px);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);
+}
+.show .label,.case-hero .label{opacity:1;transform:none}
+
+/* ---------- Titik hijau berdenyut ---------- */
+@keyframes denyut{
+  0%,100%{box-shadow:0 0 0 0 rgba(var(--aksen-rgb),.5)}
+  70%{box-shadow:0 0 0 9px rgba(var(--aksen-rgb),0)}
+}
+.dot,.live::before{animation:denyut 2.2s ease-out infinite}
+
+/* ---------- Wadah utama yang muncul saat digulir ---------- */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);
+}
+.reveal.show{opacity:1;transform:none}
+
+/* ---------- Anak elemen muncul berurutan ---------- */
+.stagger > *{
+  opacity:0;transform:translateY(42px) scale(.97);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);
+}
+.stagger.go > *{opacity:1;transform:none}
+
+/* Kartu proyek & galeri sedikit miring sebelum muncul */
+.projects.stagger > *,
+.gallery.stagger > *{transform:translateY(52px) scale(.96) rotate(.6deg)}
+.projects.stagger.go > *,
+.gallery.stagger.go > *{transform:none}
+
+/* ---------- Garis waktu tumbuh & titiknya melompat ---------- */
+.timeline::before{transform:scaleY(0);transform-origin:50% 0;transition:transform 1.3s cubic-bezier(.16,1,.3,1)}
+.timeline.go::before{transform:scaleY(1)}
+.timeline .item::before{
+  transform:scale(0);opacity:0;
+  transition:transform .6s cubic-bezier(.34,1.56,.64,1),opacity .4s;
+}
+.timeline.go .item::before{transform:scale(1);opacity:1}
+.timeline.go .item:nth-child(1)::before{transition-delay:.25s}
+.timeline.go .item:nth-child(2)::before{transition-delay:.45s}
+.timeline.go .item:nth-child(3)::before{transition-delay:.65s}
+.timeline.go .item:nth-child(4)::before{transition-delay:.85s}
+
+/* ---------- Angka metrik ---------- */
+.metric .num{font-variant-numeric:tabular-nums}
+
+/* ---------- Panah bergeser saat disentuh kursor ---------- */
+.arw{display:inline-block;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+a:hover .arw{transform:translateX(6px)}
+a:hover .arw.naik{transform:translate(4px,-4px)}
+
+/* ---------- Garis bawah menyapu pada navigasi ---------- */
+.nav-links a{position:relative}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:100% 50%;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.nav-links a:hover::after,
+.nav-links a.aktif::after{transform:scaleX(1);transform-origin:0 50%}
+.nav-links a.aktif{color:var(--text)}
+
+/* ---------- Kartu & tombol saat disentuh kursor ---------- */
+.project{transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .4s}
+.project:hover{transform:translateY(-8px);box-shadow:0 22px 45px -28px var(--bayang)}
+.skill-card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .35s}
+.skill-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px -26px var(--bayang)}
+.tag{transition:border-color .25s,color .25s,background .25s}
+.skill-card:hover .tag{border-color:var(--line-kuat);color:var(--text);background:var(--bg)}
+.btn{transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .25s,background .25s,color .25s,border-color .25s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 26px -18px var(--bayang)}
+.metric{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
+.metric:hover{transform:translateY(-6px);border-color:var(--text)}
+.pager a{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
+.pager a:hover{transform:translateY(-5px)}
+.fact{transition:padding-left .3s}
+.facts:hover .fact{padding-left:4px}
+
+/* ---------- Gambar membesar di dalam bingkainya ---------- */
+.shot,.preview{overflow:hidden}
+.shot img,.preview img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gallery figure:hover .shot img,.preview:hover img{transform:scale(1.06)}
+
+/* ---------- Hormati preferensi pengguna ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .reveal,.stagger > *,.label{opacity:1;transform:none}
+  .mask-in{transform:none}
+  .timeline::before{transform:scaleY(1)}
+  .timeline .item::before{transform:scale(1);opacity:1}
+  .progress{display:none}
+}
+a:hover .arw.mundur{transform:translateX(-6px)}
+
+/* Teks status di samping tautan situs live */
+.status-teks{font-size:.85rem;color:var(--muted);font-weight:400}
+
+/* =========================================================
+   PENERAPAN WARNA AKSEN
+   Aksen hanya dipakai pada lima titik yang sudah punya makna:
+   nomor label, menu aktif, tautan utama, angka metrik, dan
+   penanda status. Selebihnya tetap hitam-putih.
+   ========================================================= */
+.label{color:var(--aksen)}
+.nav-links a.aktif{color:var(--aksen)}
+.links a.strong{color:var(--aksen);border-color:var(--aksen)}
+.live{color:var(--aksen);border-color:var(--aksen)}
+.metric .num{color:var(--aksen)}
+.callout{border-left-color:var(--aksen)}
+.timeline .item::before{border-color:var(--aksen)}
+.breadcrumb a:hover{color:var(--aksen)}
+.contact .socials a:hover{color:var(--aksen)}
+
+/* =========================================================
+   TOMBOL GANTI TEMA
+   ========================================================= */
+.tema-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;margin-left:20px;
+  background:none;border:.5px solid var(--line);border-radius:50%;
+  color:var(--muted);cursor:pointer;
+  transition:color .25s,border-color .25s,transform .25s;
+}
+.tema-btn:hover{color:var(--text);border-color:var(--line-kuat);transform:rotate(-18deg)}
+.tema-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.tema-btn .ikon-bulan{display:none}
+:root[data-tema="gelap"] .tema-btn .ikon-bulan{display:block}
+:root[data-tema="gelap"] .tema-btn .ikon-matahari{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-tema="terang"]) .tema-btn .ikon-bulan{display:block}
+  :root:not([data-tema="terang"]) .tema-btn .ikon-matahari{display:none}
+}
+
+/* Susunan navigasi agar tombol tema tetap di sisi kanan */
+nav{gap:8px}
+.nav-kanan{display:flex;align-items:center}
+
+@media(max-width:860px){
+  .tema-btn{margin-left:8px;margin-right:4px}
+}
+
+/* Kotak placeholder gambar sedikit diredupkan di tema gelap */
+:root[data-tema="gelap"] .preview,
+:root[data-tema="gelap"] .shot{opacity:.85}

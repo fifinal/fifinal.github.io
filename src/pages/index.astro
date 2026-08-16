@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import Dasar from '../layouts/Dasar.astro';
+import Seksi from '../components/Seksi.astro';
+import KartuProyek from '../components/KartuProyek.astro';
+import { profil, tentang, skill, pengalaman, sosial } from '../data/situs';
+
+const proyek = (await getCollection('proyek')).sort((a, b) => a.data.urutan - b.data.urutan);
+---
+
+<Dasar judul={`${profil.nama} — ${profil.peran}`} deskripsi={profil.deskripsiSitus} beranda>
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <div class="wrap hero">
+      <div class="badge"><span class="dot"></span> {profil.status}</div>
+      <h1>{profil.judulHero}</h1>
+      <p>{profil.ringkasHero}</p>
+      <div class="actions">
+        <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+        <a href={`mailto:${profil.email}`} class="btn btn-ghost">Hubungi Saya</a>
+      </div>
+    </div>
+
+    <!-- ============ TENTANG ============ -->
+    <Seksi id="tentang" label="01 — Tentang" judul="Sedikit tentang saya" lebar>
+      <div class="about-grid">
+        <div>
+          {tentang.paragraf.map((p) => <p set:html={p} />)}
+        </div>
+        <div class="facts">
+          {
+            tentang.fakta.map((f) => (
+              <div class="fact">
+                <span>{f.label}</span>
+                <span>{f.nilai}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Seksi>
+
+    <!-- ============ SKILL ============ -->
+    <Seksi id="skill" label="02 — Kemampuan" judul="Yang saya kerjakan" lebar>
+      <div class="skills">
+        {
+          skill.map((k) => (
+            <div class="skill-card">
+              <h3>{k.judul}</h3>
+              <div class="tags">
+                {k.daftar.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </Seksi>
+
+    <!-- ============ PROYEK ============ -->
+    <Seksi id="proyek" label="03 — Portofolio" judul="Proyek terpilih" lebar>
+      <div class="projects">
+        {proyek.map((p) => <KartuProyek proyek={p} />)}
+      </div>
+    </Seksi>
+
+    <!-- ============ PENGALAMAN ============ -->
+    <Seksi id="pengalaman" label="04 — Perjalanan" judul="Pengalaman & pendidikan" lebar>
+      <div class="timeline">
+        {
+          pengalaman.map((e) => (
+            <div class="item">
+              <div class="item-head">
+                <h3>{e.posisi}</h3>
+                <span class="year">{e.periode}</span>
+              </div>
+              <div class="company">{e.tempat}</div>
+              <ul>
+                {e.rincian.map((r) => (
+                  <li>{r}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </Seksi>
+
+    <!-- ============ KONTAK ============ -->
+    <section id="kontak">
+      <div class="wrap contact reveal">
+        <span class="label">05 — Kontak</span>
+        <h2>Mari bekerja sama</h2>
+        <p>
+          Punya proyek, tawaran kerja, atau sekadar ingin berdiskusi soal teknologi? Kotak masuk saya
+          selalu terbuka.
+        </p>
+        <a href={`mailto:${profil.email}`} class="btn btn-primary">{profil.email}</a>
+        <div class="socials">
+          {sosial.map((s) => <a href={s.url} target="_blank" rel="noopener">{s.teks}</a>)}
+        </div>
+      </div>
+    </section>
+  </main>
+</Dasar>

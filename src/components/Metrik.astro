@@ -1,0 +1,17 @@
+---
+interface Props {
+  daftar: { angka: string; keterangan: string }[];
+}
+const { daftar } = Astro.props;
+---
+
+<div class="metrics">
+  {
+    daftar.map((m) => (
+      <div class="metric">
+        <div class="num" set:html={m.angka} />
+        <div class="desc">{m.keterangan}</div>
+      </div>
+    ))
+  }
+</div>

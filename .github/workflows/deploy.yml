@@ -1,0 +1,64 @@
+# Membangun situs Astro lalu menerbitkannya ke GitHub Pages.
+# GitHub Pages tidak bisa menjalankan Astro sendiri — ia hanya melayani
+# berkas statis, jadi proses build dikerjakan di sini dan isi dist/
+# yang dikirim.
+
+name: Terbitkan ke GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Memungkinkan penerbitan manual lewat tab Actions tanpa perlu commit.
+  workflow_dispatch:
+
+# Izin minimum yang dibutuhkan actions/deploy-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Bila ada dua penerbitan berbarengan, biarkan yang berjalan selesai
+# dan antrekan yang terbaru — jangan sampai saling menimpa.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  bangun:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil kode
+        uses: actions/checkout@v4
+
+      - name: Siapkan Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # npm ci memakai package-lock.json apa adanya, jadi hasil build
+      # di sini sama persis dengan hasil di mesin lokal.
+      - name: Pasang dependensi
+        run: npm ci
+
+      - name: Bangun situs
+        run: npm run build
+
+      - name: Siapkan Pages
+        uses: actions/configure-pages@v5
+
+      - name: Unggah hasil build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  terbitkan:
+    needs: bangun
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.penerbitan.outputs.page_url }}
+    steps:
+      - name: Terbitkan ke Pages
+        id: penerbitan
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,39 @@
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+/**
+ * Satu berkas YAML = satu studi kasus proyek.
+ * Skema di bawah divalidasi saat build, jadi salah ketik nama kolom
+ * akan langsung ketahuan sebelum situs terbit.
+ */
+const proyek = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/proyek' }),
+  schema: z.object({
+    urutan: z.number(),                    // urutan tampil di beranda
+    judul: z.string(),
+    tahun: z.number(),
+    ringkas: z.string(),                   // dipakai di kartu beranda & meta description
+    lead: z.string(),                      // kalimat pembuka halaman detail
+
+    peran: z.string(),
+    periode: z.string(),
+    tim: z.string(),
+    tipe: z.string(),
+    tags: z.array(z.string()),
+
+    live: z.string().nullable(),           // null bila proyek tidak bisa diakses publik
+    status: z.string(),                    // label pengganti saat live bernilai null
+
+    masalah: z.array(z.string()),
+    solusi: z.array(z.string()),
+    proses: z.array(z.string()),
+    fitur: z.array(z.string()),
+    metrik: z.array(z.object({ angka: z.string(), keterangan: z.string() })),
+    gambar: z.array(z.object({ file: z.string(), keterangan: z.string() })),
+    tantangan: z.array(z.string()),
+    belajar: z.string(),
+    kerahasiaan: z.string(),               // dipakai pada catatan di bawah galeri
+  }),
+});
+
+export const collections = { proyek };

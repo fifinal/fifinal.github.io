@@ -1,0 +1,33 @@
+---
+interface Props {
+  gambar: { file: string; keterangan: string }[];
+  kerahasiaan: string;
+}
+const { gambar, kerahasiaan } = Astro.props;
+const [utama, ...sisa] = gambar;
+---
+
+<div class="gallery">
+  <figure>
+    <div class="shot">
+      {/* Ganti isi div ini dengan <img src={`/gambar/${utama.file}`} alt={utama.keterangan} /> */}
+      gambar/{utama.file}
+    </div>
+    <figcaption>{utama.keterangan}</figcaption>
+  </figure>
+</div>
+
+<div class="gallery gallery-2" style="margin-top:24px">
+  {
+    sisa.map((g) => (
+      <figure>
+        <div class="shot">gambar/{g.file}</div>
+        <figcaption>{g.keterangan}</figcaption>
+      </figure>
+    ))
+  }
+</div>
+
+<p class="note">
+  Data pada tangkapan layar telah diganti dengan data contoh untuk menjaga kerahasiaan informasi {kerahasiaan}.
+</p>

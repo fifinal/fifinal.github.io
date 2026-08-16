@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  proyek: CollectionEntry<'proyek'>;
+}
+const { proyek } = Astro.props;
+const d = proyek.data;
+const tautan = `/proyek/${proyek.id}/`;
+// Kartu hanya menampilkan tiga teknologi utama; daftar lengkapnya ada di halaman detail.
+const tagsKartu = d.tags.slice(0, 3);
+---
+
+<article class="project">
+  <div class="project-top">
+    <h3><a href={tautan}>{d.judul}</a></h3>
+    <span class="year">{d.tahun}</span>
+  </div>
+  <p>{d.ringkas}</p>
+  <div class="tags">{tagsKartu.map((t) => <span class="tag">{t}</span>)}</div>
+  <div class="links">
+    <a class="strong" href={tautan}>Studi Kasus →</a>
+    {
+      d.live ? (
+        <a href={d.live} target="_blank" rel="noopener">
+          Situs Live ↗
+        </a>
+      ) : (
+        <span class="status-teks">{d.status}</span>
+      )
+    }
+  </div>
+</article>

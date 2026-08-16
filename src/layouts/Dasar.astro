@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  judul: string;
+  deskripsi: string;
+  /** true bila halaman ini adalah beranda (navigasi memakai anchor lokal) */
+  beranda?: boolean;
+}
+
+const { judul, deskripsi, beranda = false } = Astro.props;
+const kanonis = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{judul}</title>
+    <meta name="description" content={deskripsi} />
+    <link rel="canonical" href={kanonis} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={judul} />
+    <meta property="og:description" content={deskripsi} />
+    <meta property="og:url" content={kanonis} />
+
+    <!--
+      Dijalankan sebelum halaman digambar supaya tidak ada kedipan putih
+      saat pengunjung yang memilih tema gelap membuka halaman.
+    -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('tema');
+          if (t === 'gelap' || t === 'terang') document.documentElement.dataset.tema = t;
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Cadangan bila JavaScript tidak aktif: semua isi tetap terbaca -->
+    <noscript>
+      <style>
+        .reveal,
+        .label {
+          opacity: 1;
+          transform: none;
+        }
+        .hero > *,
+        .case-hero > * {
+          animation: none;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <Header beranda={beranda} />
+    <slot />
+    <Footer beranda={beranda} />
+
+    <script>
+      import '../scripts/animasi.js';
+    </script>
+  </body>
+</html>

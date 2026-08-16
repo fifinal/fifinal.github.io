@@ -1,0 +1,22 @@
+---
+/**
+ * Pembungkus satu bagian halaman: label bernomor, judul, lalu isi.
+ * Kelas `reveal` dipakai skrip animasi untuk memunculkan isi saat digulir.
+ */
+interface Props {
+  id?: string;
+  label: string;
+  judul: string;
+  /** matikan pembungkus .case bila isinya bukan teks panjang */
+  lebar?: boolean;
+}
+const { id, label, judul, lebar = false } = Astro.props;
+---
+
+<section id={id}>
+  <div class={`wrap reveal${lebar ? '' : ' case'}`}>
+    <span class="label">{label}</span>
+    <h2>{judul}</h2>
+    <slot />
+  </div>
+</section>

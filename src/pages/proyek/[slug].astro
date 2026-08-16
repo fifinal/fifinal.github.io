@@ -1,0 +1,113 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Dasar from '../../layouts/Dasar.astro';
+import Seksi from '../../components/Seksi.astro';
+import Metrik from '../../components/Metrik.astro';
+import Galeri from '../../components/Galeri.astro';
+import Pager from '../../components/Pager.astro';
+import { profil } from '../../data/situs';
+
+export async function getStaticPaths() {
+  const semua = (await getCollection('proyek')).sort((a, b) => a.data.urutan - b.data.urutan);
+
+  return semua.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      sebelumnya: i > 0 ? semua[i - 1] : null,
+      berikutnya: i < semua.length - 1 ? semua[i + 1] : null,
+    },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'proyek'>;
+  sebelumnya: CollectionEntry<'proyek'> | null;
+  berikutnya: CollectionEntry<'proyek'> | null;
+}
+
+const { entry, sebelumnya, berikutnya } = Astro.props;
+const d = entry.data;
+
+const sebelum = sebelumnya
+  ? { url: `/proyek/${sebelumnya.id}/`, judul: sebelumnya.data.judul, arah: 'Proyek sebelumnya' }
+  : { url: '/#proyek', judul: 'Semua proyek', arah: 'Kembali' };
+
+const sesudah = berikutnya
+  ? { url: `/proyek/${berikutnya.id}/`, judul: berikutnya.data.judul, arah: 'Proyek berikutnya' }
+  : { url: '/#kontak', judul: 'Hubungi saya', arah: 'Selanjutnya' };
+---
+
+<Dasar judul={`${d.judul} — ${profil.nama}`} deskripsi={d.ringkas}>
+  <main>
+    <div class="wrap case-hero">
+      <div class="breadcrumb">
+        <a href="/">Beranda</a><span class="sep">/</span>
+        <a href="/#proyek">Proyek</a><span class="sep">/</span>
+        <span>{d.judul}</span>
+      </div>
+      <h1>{d.judul}</h1>
+      <p class="lead">{d.lead}</p>
+      <div class="tags">{d.tags.map((t) => <span class="tag">{t}</span>)}</div>
+
+      <div class="status-row">
+        {
+          d.live ? (
+            <>
+              <a class="live" href={d.live} target="_blank" rel="noopener">
+                Situs Live ↗
+              </a>
+              <span class="status-teks">Kode sumber bersifat privat</span>
+            </>
+          ) : (
+            <>
+              <span class="chip">{d.status}</span>
+              <span class="status-teks">
+                Tidak dapat diakses publik — lihat tangkapan layar di bawah
+              </span>
+            </>
+          )
+        }
+      </div>
+
+      <div class="preview" style="margin-top:36px">
+        {/* Ganti dengan <img src={`/gambar/${d.gambar[0].file}`} alt={d.judul} /> */}
+        Tangkapan layar utama — gambar/{d.gambar[0].file}
+      </div>
+    </div>
+
+    <Seksi label="01 — Latar belakang" judul="Masalah yang dihadapi">
+      {d.masalah.map((p) => <p set:html={p} />)}
+    </Seksi>
+
+    <Seksi label="02 — Pendekatan" judul="Solusi yang saya ambil">
+      {d.solusi.map((p) => <p set:html={p} />)}
+    </Seksi>
+
+    <Seksi label="03 — Proses" judul="Cara saya mengerjakannya">
+      <ol>{d.proses.map((l) => <li set:html={l} />)}</ol>
+    </Seksi>
+
+    <Seksi label="04 — Hasil kerja" judul="Fitur utama">
+      <ul>{d.fitur.map((l) => <li set:html={l} />)}</ul>
+    </Seksi>
+
+    <Seksi label="05 — Tampilan" judul="Cuplikan antarmuka">
+      <Galeri gambar={d.gambar} kerahasiaan={d.kerahasiaan} />
+    </Seksi>
+
+    <Seksi label="06 — Dampak" judul="Hasil" lebar>
+      <Metrik daftar={d.metrik} />
+      <p style="color:var(--muted);max-width:720px">
+        Angka di atas diukur setelah proyek berjalan. Ganti dengan data aslimu bila tersedia.
+      </p>
+    </Seksi>
+
+    <Seksi label="07 — Refleksi" judul="Tantangan & pembelajaran">
+      {d.tantangan.map((p) => <p set:html={p} />)}
+      <div class="callout">{d.belajar}</div>
+    </Seksi>
+
+    <Pager sebelum={sebelum} sesudah={sesudah} />
+  </main>
+</Dasar>

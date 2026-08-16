@@ -1,0 +1,24 @@
+---
+import { profil } from '../data/situs';
+
+interface Props {
+  beranda?: boolean;
+}
+const { beranda = false } = Astro.props;
+const tahun = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">{tahun}</span> {profil.nama}</span>
+    {
+      beranda ? (
+        <span>Dibuat dengan Astro</span>
+      ) : (
+        <span>
+          <a href="/">Kembali ke beranda</a>
+        </span>
+      )
+    }
+  </div>
+</footer>

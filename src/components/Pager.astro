@@ -1,0 +1,25 @@
+---
+interface Sisi {
+  url: string;
+  judul: string;
+  arah: string;
+}
+interface Props {
+  sebelum: Sisi;
+  sesudah: Sisi;
+}
+const { sebelum, sesudah } = Astro.props;
+---
+
+<div class="wrap">
+  <div class="pager">
+    <a class="prev" href={sebelum.url}>
+      <span class="dir">← {sebelum.arah}</span>
+      <h3>{sebelum.judul}</h3>
+    </a>
+    <a class="next" href={sesudah.url}>
+      <span class="dir">{sesudah.arah} →</span>
+      <h3>{sesudah.judul}</h3>
+    </a>
+  </div>
+</div>

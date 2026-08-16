@@ -1,0 +1,11 @@
+Simpan tangkapan layar proyek di folder ini.
+
+Nama berkas mengikuti kolom `gambar` pada setiap file YAML di
+src/content/proyek/, misalnya:
+
+  dasbor-analitik-penjualan-1.png
+  dasbor-analitik-penjualan-2.png
+  toko-online-umkm-1.png
+
+Berkas di folder public/ bisa diakses langsung lewat URL,
+contoh: /gambar/toko-online-umkm-1.png

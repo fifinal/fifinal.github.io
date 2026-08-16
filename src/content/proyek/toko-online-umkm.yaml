@@ -1,0 +1,70 @@
+urutan: 2
+judul: Toko Online UMKM
+tahun: 2025
+ringkas: 'Platform e-commerce sederhana untuk pelaku UMKM: katalog produk, keranjang, dan integrasi pembayaran.'
+lead: Membantu pemilik usaha kecil punya toko online sendiri tanpa harus paham teknologi — dan tanpa biaya
+  bulanan yang memberatkan.
+peran: Full-stack Developer
+periode: Mei — Sep 2025
+tim: Solo
+tipe: Proyek klien
+tags:
+- Next.js
+- Tailwind
+- MongoDB
+- Midtrans
+live: '#'
+status: Situs Live
+masalah:
+- Klien saya menjual produk makanan kering lewat pesan instan. Setiap hari ia menyalin daftar produk,
+  membalas pertanyaan stok yang sama berulang kali, dan mencatat pesanan di buku tulis.
+- 'Saat pesanan meningkat, sistem itu mulai jebol: ada pesanan yang terlewat, ada stok yang terlanjur
+  dijanjikan padahal sudah habis.'
+- <strong>Kendala tambahan:</strong> ia bukan orang teknis dan tidak punya anggaran untuk berlangganan
+  platform mahal. Apa pun yang saya bangun harus bisa ia kelola sendiri.
+solusi:
+- 'Saya membangun toko online ringan dengan panel admin yang sesederhana mungkin — hanya ada empat menu:
+  produk, pesanan, stok, dan pengaturan.'
+- Seluruh situs dirancang <strong>mobile-first</strong>, karena dari data percakapan klien, hampir seluruh
+  pembelinya datang dari ponsel dengan koneksi yang tidak selalu stabil.
+proses:
+- <strong>Memahami alur lama.</strong> Menemani klien sehari penuh melayani pesanan untuk melihat di mana
+  titik macetnya.
+- <strong>Menentukan ruang lingkup.</strong> Sengaja memangkas fitur seperti kupon dan poin karena belum
+  dibutuhkan.
+- <strong>Desain antarmuka.</strong> Menyusun halaman katalog dan checkout agar bisa selesai dalam tiga
+  langkah.
+- <strong>Integrasi pembayaran.</strong> Menghubungkan gerbang pembayaran lokal dengan konfirmasi otomatis.
+- <strong>Pelatihan.</strong> Membuat panduan singkat bergambar dan mendampingi klien selama dua minggu
+  pertama.
+fitur:
+- Katalog produk dengan pencarian dan kategori
+- Keranjang belanja yang tetap tersimpan meski halaman ditutup
+- Checkout tiga langkah tanpa wajib membuat akun
+- Integrasi pembayaran otomatis dengan konfirmasi instan
+- Panel admin sederhana untuk mengelola produk, stok, dan pesanan
+- Notifikasi pesanan baru langsung ke ponsel pemilik toko
+metrik:
+- angka: 3 langkah
+  keterangan: Alur checkout dari keranjang hingga bayar
+- angka: '0'
+  keterangan: Pesanan terlewat sejak sistem dipakai
+- angka: ~85%
+  keterangan: Pengunjung datang dari perangkat mobile
+gambar:
+- file: toko-online-umkm-1.png
+  keterangan: Halaman katalog produk, tampilan mobile dan desktop.
+- file: toko-online-umkm-2.png
+  keterangan: Alur checkout tiga langkah tanpa wajib membuat akun.
+- file: toko-online-umkm-3.png
+  keterangan: Panel admin sederhana untuk mengelola produk dan stok.
+tantangan:
+- Bagian tersulit justru bukan teknis, melainkan menahan diri. Saya sempat ingin menambahkan banyak fitur
+  karena secara teknis menarik dikerjakan.
+- 'Setelah melihat klien kebingungan pada versi awal panel admin yang terlalu ramai, saya memangkas habis:
+  menghapus tiga menu, menyatukan form, dan mengganti istilah teknis dengan bahasa sehari-hari. Versi
+  yang lebih sedikit fiturnya justru jauh lebih terpakai.'
+belajar: 'Fitur yang tidak dipakai sama nilainya dengan fitur yang tidak ada — bedanya, fitur yang tidak
+  dipakai tetap harus dirawat. Sejak proyek ini saya selalu bertanya lebih dulu: kalau fitur ini dihapus,
+  apa yang rusak?'
+kerahasiaan: klien
