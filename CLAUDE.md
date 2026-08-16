@@ -7,14 +7,22 @@ percakapan bisa dilanjutkan tanpa mengulang dari nol.
 ## Ringkas
 
 Situs portofolio pribadi. Astro 7, statis penuh, tanpa framework UI.
-Pemilik: Fifin Alamsyah — web developer, fokus frontend/React.
+Pemilik: Fifin Alamsyah — web developer sistem informasi pendidikan
+tinggi. Stack sehari-harinya Laravel + Vue, bukan React.
 Bahasa situs dan seluruh komentar kode: **Bahasa Indonesia**.
+
+Astro 7 menuntut **Node ≥ 22.12**. Mesin pemilik masih memakai v20
+sebagai bawaan, jadi `npm run build` gagal sebelum versinya dinaikkan
+(`nvm use 22`).
 
 ```bash
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # hasil di dist/
 ```
+
+Sudah terbit di **https://fifinal.github.io/** — lihat bagian
+"Publikasi" di bawah.
 
 ## Keputusan yang sudah diambil
 
@@ -48,6 +56,18 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
    diminta menambah lagi, tawarkan dulu parallax atau kursor kustom sambil
    mengingatkan keduanya mulai menabrak gaya minimalis.
 
+8. **Jangan mengarang isi.** Situs ini pernah dua kali berisi data
+   template — portofolio 2021 tayang empat tahun dengan "John Joe" dan
+   Lorem ipsum, lalu versi Astro ini sempat memuat perusahaan, kampus,
+   dan metrik fiktif yang terbaca meyakinkan. Yang kedua lebih berbahaya
+   justru karena tidak terlihat palsu.
+
+   Aturannya: isi hanya yang bisa ditunjuk asalnya. Bila sebuah bagian
+   menuntut cerita orang pertama — kenapa sebuah keputusan diambil, apa
+   yang macet, apa yang dipelajari — tulis penanda `[ISI]` berisi
+   pertanyaan terarah dan tanyakan pada pemilik. Halaman yang tampak
+   belum selesai lebih baik daripada halaman yang meyakinkan tapi palsu.
+
 ## Struktur
 
 ```
@@ -64,8 +84,11 @@ src/
 public/gambar/             tangkapan layar (masih kosong)
 ```
 
-Nama berkas YAML menjadi URL-nya: `toko-online-umkm.yaml` →
-`/proyek/toko-online-umkm/`. Menambah proyek cukup menyalin satu YAML.
+Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
+`/proyek/simbelmawa/`. Menambah proyek cukup menyalin satu YAML.
+
+Empat studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
+`simbelmawa`, `sistem-langitan`, `sistem-magang`, `peksiminas`.
 
 ## Konvensi
 
@@ -77,18 +100,67 @@ Nama berkas YAML menjadi URL-nya: `toko-online-umkm.yaml` →
   `@media (prefers-reduced-motion:reduce)`.
 - Isi yang mengandung HTML sederhana (`<strong>`) dirender dengan
   `set:html`. Isi biasa jangan.
+- **Tidak semua kolom menerima HTML.** `pengalaman[].rincian` di
+  `situs.ts` dirender sebagai `{r}` teks biasa di `index.astro`, jadi
+  tag yang ditulis di sana akan tampil mentah. Periksa dulu cara
+  sebuah kolom dirender sebelum menyisipkan `<strong>`.
+
+## Publikasi
+
+Terbit di **https://fifinal.github.io/** — situs pengguna GitHub Pages,
+dilayani dari akar domain, jadi `base` di `astro.config.mjs` tidak
+diisi.
+
+Alurnya di `.github/workflows/deploy.yml`: tiap push ke `main`
+membangun dengan Node 22 lalu menerbitkan lewat `actions/deploy-pages`.
+Sekitar 40 detik. Sumber Pages disetel ke `workflow`, **bukan** branch —
+kalau kembali ke `legacy`, Jekyll akan mencoba memproses sumber Astro
+dan gagal di tiap push.
+
+Portofolio pertama (2021–2022, template yang tak pernah diisi)
+diarsipkan di repo `fifinal/portfolio-lama-2021`.
+
+## Sumber data
+
+Isi `situs.ts` dan bagian faktual tiap YAML disusun dari riwayat
+kontribusi GitHub yang bisa diperiksa ulang, bukan dari ingatan:
+
+- Statistik kontributor tiap repo (`gh api repos/OWNER/REPO/contributors`)
+- Rentang commit pemilik (`gh api "repos/.../commits?author=fifinal"`)
+- Struktur repo — berkas rute menandakan jumlah peran pengguna,
+  `.env.example` menandakan basis data (PostgreSQL, bukan MySQL)
+
+Pemilik punya **dua akun**: `fifinal` dan `fifinalamsyah`. Kontribusinya
+terpecah, jadi keduanya harus dijumlahkan saat menghitung metrik.
+
+Kerjanya tersebar di dua organisasi yang tidak muncul di `gh repo list`
+biasa — `umaha-ac-id` (tempat bekerja) dan `kemdikbud-id` (freelance,
+kini bernama Kemdiktisaintek). Pakai `gh api "user/repos?affiliation=..."`
+untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] Ganti data contoh: nama perusahaan dan universitas di `src/data/situs.ts`,
-      serta judul dan angka proyek di berkas YAML — semuanya masih karangan.
-- [ ] Isi tautan `#`: `sosial` di `situs.ts` dan kolom `live` di YAML.
+- [ ] **51 penanda `[ISI]` di empat berkas YAML.** Isinya pertanyaan
+      terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
+      `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
+      yang tahu jawabannya. Penanda ini **tampil di situs publik**,
+      jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
+- [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
+      Isi atau hapus — keputusan No. 2 melarang tautan mati.
+- [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik
+      yang boleh dibagikan, isikan agar label "Situs Live" muncul.
 - [ ] Tangkapan layar. Taruh di `public/gambar/` sesuai nama pada kolom
       `gambar`, lalu ganti kotak placeholder `.shot` di `Galeri.astro` dan
       `.preview` di `[slug].astro` dengan tag `<img>` — contohnya sudah
       ditulis sebagai komentar di kedua berkas.
-- [ ] Ganti `site` di `astro.config.mjs` dengan domain asli.
-- [ ] Publikasi. Belum ada repo Git dan belum di-deploy.
+      **Hati-hati:** ini sistem kementerian dan kampus. Tangkapan layar
+      berpotensi memuat data mahasiswa asli dan harus disensor lebih
+      dulu.
+- [ ] Konfirmasi dua data yang disimpulkan, bukan dinyatakan pemilik:
+      lokasi "Sidoarjo" (dari domain kampus) dan "Lulus 2019" (dari
+      tanggal repo skripsi).
+- [ ] `profil.status` masih berbunyi "Terbuka untuk peluang baru" —
+      bawaan template, sementara pemilik sedang bekerja.
 
 ## Cara memverifikasi perubahan
 
