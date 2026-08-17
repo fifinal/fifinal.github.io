@@ -51,7 +51,7 @@ export const pengalaman = [
     periode: '2022 — Sekarang',
     tempat: 'Universitas Maarif Hasyim Latif · Sidoarjo',
     rincian: [
-      'Mengembangkan dan merawat Sistem Langitan, sistem informasi akademik yang dipakai seluruh sivitas kampus — dari pendaftaran mahasiswa baru sampai pengelolaan perkuliahan.',
+      'Mengembangkan dan merawat Sistem Langitan, sistem informasi akademik multi-tenant yang melayani beberapa perguruan tinggi dari satu basis kode — lima puluh modul, dari pendaftaran mahasiswa baru sampai wisuda.',
       'Kontributor terbesar kedua dari dua belas orang di repositori intinya, dengan lebih dari 480 commit.',
       'Membangun UNSCO, platform kompetisi dan olimpiade tingkat nasional yang diselenggarakan kampus.',
     ],

@@ -1,50 +1,56 @@
 urutan: 2
-judul: Sistem Langitan — Sistem Informasi Akademik Kampus
+judul: Sistem Langitan — Sistem Informasi Akademik Multi-Kampus
 tahun: 2026
-ringkas: Sistem informasi akademik yang dipakai seluruh sivitas Universitas Maarif Hasyim Latif, dari
-  pendaftaran mahasiswa baru sampai kelulusan, dengan lima puluh modul yang saling terhubung.
-lead: Merawat dan memodernkan sistem yang sudah berjalan bertahun-tahun — sambil memastikan perkuliahan
-  satu kampus tidak berhenti sehari pun karena pekerjaan itu.
+ringkas: Sistem informasi akademik multi-tenant yang melayani beberapa perguruan tinggi sekaligus dari
+  satu basis kode, mencakup lima puluh modul dari pendaftaran mahasiswa baru sampai wisuda.
+lead: Satu basis kode yang harus melayani beberapa kampus sekaligus — masing-masing dengan identitas,
+  aturan akademik, dan datanya sendiri — sambil terus berjalan tanpa boleh berhenti sehari pun.
 peran: Pengembang Inti
 periode: 2022 — Sekarang
 tim: 12 kontributor
 tipe: Sistem internal kampus
 tags:
-- PHP
+- PHP 8.1
 - Oracle
+- Smarty
 - Docker
-- PHPStan
 - Legacy
 live: null
 status: Produksi — sistem internal
 masalah:
 - '[ISI] Dalam keadaan seperti apa sistem ini ketika kamu mulai menanganinya pada 2022?'
 - '[ISI] Kenapa migrasi ke PHP 8 jadi mendesak? Apa yang terancam kalau ditunda?'
+- '[ISI] Apa kesulitan khas merawat satu basis kode yang dipakai beberapa kampus dengan aturan berbeda?'
 - '[ISI] Apa risiko terbesar mengubah sistem yang dipakai seluruh kampus setiap hari?'
 solusi:
 - '[ISI] Bagaimana strategi migrasinya — bertahap per modul, atau sekaligus?'
 - '[ISI] Kenapa memilih menambahkan pemeriksa kompatibilitas otomatis ketimbang memeriksa manual?'
+- '[ISI] Bagaimana perbedaan antar kampus ditangani tanpa menggandakan kode?'
 proses:
 - '[ISI] Bagaimana kamu memetakan bagian mana saja yang akan rusak di PHP 8?'
 - '[ISI] Bagaimana pengujian dilakukan sebelum perubahan naik ke produksi?'
 - '[ISI] Bagaimana kamu menangani modul yang terlalu berisiko diubah?'
 fitur:
-- Lima puluh modul akademik yang saling terhubung, mencakup pendaftaran mahasiswa baru, perkuliahan,
-  keuangan, hingga wisuda
-- Migrasi bertahap dari PHP versi lama ke PHP 8.1 dan 8.2, disertai catatan perubahan terdokumentasi
-- Perkakas pemeriksa kompatibilitas dan kode usang yang bisa dijalankan berulang sebelum rilis
+- Satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan tampilan dan identitas terpisah
+  untuk tiap institusi
+- Lima puluh modul akademik yang saling terhubung — pendaftaran mahasiswa baru, perkuliahan, keuangan,
+  kepegawaian, hingga wisuda
+- Empat jenis pengguna — pegawai, dosen, mahasiswa, dan orang tua — dengan lebih dari tiga puluh peran
+  turunan
+- Kewenangan tiap peran ditentukan lewat pemetaan modul dan menu di basis data, bukan dipaku di kode
+- Navigasi ala aplikasi satu halaman memakai hash router, dibangun di atas basis kode lawas
+- Migrasi bertahap ke PHP 8.1 disertai perkakas pemeriksa kompatibilitas yang bisa dijalankan berulang
+  sebelum tiap rilis
 - Analisis statis dengan PHPStan dan pemeriksaan gaya kode otomatis
-- Terhubung dengan PDDikti untuk pelaporan data akademik nasional
-- Lingkungan pengembangan terkontainer dengan berkas Docker terpisah untuk tiap versi PHP, termasuk
-  varian ARM64
-- Pembuatan dokumen dan laporan cetak lewat TCPDF
+- Pelaporan data akademik ke PDDikti, serta pembuatan dokumen cetak dan berkas lembar sebar
+- Lingkungan terkontainer Docker multi-tahap dengan rilis otomatis lewat GitHub Actions
 metrik:
 - angka: '50'
-  keterangan: Modul akademik dalam satu sistem
+  keterangan: Modul akademik dalam satu basis kode
+- angka: 30+
+  keterangan: Peran pengguna dengan kewenangan berbeda
 - angka: '484'
-  keterangan: Commit atas nama saya
-- angka: 4 tahun
-  keterangan: Terlibat merawat dan memodernkan
+  keterangan: Commit atas nama saya selama empat tahun
 gambar:
 - file: sistem-langitan-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan pegawai asli.'
