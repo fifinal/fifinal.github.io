@@ -5,7 +5,7 @@ ringkas: Sistem informasi akademik multi-tenant yang melayani beberapa perguruan
   satu basis kode, mencakup lima puluh modul dari pendaftaran mahasiswa baru sampai wisuda.
 lead: Satu basis kode yang harus melayani beberapa kampus sekaligus — masing-masing dengan identitas,
   aturan akademik, dan datanya sendiri — sambil terus berjalan tanpa boleh berhenti sehari pun.
-peran: Pengembang Inti
+peran: Pengembang Utama
 periode: 2022 — Sekarang
 tim: 12 kontributor
 tipe: Sistem internal kampus
