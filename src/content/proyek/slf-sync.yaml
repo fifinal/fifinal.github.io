@@ -45,6 +45,12 @@ metrik:
   keterangan: Dirawat tanpa putus sejak 2022
 - angka: '2'
   keterangan: Orang yang merawat seluruh sistem ini
+diagram:
+  file: slf-sync.svg
+  keterangan: Data akademik mengalir satu arah dari sistem kampus ke pangkalan data nasional. Yang
+    bertanda hijau adalah jalur pembatalan — jalan pulang untuk menarik kembali kiriman yang keliru,
+    karena kesalahan di pangkalan data nasional tidak bisa sekadar ditimpa. Kotak putus-putus di kanan
+    berada di luar kendali kami.
 gambar:
 - file: slf-sync-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa asli.'

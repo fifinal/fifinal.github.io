@@ -1,0 +1,59 @@
+<!--
+  Diagram alur SLF Sync — digambar ulang pada tingkat abstraksi yang
+  aman untuk portofolio publik. Tanpa nama tabel, endpoint layanan web,
+  maupun topologi server.
+
+  Bentuknya sengaja berbeda dari lima diagram sebelumnya: ini satu-
+  satunya yang punya jalur balik. Data mengalir satu arah ke pangkalan
+  data nasional, tapi ada jalan pulang untuk menarik kembali kiriman
+  yang keliru — dan justru itu yang diberi aksen.
+-->
+<svg viewBox="0 0 760 320" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Aliran data dari sistem akademik kampus ke pangkalan data nasional, dengan jalur pembatalan</title>
+
+  <defs>
+    <marker id="sf-panah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path class="dg-panah-ujung" d="M0,0 L10,5 L0,10 z" />
+    </marker>
+  </defs>
+
+  <!-- Aliran maju -->
+  <g class="dg-alur">
+    <line x1="190" y1="98" x2="250" y2="98" marker-end="url(#sf-panah)" />
+    <line x1="450" y1="98" x2="520" y2="98" marker-end="url(#sf-panah)" />
+    <line x1="350" y1="136" x2="350" y2="200" marker-end="url(#sf-panah)" />
+  </g>
+
+  <!-- Jalan pulang: pembatalan ikut menulis ke pangkalan data yang sama -->
+  <g class="dg-cabang">
+    <path d="M450,238 C520,238 620,238 620,142" marker-end="url(#sf-panah)" />
+  </g>
+
+  <g class="dg-kotak">
+    <rect x="20"  y="60" width="170" height="76" rx="10" />
+    <rect x="250" y="60" width="200" height="76" rx="10" />
+  </g>
+
+  <!-- Pangkalan data nasional, di luar kendali -->
+  <g class="dg-cip">
+    <rect x="520" y="60" width="200" height="76" rx="10" />
+  </g>
+
+  <!-- Satu-satunya yang beraksen: kemampuan menarik kembali -->
+  <rect class="dg-kotak-aksen" x="250" y="200" width="200" height="76" rx="10" />
+
+  <g class="dg-judul">
+    <text x="40"  y="94">Sistem Langitan</text>
+    <text x="270" y="94">SLF Sync</text>
+    <text x="540" y="94" class="dg-judul-luar">Feeder PDDikti</text>
+    <text x="270" y="234" class="dg-teks-aksen">Jalur pembatalan</text>
+  </g>
+
+  <g class="dg-sub">
+    <text x="40"  y="114">sumber data akademik</text>
+    <text x="270" y="114">penerjemah dan pengirim</text>
+    <text x="540" y="114">pangkalan data nasional</text>
+    <text x="270" y="254" class="dg-sub-aksen">menarik kembali yang keliru</text>
+  </g>
+</svg>

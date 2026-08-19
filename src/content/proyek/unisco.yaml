@@ -44,6 +44,11 @@ metrik:
   keterangan: Tahap dalam satu sistem — daftar, bayar, ujian, hasil
 - angka: 3 bulan
   keterangan: Dari commit pertama hingga penyelenggaraan
+diagram:
+  file: unisco.svg
+  keterangan: Tiga masukan menyatu ke satu sesi ujian, lalu memancar menjadi jawaban dan hasil. Yang
+    bertanda hijau adalah sesi ujiannya — satu-satunya bagian yang tidak bisa diulang kalau gagal,
+    karena seluruh peserta mengerjakan pada jam yang sama.
 gambar:
 - file: unsco-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'
