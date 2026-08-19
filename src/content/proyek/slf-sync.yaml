@@ -1,0 +1,59 @@
+urutan: 4
+judul: SLF Sync — Penghubung Sistem Akademik dengan Pangkalan Data Nasional
+tahun: 2026
+ringkas: Alat sinkronisasi yang mengirim data akademik dari Sistem Langitan ke Feeder PDDikti — pelaporan
+  wajib yang menentukan status data seluruh mahasiswa di pangkalan data nasional.
+lead: Alat kecil yang taruhannya besar. Kalau ia mengirim data yang salah, yang keliru bukan satu layar
+  di kampus, melainkan catatan resmi mahasiswa di pangkalan data nasional.
+peran: Pengembang Utama
+periode: 2022 — Sekarang
+tim: 2 orang
+tipe: Sistem internal kampus
+tags:
+- CodeIgniter
+- SOAP
+- Smarty
+- PDDikti
+- Docker
+live: null
+status: Produksi — sistem internal
+masalah:
+- '[ISI] Sebelum alat ini ada, bagaimana data akademik dilaporkan ke Feeder? Berapa lama prosesnya dan
+  bagian mana yang paling sering salah?'
+- '[ISI] Kenapa sinkronisasi ke pangkalan data nasional tidak bisa sekadar mengirim semuanya sekaligus?
+  Apa yang membuatnya rumit?'
+- '[ISI] Apa akibat nyatanya bagi kampus kalau data di Feeder tidak sesuai atau terlambat?'
+solusi:
+- '[ISI] Ada controller Rollback tersendiri di sistem ini. Kejadian apa yang membuatnya perlu dibuat?'
+- '[ISI] Muncul Syncv2 berdampingan dengan Sync yang lama. Apa yang tidak beres pada versi pertama, dan
+  kenapa yang lama tetap dibiarkan hidup?'
+proses:
+- '[ISI] Alat ini memakai CodeIgniter dan NuSOAP, jauh lebih tua dari proyekmu yang lain. Kenapa tidak
+  ditulis ulang saja selama empat tahun ini?'
+- '[ISI] Bagaimana kamu menguji sinkronisasi tanpa mengotori data asli di Feeder?'
+fitur:
+- Sinkronisasi data akademik dari sistem kampus ke Feeder PDDikti lewat layanan web
+- Pembatalan hasil sinkronisasi ketika data yang terkirim ternyata keliru
+- Penghapusan dan penautan data sebagai jalur terpisah dari sinkronisasi biasa
+- Dua generasi mekanisme sinkronisasi berjalan berdampingan, yang lama tidak dimatikan begitu saja
+- Antarmuka pemantauan untuk melihat apa yang sudah dan belum terkirim
+- Berjalan dalam kontainer Docker
+metrik:
+- angka: '93'
+  keterangan: Commit atas nama saya, dijumlahkan dari dua akun
+- angka: 4 tahun
+  keterangan: Dirawat tanpa putus sejak 2022
+- angka: '2'
+  keterangan: Orang yang merawat seluruh sistem ini
+gambar:
+- file: slf-sync-1.png
+  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa asli.'
+- file: slf-sync-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Pernahkah sinkronisasi mengirim data yang salah ke Feeder? Bagaimana ketahuannya, dan bagaimana
+  dipulihkan?'
+- '[ISI] Apa yang terjadi kalau Feeder tidak bisa dihubungi persis saat batas pelaporan mepet?'
+belajar: '[ISI] Satu pelajaran dari merawat alat kecil yang kalau gagal, dampaknya sampai ke pelaporan
+  nasional kampus.'
+kerahasiaan: sivitas akademika

@@ -1,0 +1,57 @@
+urutan: 7
+judul: UNSCO — Platform Kompetisi dan Ujian Daring
+tahun: 2026
+ringkas: Platform Computer Based Test untuk penyelenggaraan lomba dan olimpiade tingkat nasional, dari
+  pendaftaran dan pembayaran sampai pelaksanaan ujian dan pengumuman hasil.
+lead: Ujian daring tidak memberi kesempatan kedua. Semua peserta mengerjakan pada jam yang sama, dan
+  apa pun yang gagal saat itu tidak bisa diulang di hari lain.
+peran: Pengembang Utama
+periode: Jun — Agu 2026
+tim: 2 kontributor
+tipe: Sistem internal kampus
+tags:
+- Laravel
+- PHP 8.2
+- Blade
+- Tailwind
+- Docker
+live: null
+status: Produksi — sistem internal
+masalah:
+- '[ISI] Sebelum ada sistem ini, bagaimana lomba diselenggarakan? Ujiannya di kertas, atau memakai
+  perkakas siap pakai?'
+- '[ISI] Kenapa dibangun sendiri, bukan memakai platform ujian daring yang sudah ada?'
+- '[ISI] Kebutuhan apa yang khas pada lomba berjenjang, yang tidak ada pada ujian kuliah biasa?'
+solusi:
+- '[ISI] Bagaimana kamu memastikan ujian tetap berjalan ketika banyak peserta mengerjakan bersamaan?'
+- '[ISI] Bagaimana jawaban peserta dijaga agar tidak hilang kalau koneksinya putus di tengah ujian?'
+proses:
+- '[ISI] Sistem ini selesai dalam tiga bulan menjelang acara. Bagian mana yang dikerjakan lebih dulu,
+  dan apa yang sengaja ditunda?'
+- '[ISI] Kamu mengerjakannya hampir sendirian. Apa yang dikerjakan rekanmu, dan bagaimana pembagiannya?'
+fitur:
+- Pendaftaran peserta perorangan maupun kelompok, dengan syarat lomba dan syarat peserta yang bisa diatur
+- Pembayaran biaya pendaftaran dengan tarif berbeda per bidang lomba
+- Bank soal dengan opsi jawaban, disusun per bidang lomba dan per tahapan
+- Sesi ujian terjadwal, dengan jawaban peserta tersimpan selama pengerjaan
+- Penilaian dan pengumuman hasil ujian
+- Halaman informasi lomba beserta pertanyaan yang sering diajukan
+- Berjalan dalam kontainer Docker
+metrik:
+- angka: '85'
+  keterangan: Commit atas nama saya — kontributor terbesar
+- angka: '4'
+  keterangan: Tahap dalam satu sistem — daftar, bayar, ujian, hasil
+- angka: 3 bulan
+  keterangan: Dari commit pertama hingga penyelenggaraan
+gambar:
+- file: unsco-1.png
+  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'
+- file: unsco-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Apa yang paling menegangkan saat hari pelaksanaan ujian? Adakah yang sempat bermasalah?'
+- '[ISI] Adakah fitur yang dibangun lalu ternyata tidak terpakai saat acara?'
+belajar: '[ISI] Satu pelajaran dari membangun sistem yang hanya dipakai beberapa jam, tapi tidak boleh
+  gagal di jam-jam itu.'
+kerahasiaan: peserta lomba

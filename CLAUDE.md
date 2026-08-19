@@ -105,9 +105,13 @@ public/gambar/             tangkapan layar (masih kosong)
 Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
 `/proyek/simbelmawa/`. Menambah proyek cukup menyalin satu YAML.
 
-Lima studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
-`simbelmawa`, `sistem-langitan`, `sistem-langitan-v2`, `sistem-magang`,
-`peksiminas`.
+Tujuh studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
+`simbelmawa`, `sistem-langitan`, `sistem-langitan-v2`, `slf-sync`,
+`sistem-magang`, `peksiminas`, `unsco`.
+
+Keluarga Langitan sengaja dikelompokkan di urutan 2–4 — v1, penulisan
+ulangnya, lalu alat sinkronisasinya — bukan diurutkan menurut jumlah
+commit.
 
 ## Konvensi
 
@@ -159,12 +163,16 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **64 penanda `[ISI]` di lima berkas YAML.** Isinya pertanyaan
+- [ ] **88 penanda `[ISI]` di tujuh berkas YAML.** Isinya pertanyaan
       terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [x] Diagram arsitektur — **selesai untuk kelima proyek.** Masing-masing
+- [ ] Diagram arsitektur untuk `slf-sync` dan `unsco`, dua proyek yang
+      baru ditambahkan. Untuk slf-sync, bentuk yang belum terpakai:
+      aliran data satu arah dengan jalur pembatalan. Untuk unsco,
+      alur peserta dari daftar sampai hasil.
+- [x] Diagram arsitektur — **selesai untuk lima proyek pertama.** Masing-masing
       sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
       informasi:
 
