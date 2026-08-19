@@ -26,11 +26,12 @@ masalah:
 - Dua hal lain ikut menekan. Aplikasi itu tidak menyediakan API, jadi tidak ada cara melayaninya selain
   lewat dirinya sendiri. Dan tampilannya sudah jauh tertinggal.
 - 'Versi ini dirancang sebagai <strong>API tersendiri sejak awal</strong> — bukan sebagai tampalan atas
-  permintaan yang datang belakangan. Rencananya sudah memperhitungkan lebih dari satu jenis pemanggil,
-  termasuk aplikasi mobile Flutter yang kemudian dikerjakan tim lain.'
-- 'Konsekuensinya menuntut kedisiplinan yang berbeda. Karena yang memakai API ini tim di luar tim saya,
-  kontraknya harus jelas dan stabil sejak awal — tidak bisa diam-diam diubah lalu pemanggilnya
-  disesuaikan belakangan.'
+  permintaan yang datang belakangan. Lebih dari satu jenis pemanggil sudah diperhitungkan sejak hari
+  pertama.'
+- 'Timnya dibagi menurut permukaan: saya memegang <strong>backend</strong>, seorang rekan mengerjakan
+  frontend React, dan seorang lagi aplikasi mobile Flutter. Satu API melayani keduanya.'
+- Pembagian itu menuntut kontrak yang jelas. Meski satu tim, dua klien yang berbeda memanggil API yang
+  sama — perubahan yang tidak diumumkan lebih dulu akan merusak salah satunya.
 - '[ISI] Kendala apa yang khas ketika penggunanya tersebar di ratusan perguruan tinggi se-Indonesia?'
 solusi:
 - '[ISI] Keputusan arsitektur apa yang kamu ambil untuk menangani delapan peran pengguna sekaligus?'
