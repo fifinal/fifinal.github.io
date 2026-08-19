@@ -1,0 +1,101 @@
+<!--
+  Diagram alur Sistem Magang — digambar ulang pada tingkat abstraksi
+  yang aman untuk portofolio publik. Tanpa nama mitra industri, nama
+  tabel, maupun endpoint.
+
+  Bentuknya sengaja berbeda dari dua diagram sebelumnya: di sini yang
+  menarik adalah perjalanan peserta melewati tahap, dengan peran yang
+  berganti di tiap tahap — dan dua di antaranya berada di luar kampus.
+-->
+<svg viewBox="0 0 760 350" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Perjalanan peserta magang melewati lima tahap, dengan peran yang berganti di tiap tahap</title>
+
+  <defs>
+    <marker id="mg-panah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path class="dg-panah-ujung" d="M0,0 L10,5 L0,10 z" />
+    </marker>
+  </defs>
+
+  <!-- Peran menempel ke tahapnya masing-masing -->
+  <g class="dg-cabang">
+    <path d="M78,112  L78,170" />
+    <path d="M230,112 L230,170" />
+    <path d="M382,112 L382,170" />
+    <path d="M534,112 L534,170" />
+    <path d="M686,112 L686,170" />
+  </g>
+
+  <!-- Perjalanan peserta, kiri ke kanan -->
+  <g class="dg-alur">
+    <line x1="144" y1="201" x2="164" y2="201" marker-end="url(#mg-panah)" />
+    <line x1="296" y1="201" x2="316" y2="201" marker-end="url(#mg-panah)" />
+    <line x1="448" y1="201" x2="468" y2="201" marker-end="url(#mg-panah)" />
+    <line x1="600" y1="201" x2="620" y2="201" marker-end="url(#mg-panah)" />
+  </g>
+
+  <!-- Peran di dalam kampus dan kementerian -->
+  <g class="dg-kotak">
+    <rect x="12"  y="44" width="132" height="30" rx="7" />
+    <rect x="12"  y="82" width="132" height="30" rx="7" />
+    <rect x="164" y="44" width="132" height="30" rx="7" />
+    <rect x="164" y="82" width="132" height="30" rx="7" />
+    <rect x="316" y="82" width="132" height="30" rx="7" />
+    <rect x="468" y="82" width="132" height="30" rx="7" />
+    <rect x="620" y="44" width="132" height="30" rx="7" />
+    <rect x="620" y="82" width="132" height="30" rx="7" />
+  </g>
+
+  <!-- Peran di luar kampus -->
+  <g class="dg-cip">
+    <rect x="316" y="44" width="132" height="30" rx="7" />
+    <rect x="468" y="44" width="132" height="30" rx="7" />
+  </g>
+
+  <!-- Tahap perjalanan -->
+  <g class="dg-kotak">
+    <rect x="12"  y="170" width="132" height="62" rx="10" />
+    <rect x="164" y="170" width="132" height="62" rx="10" />
+    <rect x="468" y="170" width="132" height="62" rx="10" />
+    <rect x="620" y="170" width="132" height="62" rx="10" />
+  </g>
+
+  <!-- Satu-satunya tahap beraksen: titik peserta menyeberang ke industri -->
+  <rect class="dg-kotak-aksen" x="316" y="170" width="132" height="62" rx="10" />
+
+  <!-- Lapisan pendukung yang melintasi seluruh tahap -->
+  <g class="dg-kotak">
+    <rect x="12" y="280" width="740" height="52" rx="10" />
+  </g>
+
+  <g class="dg-cip-teks">
+    <text x="24"  y="63">Mahasiswa</text>
+    <text x="24"  y="101">Kaprodi</text>
+    <text x="176" y="63">Reviewer</text>
+    <text x="176" y="101">Reviewer lanjutan</text>
+    <text x="328" y="63" class="dg-judul-luar">Mitra industri</text>
+    <text x="328" y="101">Operator</text>
+    <text x="480" y="63" class="dg-judul-luar">Mentor</text>
+    <text x="480" y="101">Dosen</text>
+    <text x="632" y="63">Pimpinan</text>
+    <text x="632" y="101">Admin pusat</text>
+  </g>
+
+  <g class="dg-judul">
+    <text x="24"  y="194">Pendaftaran</text>
+    <text x="176" y="194">Seleksi</text>
+    <text x="328" y="194" class="dg-teks-aksen">Penempatan</text>
+    <text x="480" y="194">Pelaksanaan</text>
+    <text x="632" y="194">Pelaporan</text>
+    <text x="28"  y="305">Lapisan pendukung</text>
+  </g>
+
+  <g class="dg-sub">
+    <text x="24"  y="214">usulan peserta</text>
+    <text x="176" y="214">penilaian</text>
+    <text x="328" y="214" class="dg-sub-aksen">kampus ke industri</text>
+    <text x="480" y="214">bimbingan</text>
+    <text x="632" y="214">penilaian akhir</text>
+    <text x="28"  y="324">skema pendanaan beasiswa · kebutuhan perjalanan peserta</text>
+  </g>
+</svg>

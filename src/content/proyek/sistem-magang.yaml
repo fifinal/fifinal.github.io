@@ -1,4 +1,4 @@
-urutan: 3
+urutan: 4
 judul: Sistem Magang Mahasiswa Nasional
 tahun: 2025
 ringkas: Platform penyelenggaraan program magang mahasiswa tingkat nasional yang mempertemukan mahasiswa,
@@ -44,6 +44,11 @@ metrik:
   keterangan: Peran pengguna yang dilayani
 - angka: 7 bulan
   keterangan: Dari commit pertama hingga rilis
+diagram:
+  file: sistem-magang.svg
+  keterangan: Perjalanan satu peserta dari pendaftaran sampai pelaporan, dengan peran yang berganti di
+    tiap tahap. Tahap bertanda hijau adalah titik peserta menyeberang dari kampus ke industri — dua peran
+    di sana digambar putus-putus karena berada di luar kampus dan di luar kendali sistem.
 gambar:
 - file: sistem-magang-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan mitra asli.'

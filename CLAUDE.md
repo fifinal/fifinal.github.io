@@ -105,8 +105,9 @@ public/gambar/             tangkapan layar (masih kosong)
 Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
 `/proyek/simbelmawa/`. Menambah proyek cukup menyalin satu YAML.
 
-Empat studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
-`simbelmawa`, `sistem-langitan`, `sistem-magang`, `peksiminas`.
+Lima studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
+`simbelmawa`, `sistem-langitan`, `sistem-langitan-v2`, `sistem-magang`,
+`peksiminas`.
 
 ## Konvensi
 
@@ -158,16 +159,19 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **53 penanda `[ISI]` di empat berkas YAML.** Isinya pertanyaan
+- [ ] **68 penanda `[ISI]` di lima berkas YAML.** Isinya pertanyaan
       terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [ ] Diagram arsitektur untuk dua proyek sisanya, `sistem-magang`
-      dan `peksiminas`. Yang sudah ada di `src/diagram/`:
-      `sistem-langitan.svg` (lapisan berurutan) dan `simbelmawa.svg`
-      (peran mengerucut ke satu API). Beri bentuk yang berbeda lagi —
-      diagram yang seragam tidak menambah informasi.
+- [ ] Diagram arsitektur untuk `peksiminas` dan `sistem-langitan-v2`.
+      Yang sudah ada di `src/diagram/`, masing-masing sengaja berbeda
+      bentuk: `sistem-langitan.svg` (lapisan berurutan),
+      `simbelmawa.svg` (peran mengerucut ke satu API), dan
+      `sistem-magang.svg` (perjalanan peserta antar tahap). Beri bentuk
+      yang berbeda lagi — diagram yang seragam tidak menambah informasi.
+      Peksiminas punya alur berjenjang provinsi ke nasional; v2 punya
+      dua sistem berdampingan di atas satu basis data.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
 - [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik
