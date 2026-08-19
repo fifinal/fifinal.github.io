@@ -163,7 +163,7 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **88 penanda `[ISI]` di tujuh berkas YAML.** Isinya pertanyaan
+- [ ] **87 penanda `[ISI]` di tujuh berkas YAML.** Isinya pertanyaan
       terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
@@ -201,12 +201,17 @@ untuk melihatnya.
       belakang Cloudflare: `curl` selalu dijawab 403 meski situsnya
       hidup. Yang sahih adalah membukanya dengan peramban sungguhan.
 - [ ] Tangkapan layar. Taruh di `public/gambar/` sesuai nama pada kolom
-      `gambar`, lalu ganti kotak placeholder `.shot` di `Galeri.astro` dan
-      `.preview` di `[slug].astro` dengan tag `<img>` — contohnya sudah
-      ditulis sebagai komentar di kedua berkas.
+      `gambar`, lalu ganti kotak placeholder `.shot` di `Galeri.astro`
+      dengan tag `<img>` — contohnya sudah ditulis sebagai komentar di
+      berkas itu.
+
       **Hati-hati:** ini sistem kementerian dan kampus. Tangkapan layar
       berpotensi memuat data mahasiswa asli dan harus disensor lebih
       dulu.
+
+      Pratinjau besar di kepala halaman detail (`.preview`) **sudah
+      dihapus** atas permintaan pemilik, beserta gayanya di `global.css`.
+      Bukti visual kini hanya lewat galeri dan diagram.
 - [ ] Konfirmasi "Lulus 2019", disimpulkan dari tanggal repo skripsi.
       Nama "Universitas Maarif Hasyim Latif" sudah terverifikasi dari
       judul halaman langitan.umaha.ac.id.
