@@ -1,0 +1,98 @@
+<!--
+  Diagram arsitektur Simbelmawa — digambar ulang pada tingkat abstraksi
+  yang aman untuk portofolio publik. Sengaja tidak memuat nama kelas,
+  nama tabel, endpoint, maupun topologi server.
+
+  Bentuknya sengaja berbeda dari diagram Sistem Langitan: di sini yang
+  menarik bukan lapisan berurutan, melainkan delapan peran yang
+  mengerucut ke satu API dengan kewenangan terpisah.
+-->
+<svg viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Delapan peran pengguna mengerucut ke satu API, lalu ke basis data dan PDPT</title>
+
+  <defs>
+    <marker id="sb-panah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path class="dg-panah-ujung" d="M0,0 L10,5 L0,10 z" />
+    </marker>
+  </defs>
+
+  <!-- Delapan peran mengerucut ke gerbang -->
+  <g class="dg-cabang">
+    <path d="M212,43  C240,43  232,204 260,204" />
+    <path d="M212,89  C240,89  232,204 260,204" />
+    <path d="M212,135 C240,135 232,204 260,204" />
+    <path d="M212,181 C240,181 232,204 260,204" />
+    <path d="M212,227 C240,227 232,204 260,204" />
+    <path d="M212,273 C240,273 232,204 260,204" />
+    <path d="M212,319 C240,319 232,204 260,204" />
+    <path d="M212,365 C240,365 232,204 260,204" />
+  </g>
+
+  <!-- Tulang punggung API -->
+  <g class="dg-alur">
+    <line x1="385" y1="230" x2="385" y2="258" marker-end="url(#sb-panah)" />
+    <line x1="385" y1="316" x2="385" y2="344" marker-end="url(#sb-panah)" />
+    <line x1="385" y1="402" x2="385" y2="430" marker-end="url(#sb-panah)" />
+  </g>
+
+  <!-- Pertukaran data dua arah dengan pangkalan data nasional -->
+  <g class="dg-alur">
+    <line x1="510" y1="373" x2="550" y2="373"
+          marker-start="url(#sb-panah)" marker-end="url(#sb-panah)" />
+  </g>
+
+  <!-- Peran pengguna -->
+  <g class="dg-kotak">
+    <rect x="16" y="24"  width="196" height="38" rx="8" />
+    <rect x="16" y="70"  width="196" height="38" rx="8" />
+    <rect x="16" y="116" width="196" height="38" rx="8" />
+    <rect x="16" y="162" width="196" height="38" rx="8" />
+    <rect x="16" y="208" width="196" height="38" rx="8" />
+    <rect x="16" y="254" width="196" height="38" rx="8" />
+    <rect x="16" y="300" width="196" height="38" rx="8" />
+    <rect x="16" y="346" width="196" height="38" rx="8" />
+  </g>
+
+  <!-- Lapisan API -->
+  <g class="dg-kotak">
+    <rect x="260" y="178" width="250" height="52" rx="10" />
+    <rect x="260" y="344" width="250" height="58" rx="10" />
+    <rect x="260" y="430" width="250" height="52" rx="10" />
+  </g>
+
+  <!-- Satu-satunya lapisan beraksen: pemisahan kewenangan per peran -->
+  <rect class="dg-kotak-aksen" x="260" y="258" width="250" height="58" rx="10" />
+
+  <!-- Sistem luar -->
+  <g class="dg-cip">
+    <rect x="550" y="347" width="194" height="52" rx="8" />
+  </g>
+
+  <g class="dg-cip-teks">
+    <text x="32" y="48">Mahasiswa</text>
+    <text x="32" y="94">Dosen pendamping</text>
+    <text x="32" y="140">Reviewer</text>
+    <text x="32" y="186">Operator PT</text>
+    <text x="32" y="232">Pimpinan PT</text>
+    <text x="32" y="278">LLDIKTI</text>
+    <text x="32" y="324">Admin kementerian</text>
+    <text x="32" y="370">Panitia PIMNAS</text>
+  </g>
+
+  <g class="dg-judul">
+    <text x="280" y="202">Gerbang otentikasi</text>
+    <text x="280" y="282" class="dg-teks-aksen">Pemisahan kewenangan</text>
+    <text x="280" y="368">Domain hibah &amp; program</text>
+    <text x="280" y="454">Basis data</text>
+    <text x="570" y="371" class="dg-judul-luar">PDPT</text>
+  </g>
+
+  <g class="dg-sub">
+    <text x="280" y="220">token JWT bermasa berlaku</text>
+    <text x="280" y="300" class="dg-sub-aksen">delapan berkas rute terpisah</text>
+    <text x="280" y="386">pengusulan · penilaian · penetapan</text>
+    <text x="280" y="472">PostgreSQL</text>
+    <text x="570" y="389">verifikasi mahasiswa &amp; PT</text>
+  </g>
+</svg>

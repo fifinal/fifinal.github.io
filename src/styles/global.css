@@ -572,5 +572,6 @@ nav{gap:8px}
 .dg-judul text{fill:var(--text);font-size:14px;font-weight:600}
 .dg-sub text{fill:var(--muted);font-size:11.5px}
 .dg-cip-teks text{fill:var(--muted);font-size:12px}
+.dg-judul-luar{fill:var(--muted)!important}   /* sistem di luar kendali kita */
 .dg-teks-aksen{fill:var(--aksen)!important}
 .dg-sub-aksen{fill:var(--aksen)!important;opacity:.85}

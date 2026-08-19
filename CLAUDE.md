@@ -163,9 +163,11 @@ untuk melihatnya.
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [ ] Diagram arsitektur untuk tiga proyek sisanya. Sistem Langitan
-      sudah ada di `src/diagram/`. Simbelmawa paling layak menyusul —
-      delapan peran penggunanya bagus digambar.
+- [ ] Diagram arsitektur untuk dua proyek sisanya, `sistem-magang`
+      dan `peksiminas`. Yang sudah ada di `src/diagram/`:
+      `sistem-langitan.svg` (lapisan berurutan) dan `simbelmawa.svg`
+      (peran mengerucut ke satu API). Beri bentuk yang berbeda lagi —
+      diagram yang seragam tidak menambah informasi.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
 - [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik

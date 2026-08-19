@@ -1,0 +1,68 @@
+urutan: 5
+judul: Sistem Langitan v2 — Penulisan Ulang SIAKAD di Atas Basis Data Warisan
+tahun: 2026
+ringkas: Penulisan ulang sistem informasi akademik Langitan ke Laravel 12, Inertia, dan Vue 3 — dikerjakan
+  di atas basis data Oracle warisan yang tidak boleh diubah karena masih melayani sistem lama di produksi.
+lead: Menulis ulang sistem yang tidak boleh berhenti sehari pun. Basis datanya masih dipakai versi lama
+  yang berjalan di produksi, jadi skema warisannya tidak bisa disentuh — dan versi lama itu pula yang
+  menjadi acuan benar-salahnya setiap layar baru.
+peran: '[ISI] Sebut peranmu di tim ini. Sebagai bahan: 170 dari 776 commit atas namamu, terbanyak kedua
+  dari lima kontributor.'
+periode: Feb 2025 — Sekarang
+tim: 5 kontributor
+tipe: Sistem internal kampus
+tags:
+- Laravel 12
+- Inertia
+- Vue 3
+- Oracle
+- JWT
+- Pest
+live: null
+status: Dalam pengembangan — berdampingan dengan versi lama
+masalah:
+- '[ISI] Kenapa versi lama perlu ditulis ulang, bukan diperbaiki terus seperti selama ini? Apa yang
+  akhirnya memaksa keputusan itu?'
+- '[ISI] Apa konsekuensi nyata dari basis data yang dipakai bersama sistem lama yang masih jalan —
+  pernahkah nyaris celaka karenanya?'
+- '[ISI] Kenapa hanya sebagian kecil tabel yang punya migrasi? Apa risikonya bagi cara tim bekerja
+  sehari-hari, terutama saat menguji?'
+solusi:
+- '[ISI] Kenapa memilih Inertia — monolit yang merender Vue — dan bukan SPA terpisah dengan API?'
+- '[ISI] Aturan "service tidak boleh menyentuh Inertia, response, atau Request" itu lahir dari masalah
+  apa? Apa yang rusak sebelum aturan itu ada?'
+- '[ISI] Bagaimana memastikan keluaran v2 benar-benar cocok dengan v1, bukan sekadar terlihat masuk akal?'
+proses:
+- '[ISI] Bagaimana urutan modul dikerjakan — siapa yang menentukan, dan atas dasar apa?'
+- '[ISI] Repo ini pernah rusak karena 11 modul dibuka bersamaan tanpa satu pun tuntas. Apa yang berubah
+  dalam cara tim bekerja setelah itu?'
+- '[ISI] Kenapa keputusan arsitektur ditulis sebagai ADR, dan apakah itu benar-benar dibaca ulang?'
+fitur:
+- Dua permukaan setara dari satu lapisan layanan — halaman web Inertia dan API JSON bervesi, tanpa
+  logika yang digandakan
+- Empat belas peran pengguna dengan berkas rute dan kewenangan terpisah, dari mahasiswa dan dosen
+  sampai keuangan, penjaminan mutu, dan rektor
+- Menu sidebar dan remah roti dirender dari tabel menu warisan, bukan dipaku di kode
+- Autentikasi ganda — sesi untuk web, token JWT untuk klien mobile yang sudah berjalan
+- Pemberitahuan langsung lewat Laravel Reverb
+- Keputusan arsitektur direkam sebagai ADR dan ditegakkan oleh berkas uji, termasuk penamaan rute
+  yang pelanggarannya tidak memunculkan galat apa pun
+metrik:
+- angka: '170'
+  keterangan: Commit atas nama saya di repositori ini
+- angka: '14'
+  keterangan: Peran pengguna dengan rute dan kewenangan terpisah
+- angka: '106'
+  keterangan: Model yang memetakan skema Oracle warisan
+gambar:
+- file: sistem-langitan-v2-1.png
+  keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
+- file: sistem-langitan-v2-2.png
+  keterangan: '[ISI] Tampilan kedua.'
+tantangan:
+- '[ISI] Bagian tersulit dari mencocokkan perilaku v2 dengan v1 memakai data asli. Contoh yang paling
+  membekas?'
+- '[ISI] Adakah keputusan arsitektur yang kemudian kamu ubah setelah dipakai beberapa modul?'
+belajar: '[ISI] Satu pelajaran dari menulis ulang sistem yang basis datanya tidak boleh disentuh —
+  sesuatu yang akan kamu bawa ke proyek migrasi berikutnya.'
+kerahasiaan: sivitas akademika

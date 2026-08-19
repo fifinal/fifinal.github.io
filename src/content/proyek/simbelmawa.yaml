@@ -45,6 +45,11 @@ metrik:
   keterangan: Jenis pengguna dengan kewenangan berbeda
 - angka: 3 tahun
   keterangan: Dikembangkan dan dirawat tanpa putus
+diagram:
+  file: simbelmawa.svg
+  keterangan: Delapan peran pengguna mengerucut ke satu API. Lapisan bertanda hijau adalah pemisahan
+    kewenangan — tiap peran punya berkas rutenya sendiri, sehingga data yang sama tampil berbeda
+    tergantung siapa yang memintanya. Kotak putus-putus di kanan adalah sistem di luar kendali kami.
 gambar:
 - file: simbelmawa-1.png
   keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
