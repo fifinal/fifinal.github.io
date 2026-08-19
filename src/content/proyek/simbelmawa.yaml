@@ -20,7 +20,14 @@ status: Produksi — sistem nasional
 masalah:
 - '[ISI] Sebelum sistem ini ada, bagaimana pengajuan dan penilaian proposal hibah dijalankan? Apa yang
   paling sering macet?'
-- '[ISI] Kenapa dibangun sebagai API terpisah, bukan aplikasi monolit seperti sistem sebelumnya?'
+- Sistem pendahulunya berupa aplikasi web tunggal berbasis ASP.NET WebForms yang sudah berjalan sejak
+  2018 — seluruh logika dan tampilannya menyatu, tanpa permukaan yang bisa dipanggil dari luar.
+- 'Sementara itu tim lain mulai membangun aplikasi mobile dengan Flutter, dan mereka butuh sesuatu untuk
+  dipanggil. Karena itu versi ini dibangun sebagai <strong>API tersendiri</strong>: satu sumber data yang
+  melayani web dan mobile sekaligus.'
+- 'Konsekuensinya menuntut kedisiplinan yang berbeda. Karena yang memakai API ini tim di luar tim saya,
+  kontraknya harus jelas dan stabil sejak awal — tidak bisa diam-diam diubah lalu pemanggilnya
+  disesuaikan belakangan.'
 - '[ISI] Kendala apa yang khas ketika penggunanya tersebar di ratusan perguruan tinggi se-Indonesia?'
 solusi:
 - '[ISI] Keputusan arsitektur apa yang kamu ambil untuk menangani delapan peran pengguna sekaligus?'

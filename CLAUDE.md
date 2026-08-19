@@ -159,7 +159,7 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **67 penanda `[ISI]` di lima berkas YAML.** Isinya pertanyaan
+- [ ] **66 penanda `[ISI]` di lima berkas YAML.** Isinya pertanyaan
       terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
