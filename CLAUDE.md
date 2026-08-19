@@ -164,19 +164,25 @@ untuk melihatnya.
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [ ] Diagram arsitektur untuk `sistem-langitan-v2` — satu-satunya
-      yang belum punya. Empat yang sudah ada di `src/diagram/`,
-      masing-masing sengaja berbeda bentuk: `sistem-langitan.svg`
-      (lapisan berurutan), `simbelmawa.svg` (peran mengerucut ke satu
-      API), `sistem-magang.svg` (perjalanan peserta antar tahap), dan
-      `peksiminas.svg` (penyempitan berjenjang). Beri v2 bentuk yang
-      berbeda lagi — dua sistem berdampingan di atas satu basis data
-      warisan. Diagram yang seragam tidak menambah informasi.
+- [x] Diagram arsitektur — **selesai untuk kelima proyek.** Masing-masing
+      sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
+      informasi:
 
-      Kosakata visual yang sudah berlaku di keempatnya, ikuti: garis
-      putus-putus berarti di luar kendali sistem, dan **hanya satu**
-      elemen per diagram yang boleh diberi aksen hijau — pilih yang
-      paling menjelaskan inti persoalannya.
+      | Berkas | Bentuk | Yang diberi aksen |
+      |---|---|---|
+      | `sistem-langitan.svg` | lapisan berurutan | resolusi multi-tenant |
+      | `simbelmawa.svg` | peran mengerucut ke satu API | pemisahan kewenangan |
+      | `sistem-magang.svg` | perjalanan peserta antar tahap | tahap menyeberang ke industri |
+      | `peksiminas.svg` | penyempitan berjenjang | penjurian berjalur terpisah |
+      | `sistem-langitan-v2.svg` | dua permukaan menyatu di atas basis data warisan | basis data warisan |
+
+      Kosakata visual yang berlaku di kelimanya, ikuti bila menambah
+      diagram baru: garis putus-putus berarti di luar kendali sistem,
+      dan **hanya satu** elemen per diagram yang boleh diberi aksen
+      hijau — pilih yang paling menjelaskan inti persoalannya, dan itu
+      boleh berupa kendala, bukan hanya solusi. Pada v2 misalnya, yang
+      diberi aksen adalah basis data warisannya, bukan lapisan layanan
+      yang dibangun untuk mengatasinya.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
 - [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik

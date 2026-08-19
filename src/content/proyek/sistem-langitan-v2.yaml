@@ -1,4 +1,4 @@
-urutan: 5
+urutan: 3
 judul: Sistem Langitan v2 — Penulisan Ulang SIAKAD di Atas Basis Data Warisan
 tahun: 2026
 ringkas: Penulisan ulang sistem informasi akademik Langitan ke Laravel 12, Inertia, dan Vue 3 — dikerjakan
@@ -54,6 +54,12 @@ metrik:
   keterangan: Peran pengguna dengan rute dan kewenangan terpisah
 - angka: '106'
   keterangan: Model yang memetakan skema Oracle warisan
+diagram:
+  file: sistem-langitan-v2.svg
+  keterangan: Dua permukaan setara — halaman web dan klien mobile — menyatu ke satu lapisan layanan,
+    lalu bertumpu pada basis data warisan. Yang bertanda hijau adalah basis datanya, bukan lapisan
+    layanannya, karena di situlah kendalanya. Kotak putus-putus di kanan adalah sistem lama yang masih
+    melayani produksi di atas basis data yang sama, dan karena itu skemanya tidak bisa disentuh.
 gambar:
 - file: sistem-langitan-v2-1.png
   keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
