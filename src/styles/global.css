@@ -220,16 +220,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 .meta dd{font-size:.92rem;font-weight:500}
 
-/* Pratinjau visual (placeholder) */
-.preview{
-  margin-top:40px;border:1px solid var(--line);border-radius:var(--radius);
-  background:
-    repeating-linear-gradient(45deg,var(--bg-soft) 0 12px,var(--bg) 12px 24px);
-  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:.85rem;text-align:center;padding:24px;
-}
-.preview img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius)}
-
 /* Isi studi kasus */
 .case{max-width:720px}
 .case h2{font-size:clamp(1.4rem,2.8vw,1.8rem);margin-bottom:20px}
@@ -388,7 +378,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .hero > *:nth-child(4),.case-hero > *:nth-child(4){animation-delay:.44s}
 .hero > *:nth-child(5),.case-hero > *:nth-child(5){animation-delay:.57s}
 .hero > *:nth-child(6),.case-hero > *:nth-child(6){animation-delay:.70s}
-.hero > *:nth-child(7),.case-hero > *:nth-child(7){animation-delay:.83s}
 /* judul hero dikecualikan, ia memakai efek tersingkap */
 .hero > h1,.case-hero > h1{animation:none;opacity:1;transform:none}
 
@@ -475,9 +464,9 @@ a:hover .arw.naik{transform:translate(4px,-4px)}
 .facts:hover .fact{padding-left:4px}
 
 /* ---------- Gambar membesar di dalam bingkainya ---------- */
-.shot,.preview{overflow:hidden}
-.shot img,.preview img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
-.gallery figure:hover .shot img,.preview:hover img{transform:scale(1.06)}
+.shot{overflow:hidden}
+.shot img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gallery figure:hover .shot img{transform:scale(1.06)}
 
 /* ---------- Hormati preferensi pengguna ---------- */
 @media (prefers-reduced-motion:reduce){
@@ -542,7 +531,6 @@ nav{gap:8px}
 }
 
 /* Kotak placeholder gambar sedikit diredupkan di tema gelap */
-:root[data-tema="gelap"] .preview,
 :root[data-tema="gelap"] .shot{opacity:.85}
 
 /* =========================================================
