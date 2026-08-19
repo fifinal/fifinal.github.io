@@ -208,7 +208,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* Meta ringkas */
 .meta{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;
   border:1px solid var(--line);border-radius:var(--radius);
   overflow:hidden;background:var(--bg-soft);
 }
@@ -388,6 +388,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .hero > *:nth-child(4),.case-hero > *:nth-child(4){animation-delay:.44s}
 .hero > *:nth-child(5),.case-hero > *:nth-child(5){animation-delay:.57s}
 .hero > *:nth-child(6),.case-hero > *:nth-child(6){animation-delay:.70s}
+.hero > *:nth-child(7),.case-hero > *:nth-child(7){animation-delay:.83s}
 /* judul hero dikecualikan, ia memakai efek tersingkap */
 .hero > h1,.case-hero > h1{animation:none;opacity:1;transform:none}
 
