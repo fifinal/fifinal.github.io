@@ -1,5 +1,5 @@
 urutan: 7
-judul: UNSCO — Platform Kompetisi dan Ujian Daring
+judul: UNISCO — Platform Kompetisi dan Ujian Daring
 tahun: 2026
 ringkas: Platform Computer Based Test untuk penyelenggaraan lomba dan olimpiade tingkat nasional, dari
   pendaftaran dan pembayaran sampai pelaksanaan ujian dan pengumuman hasil.
@@ -15,7 +15,7 @@ tags:
 - Blade
 - Tailwind
 - Docker
-live: null
+live: https://unisco.umaha.ac.id
 status: Produksi — sistem internal
 masalah:
 - '[ISI] Sebelum ada sistem ini, bagaimana lomba diselenggarakan? Ujiannya di kertas, atau memakai

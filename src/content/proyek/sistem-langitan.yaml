@@ -15,7 +15,7 @@ tags:
 - Smarty
 - Docker
 - Legacy
-live: null
+live: https://langitan.umaha.ac.id
 status: Produksi — sistem internal
 masalah:
 - '[ISI] Dalam keadaan seperti apa sistem ini ketika kamu mulai menanganinya pada 2022?'

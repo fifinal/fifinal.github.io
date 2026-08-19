@@ -1,5 +1,5 @@
 urutan: 1
-judul: Simbelmawa — Pengelolaan Hibah Kemahasiswaan Nasional
+judul: Simbelmawa — Pengelolaan Hibah PKM Nasional
 tahun: 2026
 ringkas: API inti sistem pengelolaan hibah dan program kemahasiswaan Kementerian Pendidikan Tinggi, Sains,
   dan Teknologi, melayani delapan jenis pengguna dari mahasiswa hingga pengelola kementerian.
@@ -15,7 +15,7 @@ tags:
 - PostgreSQL
 - JWT
 - Docker
-live: null
+live: https://simbelmawa.kemdiktisaintek.go.id/
 status: Produksi — sistem nasional
 masalah:
 - Mundur cukup jauh, pengelolaannya pernah berjalan lewat berkas Excel yang dikirim dan dibalas lewat

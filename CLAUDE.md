@@ -107,7 +107,7 @@ Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
 
 Tujuh studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
 `simbelmawa`, `sistem-langitan`, `sistem-langitan-v2`, `slf-sync`,
-`sistem-magang`, `peksiminas`, `unsco`.
+`sistem-magang`, `peksiminas`, `unisco`.
 
 Keluarga Langitan sengaja dikelompokkan di urutan 2–4 — v1, penulisan
 ulangnya, lalu alat sinkronisasinya — bukan diurutkan menurut jumlah
@@ -193,8 +193,15 @@ untuk melihatnya.
       yang dibangun untuk mengatasinya.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
-- [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik
-      yang boleh dibagikan, isikan agar label "Situs Live" muncul.
+- [ ] Kolom `live` terisi di empat proyek — simbelmawa, sistem-langitan,
+      sistem-magang, unisco — dan sengaja dibiarkan `null` di tiga
+      sisanya karena URL-nya tidak lolos uji: `langitan-v2.umaha.ac.id`
+      mengembalikan halaman "Not Found", `slf-sync.umaha.ac.id` tidak
+      terjangkau dari luar, dan peksiminas belum punya URL.
+
+      **Uji dulu sebelum memasang tautan.** Domain UMAHA berada di
+      belakang Cloudflare: `curl` selalu dijawab 403 meski situsnya
+      hidup. Yang sahih adalah membukanya dengan peramban sungguhan.
 - [ ] Tangkapan layar. Taruh di `public/gambar/` sesuai nama pada kolom
       `gambar`, lalu ganti kotak placeholder `.shot` di `Galeri.astro` dan
       `.preview` di `[slug].astro` dengan tag `<img>` — contohnya sudah
@@ -202,9 +209,9 @@ untuk melihatnya.
       **Hati-hati:** ini sistem kementerian dan kampus. Tangkapan layar
       berpotensi memuat data mahasiswa asli dan harus disensor lebih
       dulu.
-- [ ] Konfirmasi dua data yang disimpulkan, bukan dinyatakan pemilik:
-      lokasi "Sidoarjo" (dari domain kampus) dan "Lulus 2019" (dari
-      tanggal repo skripsi).
+- [ ] Konfirmasi "Lulus 2019", disimpulkan dari tanggal repo skripsi.
+      Nama "Universitas Maarif Hasyim Latif" sudah terverifikasi dari
+      judul halaman langitan.umaha.ac.id.
 - [ ] `profil.status` masih berbunyi "Terbuka untuk peluang baru" —
       bawaan template, sementara pemilik sedang bekerja.
 
