@@ -66,7 +66,10 @@ gambar:
 - file: simbelmawa-2.png
   keterangan: '[ISI] Tampilan kedua.'
 tantangan:
-- '[ISI] Bagian tersulit apa yang kamu hadapi? Boleh teknis, boleh soal koordinasi.'
+- Bagian tersulit bukan membangun fiturnya, melainkan menahan lonjakan menjelang tenggat. Pengusulan
+  menumpuk di hari-hari terakhir, dan beban dari ratusan perguruan tinggi datang hampir bersamaan.
+- 'Yang menyerah lebih dulu adalah <strong>basis datanya</strong>, bukan aplikasinya. Jalan keluar yang
+  diambil saat itu adalah menaikkan spesifikasi server.'
 - '[ISI] Adakah keputusan yang kemudian kamu ubah setelah sistem dipakai sungguhan?'
 belajar: '[ISI] Satu pelajaran yang kamu bawa ke proyek berikutnya setelah tiga tahun mengerjakan ini.'
 kerahasiaan: mahasiswa dan perguruan tinggi
