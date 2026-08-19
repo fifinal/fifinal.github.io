@@ -5,7 +5,7 @@
 
 export const profil = {
   nama: 'Fifin Alamsyah',
-  logo: { depan: 'Fifin', belakang: '.dev' },
+  logo: { depan: 'Fifin', belakang: ' Alamsyah' },
   peran: 'Web Developer',
   email: 's.fifinalamsyah@gmail.com',
   status: 'Terbuka untuk peluang baru',
@@ -53,7 +53,7 @@ export const pengalaman = [
     rincian: [
       'Mengembangkan dan merawat Sistem Langitan, sistem informasi akademik multi-tenant yang melayani beberapa perguruan tinggi dari satu basis kode — lima puluh modul, dari pendaftaran mahasiswa baru sampai wisuda.',
       'Kontributor terbesar kedua dari dua belas orang di repositori intinya, dengan lebih dari 480 commit.',
-      'Membangun UNSCO, platform kompetisi dan olimpiade tingkat nasional yang diselenggarakan kampus.',
+      'Membangun UNISCO, platform kompetisi dan olimpiade tingkat nasional yang diselenggarakan kampus.',
     ],
   },
   {
