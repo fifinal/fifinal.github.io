@@ -1,4 +1,4 @@
-urutan: 4
+urutan: 5
 judul: Peksiminas — Pekan Seni Mahasiswa Nasional
 tahun: 2026
 ringkas: Platform penyelenggaraan ajang seni mahasiswa tingkat nasional, dari pendaftaran peserta di
@@ -40,6 +40,11 @@ metrik:
   keterangan: Kewenangan pengguna — admin pusat, admin provinsi, panitia, juri
 - angka: 4 bulan
   keterangan: Dari commit pertama hingga penyelenggaraan
+diagram:
+  file: peksiminas.svg
+  keterangan: Penyempitan berjenjang, dari banyak provinsi menjadi satu penetapan hasil. Jenjang bertanda
+    hijau adalah penjurian — dipisahkan jalur kewenangannya sendiri agar penilaian juri tidak bisa
+    disentuh panitia maupun administrator provinsi.
 gambar:
 - file: peksiminas-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'

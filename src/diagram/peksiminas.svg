@@ -1,0 +1,81 @@
+<!--
+  Diagram alur Peksiminas — digambar ulang pada tingkat abstraksi yang
+  aman untuk portofolio publik. Tanpa nama provinsi sungguhan, nama
+  tabel, maupun endpoint.
+
+  Bentuknya sengaja berbeda dari tiga diagram sebelumnya: di sini yang
+  menarik adalah penyempitan berjenjang — banyak provinsi mengerucut
+  menjadi satu ajang nasional, lalu mengerucut lagi menjadi hasil.
+  Peran ditulis sebagai baris bawah tiap jenjang, bukan sebagai kotak
+  terpisah, supaya bentuk corongnya tetap terbaca.
+-->
+<svg viewBox="0 0 760 450" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Penyempitan berjenjang Peksiminas, dari banyak provinsi menjadi satu penetapan hasil</title>
+
+  <defs>
+    <marker id="pk-panah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path class="dg-panah-ujung" d="M0,0 L10,5 L0,10 z" />
+    </marker>
+  </defs>
+
+  <!-- Tiap provinsi menyetor ke jenjang pertama -->
+  <g class="dg-cabang">
+    <path d="M80,56  L80,112" />
+    <path d="M200,56 L200,112" />
+    <path d="M320,56 L320,112" />
+    <path d="M440,56 L440,112" />
+    <path d="M560,56 L560,112" />
+    <path d="M680,56 L680,112" />
+  </g>
+
+  <!-- Penyempitan antar jenjang -->
+  <g class="dg-alur">
+    <line x1="380" y1="168" x2="380" y2="200" marker-end="url(#pk-panah)" />
+    <line x1="380" y1="256" x2="380" y2="288" marker-end="url(#pk-panah)" />
+    <line x1="380" y1="348" x2="380" y2="376" marker-end="url(#pk-panah)" />
+  </g>
+
+  <!-- Provinsi penyetor peserta -->
+  <g class="dg-kotak">
+    <rect x="28"  y="24" width="104" height="32" rx="7" />
+    <rect x="148" y="24" width="104" height="32" rx="7" />
+    <rect x="268" y="24" width="104" height="32" rx="7" />
+    <rect x="388" y="24" width="104" height="32" rx="7" />
+    <rect x="508" y="24" width="104" height="32" rx="7" />
+    <rect x="628" y="24" width="104" height="32" rx="7" />
+  </g>
+
+  <!-- Jenjang, menyempit ke bawah -->
+  <g class="dg-kotak">
+    <rect x="28"  y="112" width="704" height="56" rx="10" />
+    <rect x="128" y="200" width="504" height="56" rx="10" />
+    <rect x="290" y="376" width="180" height="52" rx="10" />
+  </g>
+
+  <!-- Satu-satunya jenjang beraksen: penjurian -->
+  <rect class="dg-kotak-aksen" x="228" y="288" width="304" height="60" rx="10" />
+
+  <g class="dg-cip-teks">
+    <text x="80"  y="45" text-anchor="middle">Prov. A</text>
+    <text x="200" y="45" text-anchor="middle">Prov. B</text>
+    <text x="320" y="45" text-anchor="middle">Prov. C</text>
+    <text x="440" y="45" text-anchor="middle">Prov. D</text>
+    <text x="560" y="45" text-anchor="middle">Prov. E</text>
+    <text x="680" y="45" text-anchor="middle">dst.</text>
+  </g>
+
+  <g class="dg-judul">
+    <text x="48"  y="136">Pendaftaran tingkat provinsi</text>
+    <text x="148" y="224">Peserta tingkat nasional</text>
+    <text x="248" y="314" class="dg-teks-aksen">Penjurian</text>
+    <text x="310" y="400">Penetapan hasil</text>
+  </g>
+
+  <g class="dg-sub">
+    <text x="48"  y="156">administrator provinsi</text>
+    <text x="148" y="244">panitia nasional</text>
+    <text x="248" y="334" class="dg-sub-aksen">juri, jalur kewenangan terpisah</text>
+    <text x="310" y="420">admin pusat</text>
+  </g>
+</svg>

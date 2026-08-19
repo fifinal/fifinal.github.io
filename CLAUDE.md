@@ -164,14 +164,19 @@ untuk melihatnya.
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [ ] Diagram arsitektur untuk `peksiminas` dan `sistem-langitan-v2`.
-      Yang sudah ada di `src/diagram/`, masing-masing sengaja berbeda
-      bentuk: `sistem-langitan.svg` (lapisan berurutan),
-      `simbelmawa.svg` (peran mengerucut ke satu API), dan
-      `sistem-magang.svg` (perjalanan peserta antar tahap). Beri bentuk
-      yang berbeda lagi — diagram yang seragam tidak menambah informasi.
-      Peksiminas punya alur berjenjang provinsi ke nasional; v2 punya
-      dua sistem berdampingan di atas satu basis data.
+- [ ] Diagram arsitektur untuk `sistem-langitan-v2` — satu-satunya
+      yang belum punya. Empat yang sudah ada di `src/diagram/`,
+      masing-masing sengaja berbeda bentuk: `sistem-langitan.svg`
+      (lapisan berurutan), `simbelmawa.svg` (peran mengerucut ke satu
+      API), `sistem-magang.svg` (perjalanan peserta antar tahap), dan
+      `peksiminas.svg` (penyempitan berjenjang). Beri v2 bentuk yang
+      berbeda lagi — dua sistem berdampingan di atas satu basis data
+      warisan. Diagram yang seragam tidak menambah informasi.
+
+      Kosakata visual yang sudah berlaku di keempatnya, ikuti: garis
+      putus-putus berarti di luar kendali sistem, dan **hanya satu**
+      elemen per diagram yang boleh diberi aksen hijau — pilih yang
+      paling menjelaskan inti persoalannya.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
 - [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik
