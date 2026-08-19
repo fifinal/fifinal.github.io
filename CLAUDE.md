@@ -168,11 +168,7 @@ untuk melihatnya.
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
-- [ ] Diagram arsitektur untuk `slf-sync` dan `unsco`, dua proyek yang
-      baru ditambahkan. Untuk slf-sync, bentuk yang belum terpakai:
-      aliran data satu arah dengan jalur pembatalan. Untuk unsco,
-      alur peserta dari daftar sampai hasil.
-- [x] Diagram arsitektur — **selesai untuk lima proyek pertama.** Masing-masing
+- [x] Diagram arsitektur — **selesai untuk ketujuh proyek.** Masing-masing
       sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
       informasi:
 
@@ -183,6 +179,8 @@ untuk melihatnya.
       | `sistem-magang.svg` | perjalanan peserta antar tahap | tahap menyeberang ke industri |
       | `peksiminas.svg` | penyempitan berjenjang | penjurian berjalur terpisah |
       | `sistem-langitan-v2.svg` | dua permukaan menyatu di atas basis data warisan | basis data warisan |
+      | `slf-sync.svg` | jembatan satu arah dengan jalan pulang | jalur pembatalan |
+      | `unisco.svg` | hub — masukan menyatu lalu memancar | sesi ujian |
 
       Kosakata visual yang berlaku di kelimanya, ikuti bila menambah
       diagram baru: garis putus-putus berarti di luar kendali sistem,
