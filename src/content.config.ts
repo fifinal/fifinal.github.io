@@ -30,6 +30,10 @@ const proyek = defineCollection({
     fitur: z.array(z.string()),
     metrik: z.array(z.object({ angka: z.string(), keterangan: z.string() })),
     gambar: z.array(z.object({ file: z.string(), keterangan: z.string() })),
+
+    // Diagram arsitektur, opsional — hanya proyek yang memang punya
+    // sesuatu untuk digambar. Berkasnya diambil dari src/diagram/.
+    diagram: z.object({ file: z.string(), keterangan: z.string() }).optional(),
     tantangan: z.array(z.string()),
     belajar: z.string(),
     kerahasiaan: z.string(),               // dipakai pada catatan di bawah galeri

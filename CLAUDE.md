@@ -39,9 +39,26 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
    berisi URL. Bila `live: null`, yang tampil adalah label status
    (misal "Produksi — sistem internal") sebagai teks biasa, bukan tautan.
 
-4. **Bukti teknis dipindahkan ke tangkapan layar dan studi kasus,**
-   karena repo tidak bisa dibagikan. Tiap halaman detail punya bagian
-   galeri "05 — Tampilan".
+4. **Bukti teknis dipindahkan ke tangkapan layar, diagram, dan studi
+   kasus,** karena repo tidak bisa dibagikan.
+
+   Untuk sistem yang kerjanya di balik layar, **diagram arsitektur lebih
+   kuat daripada tangkapan layar** — dan jauh lebih aman, karena tidak
+   memuat data pribadi yang harus disensor lebih dulu.
+
+   Kolom `diagram` di YAML bersifat opsional. Bila diisi, muncul bagian
+   "05 — Arsitektur" dan nomor bagian sesudahnya bergeser satu; bila
+   tidak, penomoran lama tetap berlaku. Label dihitung di `[slug].astro`,
+   jangan dipaku.
+
+   Diagram digambar ulang pada tingkat abstraksi yang aman — **jangan**
+   menyalin diagram internal apa adanya. Nama institusi klien, topologi
+   server, nama kelas, dan nama tabel tidak boleh keluar.
+
+   SVG-nya disisipkan langsung ke HTML lewat `Diagram.astro`, **bukan**
+   `<img>`. SVG di dalam `<img>` terkunci dari halaman induknya dan tidak
+   bisa membaca variabel CSS, jadi tidak akan ikut tombol penimpa tema
+   pada keputusan No. 6. Warnanya lewat kelas `.dg-*` di `global.css`.
 
 5. **Aksen satu warna saja: hijau lumut.** Dipakai hanya di lima titik yang
    sudah punya makna — nomor label bagian, menu aktif, tautan utama, angka
@@ -75,7 +92,8 @@ src/
 ├─ content/proyek/*.yaml   satu berkas = satu studi kasus
 ├─ content.config.ts       skema Zod, divalidasi saat build
 ├─ data/situs.ts           profil, skill, pengalaman, sosial
-├─ components/             Header, Footer, Seksi, KartuProyek, Metrik, Galeri, Pager
+├─ components/             Header, Footer, Seksi, KartuProyek, Metrik, Galeri, Diagram, Pager
+├─ diagram/*.svg           diagram arsitektur, disisipkan inline (bukan <img>)
 ├─ layouts/Dasar.astro     kerangka HTML, meta, skrip anti-kedip tema
 ├─ pages/index.astro       beranda
 ├─ pages/proyek/[slug].astro  halaman detail, satu route untuk semua proyek
@@ -140,11 +158,14 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **51 penanda `[ISI]` di empat berkas YAML.** Isinya pertanyaan
+- [ ] **53 penanda `[ISI]` di empat berkas YAML.** Isinya pertanyaan
       terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
       `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
       yang tahu jawabannya. Penanda ini **tampil di situs publik**,
       jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
+- [ ] Diagram arsitektur untuk tiga proyek sisanya. Sistem Langitan
+      sudah ada di `src/diagram/`. Simbelmawa paling layak menyusul —
+      delapan peran penggunanya bagus digambar.
 - [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
       Isi atau hapus — keputusan No. 2 melarang tautan mati.
 - [ ] Kolom `live` di keempat YAML masih `null`. Bila ada URL publik

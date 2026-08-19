@@ -1,0 +1,36 @@
+---
+/**
+ * Menyisipkan berkas SVG dari src/diagram/ langsung ke HTML.
+ *
+ * Sengaja tidak memakai <img>: SVG di dalam <img> terkunci dari
+ * halaman induknya dan tidak bisa membaca variabel CSS, sehingga
+ * tidak akan ikut tombol penimpa tema. Disisipkan seperti ini,
+ * diagram mewarisi --text, --line, dan --aksen seperti elemen lain.
+ */
+interface Props {
+  file: string;
+  keterangan: string;
+}
+const { file, keterangan } = Astro.props;
+
+const berkas = import.meta.glob<string>('/src/diagram/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+const kunci = `/src/diagram/${file}`;
+const isi = berkas[kunci];
+
+if (!isi) {
+  throw new Error(
+    `Diagram "${file}" tidak ada di src/diagram/. Yang tersedia: ` +
+      Object.keys(berkas).join(', ')
+  );
+}
+---
+
+<figure class="diagram">
+  <div class="dg-bidang" set:html={isi} />
+  <figcaption>{keterangan}</figcaption>
+</figure>

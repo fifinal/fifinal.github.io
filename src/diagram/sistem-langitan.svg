@@ -1,0 +1,77 @@
+<!--
+  Diagram arsitektur Sistem Langitan — digambar ulang pada tingkat
+  abstraksi yang aman untuk portofolio publik. Sengaja tidak memuat
+  nama institusi, topologi server, nama kelas, atau nama tabel.
+
+  Warna diambil dari variabel CSS di global.css lewat kelas .dg-*,
+  jadi diagram ini ikut berubah di mode terang dan gelap.
+-->
+<svg viewBox="0 0 720 560" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Alur permintaan Sistem Langitan, dari peramban sampai basis data</title>
+
+  <defs>
+    <marker id="dg-panah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path class="dg-panah-ujung" d="M0,0 L10,5 L0,10 z" />
+    </marker>
+  </defs>
+
+  <!-- Tulang punggung alur permintaan -->
+  <g class="dg-alur">
+    <line x1="220" y1="76"  x2="220" y2="112" marker-end="url(#dg-panah)" />
+    <line x1="220" y1="168" x2="220" y2="204" marker-end="url(#dg-panah)" />
+    <line x1="220" y1="260" x2="220" y2="296" marker-end="url(#dg-panah)" />
+    <line x1="220" y1="352" x2="220" y2="388" marker-end="url(#dg-panah)" />
+    <line x1="220" y1="444" x2="220" y2="480" marker-end="url(#dg-panah)" />
+  </g>
+
+  <!-- Cabang ke tiap institusi -->
+  <g class="dg-cabang">
+    <path d="M380,232 C410,232 410,180 440,180" />
+    <path d="M380,232 C410,232 410,228 440,228" />
+    <path d="M380,232 C410,232 410,276 440,276" />
+  </g>
+
+  <!-- Lapisan utama -->
+  <g class="dg-kotak">
+    <rect x="60" y="20"  width="320" height="56" rx="10" />
+    <rect x="60" y="112" width="320" height="56" rx="10" />
+    <rect x="60" y="296" width="320" height="56" rx="10" />
+    <rect x="60" y="388" width="320" height="56" rx="10" />
+    <rect x="60" y="480" width="320" height="56" rx="10" />
+  </g>
+
+  <!-- Lapisan multi-tenant, satu-satunya yang diberi aksen -->
+  <rect class="dg-kotak-aksen" x="60" y="204" width="320" height="56" rx="10" />
+
+  <!-- Institusi yang dilayani, sengaja tanpa nama asli -->
+  <g class="dg-cip">
+    <rect x="440" y="160" width="220" height="40" rx="8" />
+    <rect x="440" y="208" width="220" height="40" rx="8" />
+    <rect x="440" y="256" width="220" height="40" rx="8" />
+  </g>
+
+  <g class="dg-judul">
+    <text x="80" y="44">Peramban</text>
+    <text x="80" y="136">Titik masuk &amp; bootstrap</text>
+    <text x="80" y="228" class="dg-teks-aksen">Resolusi multi-tenant</text>
+    <text x="80" y="320">Otentikasi &amp; kewenangan</text>
+    <text x="80" y="412">Modul akademik</text>
+    <text x="80" y="504">Basis data</text>
+  </g>
+
+  <g class="dg-sub">
+    <text x="80" y="62">navigasi hash, permintaan AJAX</text>
+    <text x="80" y="154">konfigurasi, autoload, penanganan galat</text>
+    <text x="80" y="246" class="dg-sub-aksen">satu basis kode, identitas per institusi</text>
+    <text x="80" y="338">4 jenis pengguna · 30+ peran turunan</text>
+    <text x="80" y="430">50 modul · mesin templat</text>
+    <text x="80" y="522">Oracle</text>
+  </g>
+
+  <g class="dg-cip-teks">
+    <text x="460" y="185">Perguruan tinggi A</text>
+    <text x="460" y="233">Perguruan tinggi B</text>
+    <text x="460" y="281">Perguruan tinggi C</text>
+  </g>
+</svg>

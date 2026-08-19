@@ -543,3 +543,34 @@ nav{gap:8px}
 /* Kotak placeholder gambar sedikit diredupkan di tema gelap */
 :root[data-tema="gelap"] .preview,
 :root[data-tema="gelap"] .shot{opacity:.85}
+
+/* =========================================================
+   Diagram arsitektur
+   SVG disisipkan langsung ke HTML (bukan <img>) supaya bisa
+   membaca variabel warna di :root dan ikut berganti tema.
+   ========================================================= */
+.diagram{margin:0}
+.diagram .dg-bidang{border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg-soft);padding:24px;overflow-x:auto}
+.diagram svg{display:block;width:100%;height:auto;min-width:560px}
+.diagram figcaption{font-size:.85rem;color:var(--muted);margin-top:12px}
+
+/* Kotak lapisan */
+.dg-kotak rect{fill:var(--bg);stroke:var(--line-kuat);stroke-width:1}
+.dg-cip rect{fill:none;stroke:var(--line-kuat);stroke-width:1;stroke-dasharray:4 4}
+
+/* Satu-satunya lapisan beraksen: resolusi multi-tenant */
+.dg-kotak-aksen{fill:var(--aksen-lembut);stroke:var(--aksen);stroke-width:1.5}
+
+/* Garis alur dan cabang */
+.dg-alur line{stroke:var(--line-kuat);stroke-width:1.5}
+.dg-panah-ujung{fill:var(--line-kuat)}
+.dg-cabang path{fill:none;stroke:var(--line-kuat);stroke-width:1;stroke-dasharray:4 4}
+
+/* Tipografi di dalam diagram */
+.diagram text{font-family:inherit}
+.dg-judul text{fill:var(--text);font-size:14px;font-weight:600}
+.dg-sub text{fill:var(--muted);font-size:11.5px}
+.dg-cip-teks text{fill:var(--muted);font-size:12px}
+.dg-teks-aksen{fill:var(--aksen)!important}
+.dg-sub-aksen{fill:var(--aksen)!important;opacity:.85}

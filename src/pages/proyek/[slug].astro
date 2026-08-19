@@ -4,6 +4,7 @@ import Dasar from '../../layouts/Dasar.astro';
 import Seksi from '../../components/Seksi.astro';
 import Metrik from '../../components/Metrik.astro';
 import Galeri from '../../components/Galeri.astro';
+import Diagram from '../../components/Diagram.astro';
 import Pager from '../../components/Pager.astro';
 import { profil } from '../../data/situs';
 
@@ -36,6 +37,16 @@ const sebelum = sebelumnya
 const sesudah = berikutnya
   ? { url: `/proyek/${berikutnya.id}/`, judul: berikutnya.data.judul, arah: 'Proyek berikutnya' }
   : { url: '/#kontak', judul: 'Hubungi saya', arah: 'Selanjutnya' };
+// Bagian "Arsitektur" hanya muncul bila proyeknya memang punya diagram.
+// Nomor bagian sesudahnya ikut bergeser agar tidak ada nomor yang lompat.
+const adaDiagram = Boolean(d.diagram);
+const label = {
+  arsitektur: '05 — Arsitektur',
+  tampilan: adaDiagram ? '06 — Tampilan' : '05 — Tampilan',
+  dampak: adaDiagram ? '07 — Dampak' : '06 — Dampak',
+  refleksi: adaDiagram ? '08 — Refleksi' : '07 — Refleksi',
+};
+
 ---
 
 <Dasar judul={`${d.judul} — ${profil.nama}`} deskripsi={d.ringkas}>
@@ -92,18 +103,26 @@ const sesudah = berikutnya
       <ul>{d.fitur.map((l) => <li set:html={l} />)}</ul>
     </Seksi>
 
-    <Seksi label="05 — Tampilan" judul="Cuplikan antarmuka">
+    {
+      d.diagram && (
+        <Seksi label={label.arsitektur} judul="Bentuk sistemnya">
+          <Diagram file={d.diagram.file} keterangan={d.diagram.keterangan} />
+        </Seksi>
+      )
+    }
+
+    <Seksi label={label.tampilan} judul="Cuplikan antarmuka">
       <Galeri gambar={d.gambar} kerahasiaan={d.kerahasiaan} />
     </Seksi>
 
-    <Seksi label="06 — Dampak" judul="Hasil" lebar>
+    <Seksi label={label.dampak} judul="Hasil" lebar>
       <Metrik daftar={d.metrik} />
       <p style="color:var(--muted);max-width:720px">
         Angka di atas diukur setelah proyek berjalan. Ganti dengan data aslimu bila tersedia.
       </p>
     </Seksi>
 
-    <Seksi label="07 — Refleksi" judul="Tantangan & pembelajaran">
+    <Seksi label={label.refleksi} judul="Tantangan & pembelajaran">
       {d.tantangan.map((p) => <p set:html={p} />)}
       <div class="callout">{d.belajar}</div>
     </Seksi>
