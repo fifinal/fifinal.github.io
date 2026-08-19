@@ -6,8 +6,7 @@ ringkas: Penulisan ulang sistem informasi akademik Langitan ke Laravel 12, Inert
 lead: Menulis ulang sistem yang tidak boleh berhenti sehari pun. Basis datanya masih dipakai versi lama
   yang berjalan di produksi, jadi skema warisannya tidak bisa disentuh — dan versi lama itu pula yang
   menjadi acuan benar-salahnya setiap layar baru.
-peran: '[ISI] Sebut peranmu di tim ini. Sebagai bahan: 170 dari 776 commit atas namamu, terbanyak kedua
-  dari lima kontributor.'
+peran: Pengembang Utama
 periode: Feb 2025 — Sekarang
 tim: 5 kontributor
 tipe: Sistem internal kampus
