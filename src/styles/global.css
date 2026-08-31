@@ -640,6 +640,28 @@ nav{gap:8px}
   .cv-grid{grid-template-columns:1fr;gap:44px}
 }
 
+/* ---------- CV: sistem perguruan tinggi ----------
+   Blok selebar halaman di bawah dua kolom. Menjawab pertanyaan yang
+   lazim ditanyakan saat melamar: sistem apa, modul apa, peran apa,
+   teknologi apa, integrasi apa. */
+.cv-sistem{margin-top:56px}
+.cv-sistem-item{padding:22px 0;border-top:1px solid var(--line)}
+.cv-sistem-item:first-of-type{border-top:0;padding-top:6px}
+.cv-sistem-item .item-head{align-items:baseline;margin-bottom:6px}
+.cv-sistem-item .cv-ringkas{margin-bottom:14px;max-width:78ch}
+.cv-rincian{display:grid;gap:8px}
+.cv-rincian > div{display:grid;grid-template-columns:92px 1fr;gap:16px;align-items:start}
+.cv-rincian dt{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  padding-top:2px;
+}
+.cv-rincian dd{font-size:.9rem;color:var(--muted);line-height:1.6;max-width:76ch}
+@media(max-width:860px){
+  .cv-sistem{margin-top:40px}
+  .cv-rincian > div{grid-template-columns:1fr;gap:2px}
+}
+
 /* =========================================================
    CETAK — dipakai saat pengunjung menekan Cetak di peramban.
    Yang khas layar (header, footer, tombol, animasi masuk) dibuang;
@@ -708,6 +730,21 @@ nav{gap:8px}
   /* Jangan sampai satu pengalaman terbelah dua halaman */
   .cv-blok{margin-bottom:9pt}
   .cv-keahlian{margin-bottom:9pt}
-  .item,.cv-blok,.cv-sorotan li{break-inside:avoid;page-break-inside:avoid}
+  /* Bagian sistem perguruan tinggi ikut dirapatkan, dan tiap sistem
+     dijaga tidak terbelah dua halaman. */
+  .cv-sistem{margin-top:14pt}
+  .cv-sistem-item{padding:7pt 0}
+  .cv-sistem-item .cv-ringkas{margin-bottom:6pt}
+  .cv-rincian{gap:4pt}
+  .cv-rincian > div{grid-template-columns:52pt 1fr;gap:8pt}
+  .cv-rincian dt{font-size:6.8pt}
+  .cv-rincian dd{font-size:8.4pt;line-height:1.4}
+  .item,.cv-blok,.cv-sorotan li,.cv-sistem-item{break-inside:avoid;page-break-inside:avoid}
+  /* Kecuali bagian sistem: kalau ia ikut dijaga utuh, seluruhnya
+     terdorong ke halaman berikutnya dan halaman pertama menyisakan
+     seperempat halaman kosong. Yang dijaga utuh cukup tiap sistemnya. */
+  .cv-sistem{break-inside:auto;page-break-inside:auto}
+  /* Judul bagian tidak boleh tertinggal sendirian di kaki halaman. */
+  .cv-sistem h2{break-after:avoid;page-break-after:avoid}
   a{color:inherit!important;text-decoration:none!important}
 }

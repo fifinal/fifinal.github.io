@@ -132,10 +132,39 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     Percobaan itu ada di commit `bc5ce6a` — beserta empat jebakan
     html2canvas yang sempat ditemukan, kalau suatu saat dicoba lagi.
 
-    Gaya cetaknya disetel supaya muat **tepat satu halaman A4**, dan
-    dipakai dua-duanya: oleh dialog cetak peramban dan oleh tombol unduh.
-    Menambah satu pengalaman atau beberapa baris sorotan akan membuatnya
-    tumpah ke halaman kedua — periksa jumlah halamannya setelah berubah.
+    **Sejak 31 Agustus 2026 CV-nya dua halaman**, karena ditambahi
+    bagian "Sistem perguruan tinggi" (`sistemPT` di `cv.ts`). Bagian itu
+    menjawab pertanyaan yang lazim diminta saat melamar posisi
+    pengembang sistem kampus — sistem apa, modul apa, peran apa,
+    teknologi apa, integrasi apa — dan halaman 1 sengaja dibiarkan
+    menyisakan sedikit ruang supaya judul bagiannya tidak tertinggal
+    sendirian di kaki halaman.
+
+    Tiga hal yang menjaga pemenggalannya, jangan dibalik:
+    `.cv-sistem-item` dijaga utuh, `.cv-sistem` justru **tidak** (kalau
+    ikut dijaga, seluruh bagian terdorong ke halaman 2 dan halaman 1
+    menyisakan seperempat kosong), dan `.cv-sistem h2` memakai
+    `break-after:avoid`.
+
+    **Urutan aturan di `global.css` menentukan.** Gaya layar untuk
+    bagian CV harus ditulis **sebelum** blok `@media print`. Menempelkan
+    gaya layar di akhir berkas membuat ukuran huruf layar mengalahkan
+    ukuran cetak — spesifisitasnya sama, jadi yang terakhir menang, dan
+    `@media print` tidak menambah bobot apa pun. Ini sudah pernah
+    membuat CV membengkak jadi tiga halaman.
+
+    Tiga koreksi fakta yang datang bersama bagian itu, jangan dibalik
+    tanpa bertanya: sistem akreditasi internasional yang dikerjakan
+    adalah **pengelolaan hibahnya**, bukan penilaian akreditasi; modul
+    kuisioner evaluasi penjaminan mutu di Langitan **dirawat, bukan
+    dibangun**; dan SLF Sync menyambung ke **Neo Feeder**. Pemilik
+    **belum pernah** menangani BKD maupun SISTER — jangan diarang kalau
+    suatu saat ada yang menanyakannya.
+
+    Gaya cetaknya dipakai dua-duanya: oleh dialog cetak peramban dan
+    oleh berkas PDF-nya. Menambah satu pengalaman atau beberapa baris
+    sorotan bisa menggeser pemenggalan halamannya — periksa jumlah
+    halaman dan tampilan tiap halamannya setelah berubah.
     Tiga hal lain yang mudah terlewat di blok `@media print`, semuanya
     sudah pernah menggigit:
 

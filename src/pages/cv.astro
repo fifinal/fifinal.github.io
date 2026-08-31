@@ -147,6 +147,42 @@ const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, ''
           </div>
         </div>
       </div>
+
+      <!-- ============ SISTEM PERGURUAN TINGGI ============ -->
+      <div class="cv-blok cv-sistem reveal">
+        <h2>Sistem perguruan tinggi</h2>
+        {
+          cv.sistemPT.map((x) => (
+            <article class="cv-sistem-item">
+              <div class="item-head">
+                <h3>{x.nama}</h3>
+                <span class="year">{x.konteks}</span>
+              </div>
+              <p class="cv-ringkas">{x.ringkas}</p>
+              <dl class="cv-rincian">
+                <div>
+                  <dt>Peran</dt>
+                  <dd>{x.peran}</dd>
+                </div>
+                <div>
+                  <dt>Modul</dt>
+                  <dd>{x.modul}</dd>
+                </div>
+                <div>
+                  <dt>Teknologi</dt>
+                  <dd>{x.teknologi}</dd>
+                </div>
+                {x.integrasi && (
+                  <div>
+                    <dt>Integrasi</dt>
+                    <dd>{x.integrasi}</dd>
+                  </div>
+                )}
+              </dl>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </main>
 </Dasar>

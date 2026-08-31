@@ -65,9 +65,9 @@ export const cv = {
           isi: 'Pendaftaran peserta dan kategori lomba, pengelolaan tim, verifikasi dokumen, penilaian, pelaporan, serta ekspor otomatis ke PDF dan lembar sebar.',
         },
         {
-          judul: 'Sistem Akreditasi Internasional',
+          judul: 'Sistem Hibah Akreditasi Internasional',
           periode: 'Jan 2023 — Des 2024',
-          isi: 'Pengembangan fitur dari hulu ke hilir, dengan alur verifikasi dan hak akses berbasis peran.',
+          isi: 'Pengelolaan program hibahnya — pengusulan, verifikasi berjenjang, sampai pelaporan. Yang dikelola dananya, bukan penilaian akreditasinya.',
         },
       ],
     },
@@ -79,6 +79,63 @@ export const cv = {
         'Pemrogram utama Sistem Informasi Akademik. Merawat dan mengembangkan sistem berbasis PHP native, sekaligus membangun versi keduanya dengan Laravel. Menangani integrasi dan sinkronisasi data akademik dengan sistem luar — termasuk Feeder PDDikti — beserta optimasi proses sinkronisasinya untuk data mahasiswa berskala besar.',
       tags: ['PHP', 'Laravel', 'Oracle', 'CodeIgniter', 'Docker'],
       sorotan: [],
+    },
+  ],
+
+  /**
+   * Menjawab pertanyaan yang lazim ditanyakan saat melamar posisi
+   * pengembang sistem informasi kampus: sistem apa, modul apa, peran
+   * apa, teknologi apa, dan integrasi apa. Angka commit dan jumlah
+   * modul di sini berasal dari riwayat repositori, bukan ingatan.
+   *
+   * Tulis hanya yang benar-benar dikerjakan. Modul yang cuma dirawat
+   * disebut sebagai dirawat — jangan diangkat jadi seolah dibangun.
+   */
+  sistemPT: [
+    {
+      nama: 'Sistem Langitan — Sistem Informasi Akademik',
+      konteks: 'UMAHA · 2022 — Sekarang',
+      ringkas:
+        'SIAKAD multi-tenant: satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan lima puluh modul yang saling terhubung dan empat jenis pengguna yang bercabang menjadi lebih dari tiga puluh peran.',
+      peran: 'Pengembang utama — kontributor terbesar kedua dari dua belas orang, 484 commit',
+      modul:
+        'Akademik inti (penerimaan mahasiswa baru, KRS, perkuliahan, nilai, transkrip, wisuda), keuangan mahasiswa, kepegawaian dan penugasan dosen, pelaporan serta cetak dokumen. Modul kuisioner evaluasi penjaminan mutu saya rawat, bukan saya bangun.',
+      teknologi: 'PHP 8.1, Oracle, Smarty, Docker, GitHub Actions, PHPStan',
+      integrasi: 'Pelaporan data akademik ke PDDikti',
+    },
+    {
+      nama: 'Sistem Langitan v2 — Penulisan Ulang SIAKAD',
+      konteks: 'UMAHA · Feb 2025 — Sekarang',
+      ringkas:
+        'Menulis ulang SIAKAD di atas basis data Oracle warisan yang tidak boleh diubah, karena skema yang sama masih melayani versi lama di produksi.',
+      peran: 'Pengembang utama — 170 commit, 106 model memetakan skema warisan',
+      modul:
+        'Empat belas peran dengan berkas rute dan kewenangan terpisah — mahasiswa, dosen, keuangan, penjaminan mutu, hingga rektor. Menu dan remah roti dirender dari tabel menu warisan.',
+      teknologi: 'Laravel 12, Inertia, Vue 3, Oracle, JWT, Pest',
+      integrasi: 'Autentikasi ganda — sesi untuk web, token JWT untuk klien mobile yang sudah berjalan',
+    },
+    {
+      nama: 'SLF Sync — Penghubung ke Pangkalan Data Nasional',
+      konteks: 'UMAHA · 2022 — Sekarang',
+      ringkas:
+        'Alat sinkronisasi data akademik kampus ke pangkalan data nasional, berikut jalur pembatalan untuk menarik kembali kiriman yang keliru — karena kesalahan di sana tidak bisa sekadar ditimpa.',
+      peran: 'Pengembang utama — dua orang merawat seluruh sistem, 93 commit',
+      modul:
+        'Sinkronisasi data akademik, pembatalan hasil sinkronisasi, penghapusan dan penautan data, antarmuka pemantauan apa yang sudah dan belum terkirim.',
+      teknologi: 'CodeIgniter, SOAP, Smarty, Docker',
+      integrasi:
+        'Neo Feeder PDDikti — dua generasi mekanisme sinkronisasi berjalan berdampingan, yang lama tidak dimatikan begitu saja',
+    },
+    {
+      nama: 'UNISCO — Platform Kompetisi dan Ujian Daring',
+      konteks: 'UMAHA · Jun — Agu 2026',
+      ringkas:
+        'Platform Computer Based Test untuk lomba dan olimpiade tingkat nasional yang diselenggarakan kampus.',
+      peran: 'Pengembang utama — kontributor terbesar, 85 commit',
+      modul:
+        'Pendaftaran perorangan dan kelompok beserta pembayarannya, bank soal per bidang dan tahapan, sesi ujian terjadwal, penilaian dan pengumuman hasil.',
+      teknologi: 'Laravel, PHP 8.2, Blade, Tailwind, Docker',
+      integrasi: null,
     },
   ],
 
