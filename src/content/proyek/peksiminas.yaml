@@ -16,16 +16,6 @@ tags:
 - Docker
 live: null
 status: Produksi — sistem nasional
-masalah:
-- '[ISI] Bagaimana penyelenggaraan Peksiminas dikelola sebelum ada sistem ini?'
-- '[ISI] Apa kesulitan khas ketika pendaftaran berjenjang dari provinsi ke tingkat nasional?'
-- '[ISI] Kenapa penjurian perlu sistem tersendiri?'
-solusi:
-- '[ISI] Bagaimana kamu memisahkan kewenangan admin provinsi, panitia, dan juri?'
-- '[ISI] Bagaimana memastikan penilaian juri tidak bisa saling dipengaruhi?'
-proses:
-- '[ISI] Sistem ini dibangun dalam waktu singkat menjelang acara. Bagaimana ruang lingkupnya ditentukan?'
-- '[ISI] Apa yang disiapkan untuk mengantisipasi lonjakan pemakaian saat hari-H?'
 fitur:
 - Pendaftaran peserta berjenjang, dari administrator tingkat provinsi hingga panitia nasional
 - Jalur penjurian terpisah dengan kewenangan khusus bagi juri

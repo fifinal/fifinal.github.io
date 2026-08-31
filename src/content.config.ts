@@ -24,9 +24,6 @@ const proyek = defineCollection({
     live: z.string().nullable(),           // null bila proyek tidak bisa diakses publik
     status: z.string(),                    // label pengganti saat live bernilai null
 
-    masalah: z.array(z.string()),
-    solusi: z.array(z.string()),
-    proses: z.array(z.string()),
     fitur: z.array(z.string()),
     metrik: z.array(z.object({ angka: z.string(), keterangan: z.string() })),
     gambar: z.array(z.object({ file: z.string(), keterangan: z.string() })),

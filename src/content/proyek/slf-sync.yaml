@@ -17,22 +17,6 @@ tags:
 - Docker
 live: null
 status: Produksi — sistem internal
-masalah:
-- 'Sebelum alat ini ada, data akademik dimasukkan ke Feeder secara manual. Operator mengetik hal yang
-  sama <strong>dua kali</strong> — sekali ke sistem akademik kampus, sekali lagi ke Feeder.'
-- Alat ini menghapus pengetikan yang kedua. Sistem akademik menjadi satu-satunya tempat data dimasukkan,
-  dan Feeder diisi dari sana.
-- '[ISI] Kenapa sinkronisasi ke pangkalan data nasional tidak bisa sekadar mengirim semuanya sekaligus?
-  Apa yang membuatnya rumit?'
-- '[ISI] Apa akibat nyatanya bagi kampus kalau data di Feeder tidak sesuai atau terlambat?'
-solusi:
-- '[ISI] Ada controller Rollback tersendiri di sistem ini. Kejadian apa yang membuatnya perlu dibuat?'
-- '[ISI] Muncul Syncv2 berdampingan dengan Sync yang lama. Apa yang tidak beres pada versi pertama, dan
-  kenapa yang lama tetap dibiarkan hidup?'
-proses:
-- '[ISI] Alat ini memakai CodeIgniter dan NuSOAP, jauh lebih tua dari proyekmu yang lain. Kenapa tidak
-  ditulis ulang saja selama empat tahun ini?'
-- '[ISI] Bagaimana kamu menguji sinkronisasi tanpa mengotori data asli di Feeder?'
 fitur:
 - Sinkronisasi data akademik dari sistem kampus ke Feeder PDDikti lewat layanan web
 - Pembatalan hasil sinkronisasi ketika data yang terkirim ternyata keliru

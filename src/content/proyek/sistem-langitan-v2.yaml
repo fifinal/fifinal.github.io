@@ -19,23 +19,6 @@ tags:
 - Pest
 live: null
 status: Dalam pengembangan — berdampingan dengan versi lama
-masalah:
-- '[ISI] Kenapa versi lama perlu ditulis ulang, bukan diperbaiki terus seperti selama ini? Apa yang
-  akhirnya memaksa keputusan itu?'
-- '[ISI] Apa konsekuensi nyata dari basis data yang dipakai bersama sistem lama yang masih jalan —
-  pernahkah nyaris celaka karenanya?'
-- '[ISI] Kenapa hanya sebagian kecil tabel yang punya migrasi? Apa risikonya bagi cara tim bekerja
-  sehari-hari, terutama saat menguji?'
-solusi:
-- '[ISI] Kenapa memilih Inertia — monolit yang merender Vue — dan bukan SPA terpisah dengan API?'
-- '[ISI] Aturan "service tidak boleh menyentuh Inertia, response, atau Request" itu lahir dari masalah
-  apa? Apa yang rusak sebelum aturan itu ada?'
-- '[ISI] Bagaimana memastikan keluaran v2 benar-benar cocok dengan v1, bukan sekadar terlihat masuk akal?'
-proses:
-- '[ISI] Bagaimana urutan modul dikerjakan — siapa yang menentukan, dan atas dasar apa?'
-- '[ISI] Repo ini pernah rusak karena 11 modul dibuka bersamaan tanpa satu pun tuntas. Apa yang berubah
-  dalam cara tim bekerja setelah itu?'
-- '[ISI] Kenapa keputusan arsitektur ditulis sebagai ADR, dan apakah itu benar-benar dibaca ulang?'
 fitur:
 - Dua permukaan setara dari satu lapisan layanan — halaman web Inertia dan API JSON bervesi, tanpa
   logika yang digandakan

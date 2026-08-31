@@ -41,10 +41,10 @@ const sesudah = berikutnya
 // Nomor bagian sesudahnya ikut bergeser agar tidak ada nomor yang lompat.
 const adaDiagram = Boolean(d.diagram);
 const label = {
-  arsitektur: '05 — Arsitektur',
-  tampilan: adaDiagram ? '06 — Tampilan' : '05 — Tampilan',
-  dampak: adaDiagram ? '07 — Dampak' : '06 — Dampak',
-  refleksi: adaDiagram ? '08 — Refleksi' : '07 — Refleksi',
+  arsitektur: '02 — Arsitektur',
+  tampilan: adaDiagram ? '03 — Tampilan' : '02 — Tampilan',
+  dampak: adaDiagram ? '04 — Dampak' : '03 — Dampak',
+  refleksi: adaDiagram ? '05 — Refleksi' : '04 — Refleksi',
 };
 
 ---
@@ -89,19 +89,7 @@ const label = {
       </dl>
     </div>
 
-    <Seksi label="01 — Latar belakang" judul="Masalah yang dihadapi">
-      {d.masalah.map((p) => <p set:html={p} />)}
-    </Seksi>
-
-    <Seksi label="02 — Pendekatan" judul="Solusi yang saya ambil">
-      {d.solusi.map((p) => <p set:html={p} />)}
-    </Seksi>
-
-    <Seksi label="03 — Proses" judul="Cara saya mengerjakannya">
-      <ol>{d.proses.map((l) => <li set:html={l} />)}</ol>
-    </Seksi>
-
-    <Seksi label="04 — Hasil kerja" judul="Fitur utama">
+    <Seksi label="01 — Hasil kerja" judul="Fitur utama">
       <ul>{d.fitur.map((l) => <li set:html={l} />)}</ul>
     </Seksi>
 
@@ -119,9 +107,6 @@ const label = {
 
     <Seksi label={label.dampak} judul="Hasil" lebar>
       <Metrik daftar={d.metrik} />
-      <p style="color:var(--muted);max-width:720px">
-        Angka di atas diukur setelah proyek berjalan. Ganti dengan data aslimu bila tersedia.
-      </p>
     </Seksi>
 
     <Seksi label={label.refleksi} judul="Tantangan & pembelajaran">

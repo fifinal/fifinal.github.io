@@ -17,19 +17,6 @@ tags:
 - Legacy
 live: https://langitan.umaha.ac.id
 status: Produksi — sistem internal
-masalah:
-- '[ISI] Dalam keadaan seperti apa sistem ini ketika kamu mulai menanganinya pada 2022?'
-- '[ISI] Kenapa migrasi ke PHP 8 jadi mendesak? Apa yang terancam kalau ditunda?'
-- '[ISI] Apa kesulitan khas merawat satu basis kode yang dipakai beberapa kampus dengan aturan berbeda?'
-- '[ISI] Apa risiko terbesar mengubah sistem yang dipakai seluruh kampus setiap hari?'
-solusi:
-- '[ISI] Bagaimana strategi migrasinya — bertahap per modul, atau sekaligus?'
-- '[ISI] Kenapa memilih menambahkan pemeriksa kompatibilitas otomatis ketimbang memeriksa manual?'
-- '[ISI] Bagaimana perbedaan antar kampus ditangani tanpa menggandakan kode?'
-proses:
-- '[ISI] Bagaimana kamu memetakan bagian mana saja yang akan rusak di PHP 8?'
-- '[ISI] Bagaimana pengujian dilakukan sebelum perubahan naik ke produksi?'
-- '[ISI] Bagaimana kamu menangani modul yang terlalu berisiko diubah?'
 fitur:
 - Satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan tampilan dan identitas terpisah
   untuk tiap institusi
@@ -62,8 +49,17 @@ gambar:
 - file: sistem-langitan-2.png
   keterangan: '[ISI] Tampilan kedua.'
 tantangan:
-- '[ISI] Kode warisan seperti apa yang paling sulit disentuh? Apa yang membuatnya begitu?'
-- '[ISI] Pernahkah ada perubahan yang berdampak tak terduga di produksi? Bagaimana menanganinya?'
-belajar: '[ISI] Apa yang berubah dari cara kamu menulis kode setelah bertahun-tahun merawat sistem warisan
-  orang lain?'
+- 'Yang paling sulit disentuh punya ciri yang sama: berkasnya raksasa dan tidak memisahkan apa pun —
+  tampilan, logika, dan akses data berada dalam satu tempat — sementara sebagian aturannya justru tinggal
+  di dalam kueri Oracle yang panjang, bukan di kode PHP-nya. Tidak ada garis yang aman untuk memotong.'
+- Dua modul menonjol di antaranya. Keuangan dan tagihan hampir tidak punya ruang coba-coba karena salahnya
+  berurusan dengan uang, dan perhitungan nilai serta KRS menyimpan aturan akademik yang menumpuk
+  bertahun-tahun — sebagian tidak pernah tertulis di mana pun, hanya hidup di dalam kodenya.
+- 'Pernah, dan cara ketahuannya persis seperti yang dikhawatirkan tadi — dari laporan pengguna, bukan
+  dari pemeriksaan sendiri. Itulah harga tidak punya jaring pengaman otomatis: perubahan yang terlihat
+  aman baru terbukti tidak aman setelah dipakai orang lain.'
+belajar: Yang berubah adalah untuk siapa saya menulis. Merawat kode orang lain selama bertahun-tahun
+  membuat saya berhenti mengejar kode yang pintar dan mulai menulis untuk pembaca berikutnya — yang bisa
+  jadi saya sendiri tiga tahun lagi, tanpa ingatan apa pun tentang kenapa baris ini ada. Kode yang mudah
+  dibaca lebih berharga daripada kode yang mengesankan.
 kerahasiaan: sivitas akademika

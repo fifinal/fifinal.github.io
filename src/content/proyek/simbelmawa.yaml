@@ -17,29 +17,6 @@ tags:
 - Docker
 live: https://simbelmawa.kemdiktisaintek.go.id/
 status: Produksi — sistem nasional
-masalah:
-- Mundur cukup jauh, pengelolaannya pernah berjalan lewat berkas Excel yang dikirim dan dibalas lewat
-  surel — disalin, direkap, lalu disalin lagi.
-- 'Penggantinya, dan yang langsung mendahului sistem ini, adalah aplikasi ASP.NET WebForms yang berjalan
-  sejak 2018. Ia menyelesaikan urusan Excel, tapi membawa keterbatasannya sendiri: <strong>servernya harus
-  Windows</strong>, sehingga menaikkan versi selalu menjadi pekerjaan besar.'
-- Dua hal lain ikut menekan. Aplikasi itu tidak menyediakan API, jadi tidak ada cara melayaninya selain
-  lewat dirinya sendiri. Dan tampilannya sudah jauh tertinggal.
-- 'Versi ini dirancang sebagai <strong>API tersendiri sejak awal</strong> — bukan sebagai tampalan atas
-  permintaan yang datang belakangan. Lebih dari satu jenis pemanggil sudah diperhitungkan sejak hari
-  pertama.'
-- 'Timnya dibagi menurut permukaan: saya memegang <strong>backend</strong>, seorang rekan mengerjakan
-  frontend React, dan seorang lagi aplikasi mobile Flutter. Satu API melayani keduanya.'
-- Pembagian itu menuntut kontrak yang jelas. Meski satu tim, dua klien yang berbeda memanggil API yang
-  sama — perubahan yang tidak diumumkan lebih dulu akan merusak salah satunya.
-- '[ISI] Kendala apa yang khas ketika penggunanya tersebar di ratusan perguruan tinggi se-Indonesia?'
-solusi:
-- '[ISI] Keputusan arsitektur apa yang kamu ambil untuk menangani delapan peran pengguna sekaligus?'
-- '[ISI] Bagaimana kamu memastikan setiap peran hanya bisa mengakses data yang menjadi haknya?'
-proses:
-- '[ISI] Bagaimana kebutuhan dikumpulkan — dari pihak kementerian langsung, atau lewat perantara?'
-- '[ISI] Bagaimana siklus rilisnya, mengingat jadwalnya terikat agenda kegiatan nasional?'
-- '[ISI] Bagian mana yang dikerjakan lebih dulu, dan kenapa?'
 fitur:
 - Pengelolaan program kemahasiswaan dan hibah, dari pengusulan hingga penetapan penerima
 - Delapan peran pengguna dengan rute dan kewenangan terpisah — mahasiswa, dosen, reviewer, operator
@@ -63,14 +40,20 @@ diagram:
     tergantung siapa yang memintanya. Kotak putus-putus di kanan adalah sistem di luar kendali kami.
 gambar:
 - file: simbelmawa-1.png
-  keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
+  keterangan: Dasbor pengelola kementerian — rekap pengusulan lintas perguruan tinggi dalam angka
+    agregat, tanpa data per mahasiswa.
 - file: simbelmawa-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+  keterangan: Formulir pengusulan yang diisi mahasiswa, jalur utama yang paling ramai dipakai menjelang
+    tenggat.
 tantangan:
 - Bagian tersulit bukan membangun fiturnya, melainkan menahan lonjakan menjelang tenggat. Pengusulan
   menumpuk di hari-hari terakhir, dan beban dari ratusan perguruan tinggi datang hampir bersamaan.
 - 'Yang menyerah lebih dulu adalah <strong>basis datanya</strong>, bukan aplikasinya. Jalan keluar yang
   diambil saat itu adalah menaikkan spesifikasi server.'
-- '[ISI] Adakah keputusan yang kemudian kamu ubah setelah sistem dipakai sungguhan?'
-belajar: '[ISI] Satu pelajaran yang kamu bawa ke proyek berikutnya setelah tiga tahun mengerjakan ini.'
+- Menariknya, tidak ada keputusan rancangan yang akhirnya dibatalkan. Yang berubah hanya kapasitas
+  mesinnya — bentuk sistemnya bertahan sejak versi pertama sampai sekarang.
+belajar: 'Pelajaran yang paling terbawa ke proyek berikutnya: sistem yang sedang digantikan adalah dokumen
+  kebutuhan paling jujur yang tersedia. Ia memuat aturan yang tidak pernah tertulis di mana pun, dan
+  kebiasaan pengguna yang tidak akan disebutkan siapa pun dalam rapat karena sudah dianggap wajar.
+  Membacanya lebih dulu lebih murah daripada menemukannya satu per satu setelah rilis.'
 kerahasiaan: mahasiswa dan perguruan tinggi

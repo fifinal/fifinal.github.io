@@ -85,6 +85,21 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
    pertanyaan terarah dan tanyakan pada pemilik. Halaman yang tampak
    belum selesai lebih baik daripada halaman yang meyakinkan tapi palsu.
 
+9. **Bagian "01 — Latar belakang", "02 — Pendekatan", dan "03 — Proses"
+   sudah dihapus** dari halaman detail, atas keputusan pemilik pada 31
+   Agustus 2026. Kolom `masalah`, `solusi`, dan `proses` dibuang dari
+   skema Zod dan dari ketujuh YAML — termasuk dari `simbelmawa` dan
+   `sistem-langitan` yang isinya sudah lengkap.
+
+   Alasannya: 37 dari 64 penanda `[ISI]` yang tersisa berada di ketiga
+   kolom itu, dan penanda tampil di situs publik. Konsekuensinya halaman
+   detail kini hanya menyajikan fitur, diagram, galeri, metrik, dan
+   refleksi — bukti teknis bertumpu pada diagram, bukan lagi pada narasi.
+
+   Kalau suatu saat mau dikembalikan, isinya masih ada di riwayat git
+   sebelum penghapusan ini. Penomoran bagian dihitung di `[slug].astro`
+   dan sekarang mulai dari `01 — Hasil kerja`.
+
 ## Struktur
 
 ```
@@ -163,11 +178,21 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **87 penanda `[ISI]` di tujuh berkas YAML.** Isinya pertanyaan
-      terarah pada kolom `masalah`, `solusi`, `proses`, `tantangan`,
-      `belajar`, dan keterangan `gambar` — bagian yang hanya pemilik
-      yang tahu jawabannya. Penanda ini **tampil di situs publik**,
-      jadi ini pekerjaan paling mendesak. Mulai dari `simbelmawa.yaml`.
+- [ ] **27 penanda `[ISI]` di enam berkas YAML** — tersisa di kolom
+      `tantangan` (10), `belajar` (5), dan keterangan `gambar` (12).
+      Penanda ini **tampil di situs publik**, jadi ini pekerjaan paling
+      mendesak. `simbelmawa.yaml` sudah bersih.
+
+      Dari 87 penanda semula: 23 sudah diisi lewat tanya-jawab dengan
+      pemilik (`simbelmawa` 10, `sistem-langitan` 13), dan 37 sisanya
+      ikut terhapus bersama kolom `masalah`, `solusi`, dan `proses` —
+      lihat keputusan No. 9.
+
+      Cara mengisinya: **tanya pemilik, jangan mengarang.** Tawarkan
+      beberapa kemungkinan jawaban yang masuk akal agar ia tinggal
+      memilih, lalu tulis prosanya dari pilihan itu. Jawaban "tidak ada
+      yang berubah" atau "sudah stabil sejak awal" adalah jawaban sah —
+      jangan didramatisasi menjadi cerita penyelamatan.
 - [x] Diagram arsitektur — **selesai untuk ketujuh proyek.** Masing-masing
       sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
       informasi:

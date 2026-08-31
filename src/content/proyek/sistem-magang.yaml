@@ -17,17 +17,6 @@ tags:
 - Docker
 live: https://simbelmawa.kemdiktisaintek.go.id/magang
 status: Produksi — sistem nasional
-masalah:
-- '[ISI] Persoalan apa yang ingin dipecahkan program ini? Bagaimana magang dikelola sebelumnya?'
-- '[ISI] Kenapa jumlah peran penggunanya sampai selusin — apa yang menuntut sebanyak itu?'
-- '[ISI] Bagaimana keterlibatan LPDP memengaruhi rancangan sistemnya?'
-solusi:
-- '[ISI] Bagaimana kamu menyusun alur agar tidak membingungkan meski melibatkan banyak pihak?'
-- '[ISI] Kenapa memilih Vue dan Tailwind di sini, berbeda dari proyek lain yang memakai Blade?'
-proses:
-- '[ISI] Bagaimana proyek ini dimulai — dari nol, atau melanjutkan sistem yang ada?'
-- '[ISI] Kamu mengerjakannya berdua saja. Bagaimana pembagian kerjanya?'
-- '[ISI] Bagaimana tenggat program nasional memengaruhi urutan pengerjaan?'
 fitur:
 - Dua belas peran pengguna terpisah — mahasiswa, dosen, kepala program studi, mentor, mitra industri,
   operator, pimpinan, reviewer, dan pengelola kementerian
