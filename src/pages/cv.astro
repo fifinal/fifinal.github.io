@@ -3,12 +3,9 @@
  * Halaman CV — /cv/
  *
  * Dirancang untuk dua keadaan sekaligus: dibaca di layar seperti halaman
- * lain, dan dicetak ke A4 tanpa perubahan isi — gaya cetaknya ada di
- * blok @media print pada global.css.
- *
- * Tombol "Unduh PDF" membentuk berkasnya di peramban pengunjung saat
- * ditekan (lihat skrip di bawah), jadi tidak ada berkas PDF yang
- * disimpan maupun diterbitkan.
+ * lain, dan dicetak ke A4 tanpa perubahan isi. Berkas /cv.pdf yang
+ * ditawarkan tombol CTA dibuat justru dari halaman ini lewat
+ * `npm run cv:pdf`, sehingga PDF dan halaman tidak bisa berbeda isi.
  */
 import Dasar from '../layouts/Dasar.astro';
 import { profil, sosial } from '../data/situs';
@@ -48,14 +45,14 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
         </div>
 
         <div class="cv-aksi">
-          <button class="btn btn-primary" id="unduhCv" type="button">
+          <a class="btn btn-primary" href={cv.berkasPdf} download>
             <svg viewBox="0 0 24 24" aria-hidden="true" class="cv-ikon">
               <path d="M12 3v12"></path>
               <path d="m7 11 5 5 5-5"></path>
               <path d="M4 20h16"></path>
             </svg>
-            <span data-label>Unduh PDF</span>
-          </button>
+            Unduh PDF
+          </a>
           <a class="btn btn-ghost" href={`mailto:${profil.email}`}>Hubungi saya</a>
         </div>
       </header>
@@ -143,119 +140,4 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
       </div>
     </div>
   </main>
-
-<script>
-  /**
-   * Membuat PDF di peramban pengunjung saat tombol ditekan.
-   *
-   * Pustakanya diimpor secara dinamis — hanya terunduh oleh orang yang
-   * benar-benar menekan tombolnya, jadi halaman ini tetap ringan bagi
-   * yang cuma membaca.
-   *
-   * Halaman dipotret jadi gambar lalu ditaruh di atas kertas A4.
-   * Konsekuensinya teks di PDF tidak bisa disorot maupun dicari.
-   *
-   * Tiga hal yang membuat kodenya tidak sesederhana "potret lalu simpan",
-   * ketiganya sudah pernah menghasilkan PDF yang salah:
-   *
-   * 1. html2canvas menyalin gaya TERHITUNG dari halaman ini. Kalau
-   *    pengunjung sedang bertema gelap, warna putih ikut tersalin dan
-   *    judul jadi putih di atas kertas putih — hilang sama sekali.
-   *    Karena itu tema dipaksa terang SEBELUM memotret; menyetelnya di
-   *    dalam onclone sudah terlambat.
-   * 2. Tata letak layar kalau dipotret jadi gambar setinggi ±1450px dan
-   *    terpotong dua halaman di tengah baris. Karena itu aturan
-   *    @media print dipasang paksa sementara, dan lebarnya dikunci
-   *    718px — lebar isi A4 dikurangi margin 10mm, pada 96dpi.
-   * 3. Memotret dari dalam iframe menghasilkan halaman kosong;
-   *    html2canvas tidak bisa memotret elemen di dokumen lain. Jadi
-   *    yang dipotret memang halaman ini, dan perubahannya ditutupi
-   *    lapisan "Menyiapkan…" supaya tidak terlihat berkedip.
-   */
-  const tombol = document.getElementById('unduhCv');
-  const label = tombol?.querySelector('[data-label]');
-
-  /** Mengambil isi seluruh blok @media print dari lembar gaya situs. */
-  function aturanCetak() {
-    let teks = '';
-    for (const lembar of document.styleSheets) {
-      let aturan;
-      try {
-        aturan = lembar.cssRules;
-      } catch {
-        continue; // lembar dari domain lain, lewati
-      }
-      for (const a of aturan) {
-        const kondisi = a.conditionText || a.media?.mediaText || '';
-        if (a.type === CSSRule.MEDIA_RULE && kondisi.includes('print')) {
-          for (const dalam of a.cssRules) teks += dalam.cssText + '\n';
-        }
-      }
-    }
-    return teks;
-  }
-
-  function pasangLapisan() {
-    const lapisan = document.createElement('div');
-    lapisan.className = 'cv-lapisan';
-    lapisan.innerHTML = '<span>Menyiapkan PDF…</span>';
-    document.body.appendChild(lapisan);
-    return lapisan;
-  }
-
-  async function buatPdf() {
-    const { default: html2pdf } = await import('html2pdf.js');
-
-    const lapisan = pasangLapisan();
-    const temaSemula = document.documentElement.dataset.tema;
-    const gaya = document.createElement('style');
-    gaya.textContent =
-      aturanCetak() + '.cv-halaman{width:718px!important;max-width:718px!important;margin:0}';
-
-    document.documentElement.dataset.tema = 'terang';
-    document.head.appendChild(gaya);
-
-    // Beri kesempatan tata letak baru dan fontnya benar-benar terpasang.
-    // Sengaja memakai timer, bukan requestAnimationFrame: rAF berhenti
-    // total kalau tabnya sedang tidak terlihat, dan prosesnya akan
-    // menggantung sampai pengunjung kembali ke tab ini.
-    await new Promise((r) => setTimeout(r, 80));
-    if (document.fonts?.ready) await document.fonts.ready;
-
-    try {
-      return await html2pdf()
-        .set({
-          margin: 10,
-          filename: 'CV-Slamet-Fifin-Alamsyah.pdf',
-          image: { type: 'jpeg', quality: 0.95 },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-          html2canvas: { scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false },
-        })
-        .from(document.querySelector('.cv-halaman'))
-        .save();
-    } finally {
-      gaya.remove();
-      if (temaSemula) document.documentElement.dataset.tema = temaSemula;
-      else delete document.documentElement.dataset.tema;
-      lapisan.remove();
-    }
-  }
-
-  tombol?.addEventListener('click', async () => {
-    if (tombol.disabled) return;
-    tombol.disabled = true;
-    const semula = label.textContent;
-    label.textContent = 'Menyiapkan…';
-    try {
-      await buatPdf();
-      label.textContent = semula;
-    } catch (e) {
-      console.error(e);
-      label.textContent = 'Gagal — coba lagi';
-      setTimeout(() => (label.textContent = semula), 2500);
-    } finally {
-      tombol.disabled = false;
-    }
-  });
-</script>
 </Dasar>

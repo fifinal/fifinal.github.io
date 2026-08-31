@@ -24,6 +24,9 @@ export const cv = {
    */
   foto: '/gambar/foto-360.jpg',
 
+  /** Dibuat lewat `npm run cv:pdf`; dicetak ulang tiap penerbitan. */
+  berkasPdf: '/cv.pdf',
+
   ringkas:
     'Full-Stack Engineer yang terbiasa membangun sistem multi-pengguna berskala besar. Fokus pada REST API, alur bisnis yang berlapis — kewenangan berbasis peran, persetujuan bertingkat — optimasi performa basis data, serta memindahkan sistem warisan ke arsitektur yang lebih modular dan mudah dirawat.',
 

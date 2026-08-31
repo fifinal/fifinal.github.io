@@ -110,41 +110,27 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     tidak diterbitkan**; yang tampil hanya email dan kota. Halaman ini
     publik dan terindeks mesin pencari.
 
-    PDF-nya **dibuat di peramban pengunjung saat tombol ditekan** —
-    tidak ada berkas PDF yang disimpan di repositori maupun diterbitkan.
-    Pustakanya `html2pdf.js`, diimpor dinamis supaya hanya terunduh oleh
-    orang yang benar-benar menekan tombolnya.
+    PDF-nya **tidak disimpan di repositori.** Ia dicetak ulang tiap
+    penerbitan oleh langkah "Cetak CV ke PDF" di `deploy.yml`, yang
+    menjalankan `npm run cv:pdf -- --ke-dist` setelah build: menyalakan
+    `astro preview` di atas `dist/`, lalu mencetak `/cv/` dengan Chrome
+    tanpa jendela langsung ke `dist/cv.pdf`. Runner `ubuntu-latest`
+    sudah memuat Google Chrome di `/usr/bin/google-chrome` — kalau suatu
+    saat GitHub mencabutnya, penerbitan gagal terang-terangan di langkah
+    itu, bukan diam-diam menerbitkan tautan mati.
 
-    Ini pilihan pemilik pada 31 Agustus 2026, menggantikan cara
-    sebelumnya (dicetak Chrome saat penerbitan). Harganya nyata dan
-    sudah diketahui: hasilnya PDF **raster** ±500 KB yang teksnya tidak
-    bisa disorot maupun dicari, sedangkan cara lama menghasilkan 197 KB
-    dengan teks utuh. Kalau suatu saat mau dikembalikan, skrip dan
-    langkah CI-nya ada di commit `53682cd`.
+    Di mesin sendiri, `npm run cv:pdf` (tanpa argumen) membangun dulu
+    lalu menaruh hasilnya di `public/cv.pdf` — untuk memeriksa hasil
+    cetaknya sebelum push; sudah masuk `.gitignore`. Ingat: `npm run
+    build` biasa **tidak** membuat PDF, jadi `/cv.pdf` akan 404 di dev.
 
-    Kodenya di `src/pages/cv.astro` tidak sesederhana "potret lalu
-    simpan", dan ketiga kerumitannya wajib dipertahankan — masing-masing
-    lahir dari PDF yang terbukti salah:
-
-    1. Tema dipaksa terang **sebelum** memotret. html2canvas menyalin
-       gaya terhitung dari halaman; kalau pengunjung bertema gelap,
-       judul jadi putih di atas kertas putih. Menyetelnya di `onclone`
-       sudah terlambat.
-    2. Aturan `@media print` dipasang paksa dan lebarnya dikunci 718px.
-       Tanpa itu potretnya setinggi ±1450px dan terpotong dua halaman.
-    3. Penundanya memakai `setTimeout`, bukan `requestAnimationFrame` —
-       rAF berhenti total kalau tabnya tidak terlihat, dan prosesnya
-       menggantung sampai pengunjung kembali.
-
-    Satu jebakan lagi ada di sisi CSS: **html2canvas menggambar teks
-    berwarna warisan sebagai putih.** Karena itu blok cetak menulis
-    `color` eksplisit untuk `.cv-halaman` dan ketiga tingkat judulnya.
-    Jangan dihapus dengan alasan "kan sudah diwarisi dari body".
-
-    Memotret dari dalam `<iframe>` sudah dicoba dan **tidak bisa** —
-    hasilnya halaman kosong; html2canvas tidak memotret elemen di
-    dokumen lain. Karena itu yang dipotret halaman aslinya, ditutupi
-    lapisan `.cv-lapisan` selama proses berlangsung.
+    Cara ini sempat diganti pembuatan di peramban dengan `html2pdf.js`
+    pada 31 Agustus 2026, lalu dikembalikan di hari yang sama. Alasannya
+    terukur: hasil peramban adalah PDF **raster ±500 KB** yang teksnya
+    tidak bisa disorot, dicari, maupun dibaca mesin pemindai CV,
+    sedangkan cara ini menghasilkan **197 KB dengan teks utuh**.
+    Percobaan itu ada di commit `bc5ce6a` — beserta empat jebakan
+    html2canvas yang sempat ditemukan, kalau suatu saat dicoba lagi.
 
     Gaya cetaknya disetel supaya muat **tepat satu halaman A4**, dan
     dipakai dua-duanya: oleh dialog cetak peramban dan oleh tombol unduh.

@@ -682,10 +682,8 @@ nav{gap:8px}
   .timeline .item::before{transform:scale(1)!important;opacity:1!important}
 
   .cv-halaman{padding:0;max-width:none;color:var(--text)}
-  /* Warna ditulis eksplisit, bukan diwariskan dari body. Selain lebih
-     aman saat mencetak, ini wajib untuk tombol "Unduh PDF":
-     html2canvas menggambar teks berwarna warisan sebagai putih, dan
-     nama serta judul jabatan hilang dari kertas putih. */
+  /* Warna ditulis eksplisit, tidak diwariskan dari body — supaya
+     tidak ada judul yang ikut terbawa warna tema layar ke kertas. */
   .cv-halaman h1,.cv-halaman h2,.cv-halaman h3{color:var(--text)}
   .cv-halaman h2{color:var(--muted)}
   .cv-kepala{padding-bottom:9pt;margin-bottom:9pt;gap:12pt;grid-template-columns:auto 1fr}
@@ -712,15 +710,4 @@ nav{gap:8px}
   .cv-keahlian{margin-bottom:9pt}
   .item,.cv-blok,.cv-sorotan li{break-inside:avoid;page-break-inside:avoid}
   a{color:inherit!important;text-decoration:none!important}
-}
-
-/* Lapisan penutup saat tombol "Unduh PDF" sedang bekerja. Halaman di
-   baliknya sementara dipaksa bertema terang dan bergaya cetak; tanpa
-   penutup ini pengunjung akan melihatnya berkedip beberapa detik.
-   Sengaja di luar blok @media print supaya tidak ikut terpotret. */
-.cv-lapisan{
-  position:fixed;inset:0;z-index:200;
-  display:grid;place-items:center;
-  background:var(--bg);color:var(--muted);
-  font-size:.9rem;letter-spacing:.02em;
 }
