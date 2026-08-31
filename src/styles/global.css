@@ -600,7 +600,7 @@ nav{gap:8px}
 
 /* ---------- Dua kolom ---------- */
 .cv-grid{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
-.cv-blok{padding:0;border:0;margin-bottom:40px}
+.cv-blok{margin-bottom:40px}   /* <div>, bukan <section>: aturan section{} global memasang padding 88px + garis atas */
 .cv-blok:last-child{margin-bottom:0}
 .cv-halaman h2{
   font-size:.78rem;font-family:'JetBrains Mono',monospace;

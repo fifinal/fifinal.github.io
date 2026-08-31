@@ -61,12 +61,12 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
       <div class="cv-grid">
         <!-- Kiri -->
         <aside class="cv-samping">
-          <section class="cv-blok reveal">
+          <div class="cv-blok reveal">
             <h2>Ringkas</h2>
             <p class="cv-ringkas">{cv.ringkas}</p>
-          </section>
+          </div>
 
-          <section class="cv-blok reveal">
+          <div class="cv-blok reveal">
             <h2>Keahlian</h2>
             {
               cv.keahlian.map((k) => (
@@ -80,9 +80,9 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
                 </div>
               ))
             }
-          </section>
+          </div>
 
-          <section class="cv-blok reveal">
+          <div class="cv-blok reveal">
             <h2>Pendidikan</h2>
             {
               cv.pendidikan.map((p) => (
@@ -94,11 +94,11 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
                 </div>
               ))
             }
-          </section>
+          </div>
         </aside>
 
         <!-- Kanan -->
-        <section class="cv-utama reveal">
+        <div class="cv-utama reveal">
           <h2>Pengalaman</h2>
 
           <div class="timeline">
@@ -136,7 +136,7 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
               ))
             }
           </div>
-        </section>
+        </div>
       </div>
     </div>
   </main>
