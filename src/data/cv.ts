@@ -30,11 +30,14 @@ export const cv = {
   ringkas:
     'Full-Stack Engineer yang terbiasa membangun sistem multi-pengguna berskala besar. Fokus pada REST API, alur bisnis yang berlapis — kewenangan berbasis peran, persetujuan bertingkat — optimasi performa basis data, serta memindahkan sistem warisan ke arsitektur yang lebih modular dan mudah dirawat.',
 
+  // Label kelompok sengaja Bahasa Inggris — istilahnya memang dikenal
+  // begitu di lowongan dan CV, dan beranda pun sudah memakai Frontend,
+  // Backend, Tools. Sisa halaman tetap Bahasa Indonesia.
   keahlian: [
-    { judul: 'Bahasa & Kerangka Kerja', daftar: ['PHP', 'Laravel', 'CodeIgniter', 'JavaScript', 'REST API', 'JWT'] },
-    { judul: 'Antarmuka', daftar: ['Vue 3', 'Inertia.js', 'React', 'Blade', 'Tailwind'] },
-    { judul: 'Basis Data', daftar: ['PostgreSQL', 'Oracle', 'MySQL'] },
-    { judul: 'Perkakas', daftar: ['Git', 'Docker', 'GitHub Actions', 'Linux'] },
+    { judul: 'Languages & Frameworks', daftar: ['PHP', 'Laravel', 'CodeIgniter', 'JavaScript', 'REST API', 'JWT'] },
+    { judul: 'UI', daftar: ['Vue 3', 'Inertia.js', 'React', 'Blade', 'Tailwind'] },
+    { judul: 'Databases', daftar: ['PostgreSQL', 'Oracle', 'MySQL'] },
+    { judul: 'Tools', daftar: ['Git', 'Docker', 'GitHub Actions', 'Linux'] },
   ],
 
   pengalaman: [
