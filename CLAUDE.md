@@ -100,6 +100,32 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
    sebelum penghapusan ini. Penomoran bagian dihitung di `[slug].astro`
    dan sekarang mulai dari `01 — Hasil kerja`.
 
+10. **Halaman CV terbit di `/cv/`, dan `/cv.pdf` dibuat dari halaman itu
+    juga.** Disusun 31 Agustus 2026 dari berkas CV milik pemilik
+    (`~/Sites/cv.html`), bukan dikarang, tapi digambar ulang dengan
+    bahasa visual portofolio — bukan meniru gaya kuning-biru berkas
+    aslinya.
+
+    Alamat rumah dan nomor telepon yang ada di berkas asli **sengaja
+    tidak diterbitkan**; yang tampil hanya email dan kota. Halaman ini
+    publik dan terindeks mesin pencari.
+
+    PDF-nya dibuat dengan `npm run cv:pdf` — membangun situs, menyalakan
+    `astro preview`, lalu mencetak `/cv/` lewat Chrome tanpa jendela.
+    Hasilnya ikut di-commit, karena GitHub Actions tidak punya Chrome.
+    **Setiap kali isi CV berubah, jalankan ulang perintah itu sebelum
+    push,** kalau tidak, halaman dan PDF akan berbeda isi.
+
+    Gaya cetaknya sudah disetel supaya muat **tepat satu halaman A4**.
+    Menambah satu pengalaman atau beberapa baris sorotan akan membuatnya
+    tumpah ke halaman kedua — periksa jumlah halamannya setelah
+    menjalankan `cv:pdf`. Dua hal yang mudah terlewat di blok
+    `@media print`: pemilih warnanya harus menyebut
+    `:root:not([data-tema="terang"])` (kalau tidak, mesin bertema gelap
+    mencetak CV berlatar hitam), dan aturan penyembunyi kerangka situs
+    harus tetap memakai `header:not(.cv-kepala)` — kepala CV juga
+    memakai tag `<header>`.
+
 ## Struktur
 
 ```
@@ -112,9 +138,12 @@ src/
 ├─ layouts/Dasar.astro     kerangka HTML, meta, skrip anti-kedip tema
 ├─ pages/index.astro       beranda
 ├─ pages/proyek/[slug].astro  halaman detail, satu route untuk semua proyek
+├─ pages/cv.astro          halaman CV, sekaligus sumber berkas cv.pdf
+├─ data/cv.ts              isi CV — lebih rinci daripada `pengalaman` di situs.ts
 ├─ styles/global.css       seluruh gaya, variabel warna di paling atas
 └─ scripts/animasi.js      tema, menu mobile, animasi gulir, hitung angka
-public/gambar/             tangkapan layar (masih kosong)
+scripts/buat-cv-pdf.mjs    membuat public/cv.pdf dari halaman /cv/
+public/gambar/             foto profil; tangkapan layar proyek masih kosong
 ```
 
 Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
@@ -221,8 +250,8 @@ untuk melihatnya.
       boleh berupa kendala, bukan hanya solusi. Pada v2 misalnya, yang
       diberi aksen adalah basis data warisannya, bukan lapisan layanan
       yang dibangun untuk mengatasinya.
-- [ ] Tautan `sosial` LinkedIn dan Instagram di `situs.ts` masih `#`.
-      Isi atau hapus — keputusan No. 2 melarang tautan mati.
+- [x] Tautan `sosial` LinkedIn dan Instagram sudah terisi, diambil dari
+      berkas CV pemilik.
 - [ ] Kolom `live` terisi di empat proyek — simbelmawa, sistem-langitan,
       sistem-magang, unisco — dan sengaja dibiarkan `null` di tiga
       sisanya karena URL-nya tidak lolos uji: `langitan-v2.umaha.ac.id`
@@ -244,9 +273,11 @@ untuk melihatnya.
       Pratinjau besar di kepala halaman detail (`.preview`) **sudah
       dihapus** atas permintaan pemilik, beserta gayanya di `global.css`.
       Bukti visual kini hanya lewat galeri dan diagram.
-- [ ] Konfirmasi "Lulus 2019", disimpulkan dari tanggal repo skripsi.
-      Nama "Universitas Maarif Hasyim Latif" sudah terverifikasi dari
-      judul halaman langitan.umaha.ac.id.
+- [x] "Lulus 2019" terkonfirmasi — berkas CV pemilik menyebut Teknik
+      Informatika 2015–2019.
+- [ ] Beda tanggal mulai di UMAHA: `situs.ts` menulis "2022 — Sekarang"
+      (disimpulkan dari commit pertama), sedangkan CV menyebut Juli 2021.
+      Halaman `/cv/` memakai angka CV. Samakan salah satunya.
 - [ ] `profil.status` masih berbunyi "Terbuka untuk peluang baru" —
       bawaan template, sementara pemilik sedang bekerja.
 

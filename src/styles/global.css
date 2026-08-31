@@ -567,3 +567,135 @@ nav{gap:8px}
 .dg-judul-luar{fill:var(--muted)!important}   /* sistem di luar kendali kita */
 .dg-teks-aksen{fill:var(--aksen)!important}
 .dg-sub-aksen{fill:var(--aksen)!important;opacity:.85}
+
+/* =========================================================
+   HALAMAN CV  (/cv/)
+   Satu halaman, dua keadaan: dibaca di layar, dan dicetak ke A4.
+   Berkas /cv.pdf dibuat dari halaman ini juga (npm run cv:pdf),
+   jadi apa pun yang diubah di sini ikut terbawa ke PDF-nya.
+   ========================================================= */
+.cv-halaman{padding:64px 24px 96px}
+
+/* ---------- Kepala ---------- */
+.cv-kepala{
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:32px;align-items:center;
+  padding-bottom:36px;margin-bottom:44px;
+  border-bottom:1px solid var(--line);
+}
+.cv-foto{
+  width:120px;height:120px;border-radius:50%;
+  object-fit:cover;object-position:45% 28%;
+  border:1px solid var(--line);
+}
+.cv-kepala h1{
+  font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1.1;margin:0 0 6px;
+}
+.cv-peran{color:var(--muted);font-size:1.05rem;margin:0 0 16px}
+.cv-kontak{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.9rem;color:var(--muted)}
+.cv-kontak a{border-bottom:1px solid var(--line);padding-bottom:1px;transition:border-color .2s}
+.cv-kontak a:hover{border-color:var(--text)}
+.cv-aksi{display:flex;flex-direction:column;gap:10px}
+.cv-ikon{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Dua kolom ---------- */
+.cv-grid{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.cv-blok{padding:0;border:0;margin-bottom:40px}
+.cv-blok:last-child{margin-bottom:0}
+.cv-halaman h2{
+  font-size:.78rem;font-family:'JetBrains Mono',monospace;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  font-weight:500;margin:0 0 18px;padding-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+.cv-halaman h3{font-size:.98rem;font-weight:600;margin:0}
+.cv-ringkas{color:var(--muted);font-size:.94rem;line-height:1.65}
+.cv-keahlian{margin-bottom:20px}
+.cv-keahlian:last-child{margin-bottom:0}
+.cv-keahlian h3{font-size:.85rem;font-weight:500;color:var(--text);margin-bottom:10px}
+.cv-didik .cv-meta{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);margin:6px 0 2px}
+.cv-didik .cv-tempat{font-size:.9rem;color:var(--muted);margin-bottom:10px}
+
+/* ---------- Pengalaman ---------- */
+.cv-utama .item{padding-bottom:44px}
+.cv-tags{margin:14px 0 0}
+.cv-subjudul{
+  display:block;margin:20px 0 10px;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.cv-sorotan{list-style:none;display:grid;gap:14px}
+.cv-sorotan li{
+  padding-left:16px;border-left:1px solid var(--line);
+  display:grid;gap:3px;
+}
+.cv-sorotan-judul{font-size:.92rem;font-weight:500;color:var(--text)}
+.cv-sorotan-periode{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+.cv-sorotan-isi{font-size:.9rem;color:var(--muted);line-height:1.6}
+
+@media(max-width:860px){
+  .cv-halaman{padding:40px 20px 72px}
+  .cv-kepala{grid-template-columns:1fr;gap:20px;text-align:left}
+  .cv-aksi{flex-direction:row;flex-wrap:wrap}
+  .cv-grid{grid-template-columns:1fr;gap:44px}
+}
+
+/* =========================================================
+   CETAK — dipakai peramban saat mencetak, dan oleh skrip
+   pembuat /cv.pdf. Yang khas layar (header, footer, tombol,
+   animasi masuk) dibuang; tata letaknya tetap dua kolom.
+   ========================================================= */
+@page{size:A4;margin:10mm}
+
+@media print{
+  /* Ketiga pemilih ini disebut sekaligus karena aturan tema gelap
+     memakai :root:not([data-tema="terang"]) yang lebih spesifik dari
+     :root biasa — tanpa ini, mesin bertema gelap akan mencetak CV
+     berlatar hitam dan menghabiskan tinta. */
+  :root,
+  :root[data-tema="gelap"],
+  :root:not([data-tema="terang"]){
+    --bg:#fff;--bg-soft:#fff;--text:#16161a;--muted:#55555d;
+    --line:#d8d8d4;--line-kuat:#c8c8c2;--aksen:#2F6B4F;--aksen-lembut:#fff;
+  }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#fff!important}
+
+  /* Kerangka situs tidak ikut tercetak */
+  /* Hanya kerangka situs yang dibuang. `:not(.cv-kepala)` penting:
+     kepala CV juga memakai tag <header>, dan tanpa pengecualian ini
+     nama, foto, serta kontaknya ikut hilang dari PDF. */
+  header:not(.cv-kepala),footer,.cv-aksi,.progress,.menu-btn,.tema-btn{display:none!important}
+
+  /* Animasi masuk tidak boleh menyisakan isi transparan di kertas */
+  .reveal,.stagger > *,.label{opacity:1!important;transform:none!important}
+  .timeline::before{transform:scaleY(1)!important}
+  .timeline .item::before{transform:scale(1)!important;opacity:1!important}
+
+  .cv-halaman{padding:0;max-width:none}
+  .cv-kepala{padding-bottom:9pt;margin-bottom:9pt;gap:12pt;grid-template-columns:auto 1fr}
+  .cv-foto{width:50pt;height:50pt}
+  .cv-kepala h1{font-size:16pt}
+  .cv-peran{font-size:10pt;margin-bottom:6pt}
+  .cv-kontak{font-size:8.5pt;gap:4pt 12pt}
+  .cv-kontak a{border:0}
+
+  .cv-grid{grid-template-columns:56mm 1fr;gap:8mm}
+  .cv-halaman h2{font-size:8pt;margin-bottom:6pt;padding-bottom:4pt}
+  .cv-halaman h3{font-size:10pt}
+  .cv-ringkas,.cv-sorotan-isi{font-size:8.4pt;line-height:1.35}
+  .tag{font-size:7.5pt;padding:2pt 5pt}
+  .company,.cv-didik .cv-tempat{font-size:9pt}
+  .year,.cv-sorotan-periode,.cv-didik .cv-meta{font-size:8pt}
+  .cv-utama .item{padding-bottom:4pt}
+  .cv-tags{margin:4pt 0 0}
+  .cv-sorotan{gap:4pt}
+  .cv-subjudul{margin:5pt 0 3pt;font-size:7.5pt}
+
+  /* Jangan sampai satu pengalaman terbelah dua halaman */
+  .cv-blok{margin-bottom:9pt}
+  .cv-keahlian{margin-bottom:9pt}
+  .item,.cv-blok,.cv-sorotan li{break-inside:avoid;page-break-inside:avoid}
+  a{color:inherit!important;text-decoration:none!important}
+}

@@ -22,6 +22,8 @@ export const navigasi = [
   { teks: 'Proyek', anchor: 'proyek' },
   { teks: 'Pengalaman', anchor: 'pengalaman' },
   { teks: 'Kontak', anchor: 'kontak' },
+  // Entri ber-`href` menunjuk halaman tersendiri, bukan anchor di beranda.
+  { teks: 'CV', href: '/cv/' },
 ];
 
 export const tentang = {
@@ -79,6 +81,6 @@ export const pengalaman = [
 
 export const sosial = [
   { teks: 'GitHub', url: 'https://github.com/fifinal' },
-  { teks: 'LinkedIn', url: '#' },
-  { teks: 'Instagram', url: '#' },
+  { teks: 'LinkedIn', url: 'https://www.linkedin.com/in/slamet-fifin-alamsyah-47aa6815a' },
+  { teks: 'Instagram', url: 'https://www.instagram.com/fifinalamsyah/' },
 ];

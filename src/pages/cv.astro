@@ -1,0 +1,143 @@
+---
+/**
+ * Halaman CV — /cv/
+ *
+ * Dirancang untuk dua keadaan sekaligus: dibaca di layar seperti halaman
+ * lain, dan dicetak ke A4 tanpa perubahan isi. Berkas /cv.pdf yang
+ * ditawarkan tombol CTA dibuat justru dari halaman ini lewat
+ * `npm run cv:pdf`, sehingga PDF dan halaman tidak bisa berbeda isi.
+ */
+import Dasar from '../layouts/Dasar.astro';
+import { profil, sosial } from '../data/situs';
+import { cv } from '../data/cv';
+
+const tautanHidup = sosial.filter((s) => s.url !== '#');
+---
+
+<Dasar
+  judul={`CV — ${cv.namaLengkap}`}
+  deskripsi={`Curriculum vitae ${cv.namaLengkap}, ${cv.peran}. Pengalaman, keahlian, dan pendidikan.`}
+>
+  <main>
+    <div class="wrap cv-halaman">
+      <!-- ============ KEPALA ============ -->
+      <header class="cv-kepala reveal">
+        {
+          cv.foto && (
+            <img class="cv-foto" src={cv.foto} alt={`Foto ${cv.namaLengkap}`} width="120" height="120" />
+          )
+        }
+
+        <div class="cv-kepala-teks">
+          <span class="label">Curriculum Vitae</span>
+          <h1>{cv.namaLengkap}</h1>
+          <p class="cv-peran">{cv.peran}</p>
+
+          <ul class="cv-kontak">
+            <li>{cv.lokasi}</li>
+            <li><a href={`mailto:${profil.email}`}>{profil.email}</a></li>
+            {tautanHidup.map((s) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener">{s.teks}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="cv-aksi">
+          <a class="btn btn-primary" href={cv.berkasPdf} download>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="cv-ikon">
+              <path d="M12 3v12"></path>
+              <path d="m7 11 5 5 5-5"></path>
+              <path d="M4 20h16"></path>
+            </svg>
+            Unduh PDF
+          </a>
+          <a class="btn btn-ghost" href={`mailto:${profil.email}`}>Hubungi saya</a>
+        </div>
+      </header>
+
+      <!-- ============ ISI ============ -->
+      <div class="cv-grid">
+        <!-- Kiri -->
+        <aside class="cv-samping">
+          <section class="cv-blok reveal">
+            <h2>Ringkas</h2>
+            <p class="cv-ringkas">{cv.ringkas}</p>
+          </section>
+
+          <section class="cv-blok reveal">
+            <h2>Keahlian</h2>
+            {
+              cv.keahlian.map((k) => (
+                <div class="cv-keahlian">
+                  <h3>{k.judul}</h3>
+                  <div class="tags">
+                    {k.daftar.map((t) => (
+                      <span class="tag">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </section>
+
+          <section class="cv-blok reveal">
+            <h2>Pendidikan</h2>
+            {
+              cv.pendidikan.map((p) => (
+                <div class="cv-didik">
+                  <h3>{p.judul}</h3>
+                  <p class="cv-meta">{p.periode}</p>
+                  <p class="cv-tempat">{p.tempat}</p>
+                  <p class="cv-ringkas">{p.rincian}</p>
+                </div>
+              ))
+            }
+          </section>
+        </aside>
+
+        <!-- Kanan -->
+        <section class="cv-utama reveal">
+          <h2>Pengalaman</h2>
+
+          <div class="timeline">
+            {
+              cv.pengalaman.map((p) => (
+                <article class="item">
+                  <div class="item-head">
+                    <h3>{p.posisi}</h3>
+                    <span class="year">{p.periode}</span>
+                  </div>
+                  <p class="company">{p.tempat}</p>
+                  <p class="cv-ringkas">{p.deskripsi}</p>
+
+                  <div class="tags cv-tags">
+                    {p.tags.map((t) => (
+                      <span class="tag">{t}</span>
+                    ))}
+                  </div>
+
+                  {p.sorotan.length > 0 && (
+                    <>
+                      <span class="cv-subjudul">Sorotan proyek</span>
+                      <ul class="cv-sorotan">
+                        {p.sorotan.map((s) => (
+                          <li>
+                            <span class="cv-sorotan-judul">{s.judul}</span>
+                            <span class="cv-sorotan-periode">{s.periode}</span>
+                            <span class="cv-sorotan-isi">{s.isi}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </article>
+              ))
+            }
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</Dasar>

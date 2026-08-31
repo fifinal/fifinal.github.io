@@ -21,7 +21,7 @@ const awalan = beranda ? '' : '/';
         {
           navigasi.map((n) => (
             <li>
-              <a href={`${awalan}#${n.anchor}`}>{n.teks}</a>
+              <a href={n.href ?? `${awalan}#${n.anchor}`}>{n.teks}</a>
             </li>
           ))
         }
