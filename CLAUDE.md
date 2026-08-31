@@ -110,11 +110,18 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     tidak diterbitkan**; yang tampil hanya email dan kota. Halaman ini
     publik dan terindeks mesin pencari.
 
-    PDF-nya dibuat dengan `npm run cv:pdf` — membangun situs, menyalakan
-    `astro preview`, lalu mencetak `/cv/` lewat Chrome tanpa jendela.
-    Hasilnya ikut di-commit, karena GitHub Actions tidak punya Chrome.
-    **Setiap kali isi CV berubah, jalankan ulang perintah itu sebelum
-    push,** kalau tidak, halaman dan PDF akan berbeda isi.
+    PDF-nya **tidak disimpan di repositori.** Ia dicetak ulang tiap
+    penerbitan oleh langkah "Cetak CV ke PDF" di `deploy.yml`, yang
+    menjalankan `npm run cv:pdf -- --ke-dist` setelah build: menyalakan
+    `astro preview` di atas `dist/`, lalu mencetak `/cv/` dengan Chrome
+    tanpa jendela langsung ke `dist/cv.pdf`. Runner `ubuntu-latest`
+    sudah memuat Google Chrome di `/usr/bin/google-chrome` — kalau suatu
+    saat GitHub mencabutnya, penerbitan akan gagal terang-terangan di
+    langkah itu, bukan diam-diam menerbitkan tautan mati.
+
+    Di mesin sendiri, `npm run cv:pdf` (tanpa argumen) membangun dulu
+    lalu menaruh hasilnya di `public/cv.pdf` — berguna untuk memeriksa
+    hasil cetaknya sebelum push, dan sudah masuk `.gitignore`.
 
     Gaya cetaknya sudah disetel supaya muat **tepat satu halaman A4**.
     Menambah satu pengalaman atau beberapa baris sorotan akan membuatnya

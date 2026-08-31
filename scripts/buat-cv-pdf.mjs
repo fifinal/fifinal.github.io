@@ -1,16 +1,22 @@
 /**
- * Membuat public/cv.pdf dari halaman /cv/.
+ * Membuat berkas cv.pdf dari halaman /cv/.
  *
  * Alurnya: bangun situs → jalankan `astro preview` → cetak halamannya
  * dengan Chrome tanpa jendela → matikan preview. PDF-nya keluar dari
  * halaman yang sama persis dengan yang dilihat pengunjung, jadi
  * keduanya tidak bisa berbeda isi.
  *
- *   npm run cv:pdf
+ *   npm run cv:pdf              → membangun dulu, hasilnya ke public/cv.pdf
+ *   npm run cv:pdf -- --ke-dist → memakai dist/ yang sudah ada, hasilnya
+ *                                 langsung ke dist/cv.pdf
  *
- * Hasilnya ikut di-commit. Alur penerbitan di GitHub Actions tidak
- * menjalankan skrip ini — di sana tidak ada Chrome — jadi setiap kali
- * isi CV berubah, jalankan lagi perintah ini sebelum push.
+ * Berkasnya sengaja TIDAK di-commit. Alur penerbitan menjalankan skrip
+ * ini dengan --ke-dist setelah membangun situs, sehingga PDF selalu
+ * dibuat dari halaman /cv/ versi terbaru dan keduanya tidak mungkin
+ * berbeda isi. Runner ubuntu-latest sudah memuat Google Chrome.
+ *
+ * Bentuk tanpa argumen tetap berguna di mesin sendiri untuk melihat
+ * hasil cetaknya sebelum push.
  */
 import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync } from 'node:fs';
@@ -20,7 +26,10 @@ import { fileURLToPath } from 'node:url';
 const akar = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = 4331;
 const ALAMAT = `http://localhost:${PORT}/cv/`;
-const KELUARAN = resolve(akar, 'public/cv.pdf');
+
+/** Dipakai alur penerbitan: dist/ sudah dibangun, tinggal dicetak. */
+const keDist = process.argv.includes('--ke-dist');
+const KELUARAN = resolve(akar, keDist ? 'dist/cv.pdf' : 'public/cv.pdf');
 
 /** Chrome dicari di tempat bakunya. Edge dipakai bila Chrome tidak ada. */
 const KANDIDAT_PERAMBAN = [
@@ -70,8 +79,16 @@ async function tungguSiap(alamat, batasMs = 30000) {
 
 const peramban = cariPeramban();
 
-console.log('1/4  Membangun situs…');
-await jalankan(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build']);
+if (keDist) {
+  if (!existsSync(resolve(akar, 'dist/cv/index.html'))) {
+    console.error('dist/cv/index.html tidak ada. Jalankan `npm run build` lebih dulu.');
+    process.exit(1);
+  }
+  console.log('1/4  Melewati build — memakai dist/ yang sudah ada.');
+} else {
+  console.log('1/4  Membangun situs…');
+  await jalankan(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build']);
+}
 
 console.log('2/4  Menyalakan preview…');
 const preview = spawn(
@@ -97,13 +114,14 @@ try {
   await jalankan(peramban, [
     '--headless',
     '--disable-gpu',
+    // Sandbox Chrome tidak selalu bisa dipakai di dalam runner CI.
+    ...(process.env.CI ? ['--no-sandbox'] : []),
     '--no-pdf-header-footer',
     `--print-to-pdf=${KELUARAN}`,
     ALAMAT,
   ]);
 
   console.log(`4/4  Selesai — ${KELUARAN}`);
-  console.log('     Jangan lupa ikut di-commit supaya tautan /cv.pdf hidup di situs.');
 } finally {
   matikanPreview();
 }
