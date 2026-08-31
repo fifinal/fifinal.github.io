@@ -34,7 +34,8 @@ diagram:
   file: peksiminas.svg
   keterangan: Penyempitan berjenjang, dari banyak provinsi menjadi satu penetapan hasil. Jenjang bertanda
     hijau adalah penjurian — dipisahkan jalur kewenangannya sendiri agar penilaian juri tidak bisa
-    disentuh panitia maupun administrator provinsi.
+    disentuh panitia maupun administrator provinsi. Kotak putus-putus di baris atas adalah provinsi
+    penyetor peserta, berada di luar kendali sistem dan sengaja tanpa nama asli.
 gambar:
 - file: peksiminas-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'

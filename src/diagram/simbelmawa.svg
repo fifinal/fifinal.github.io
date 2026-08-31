@@ -8,7 +8,7 @@
   mengerucut ke satu API dengan kewenangan terpisah.
 -->
 <svg viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
-  <title>Delapan peran pengguna mengerucut ke satu API, lalu ke basis data dan PDPT</title>
+  <title>Delapan peran pengguna mengerucut ke satu API, lalu ke basis data dan PDDikti</title>
 
   <defs>
     <marker id="sb-panah" viewBox="0 0 10 10" refX="9" refY="5"
@@ -85,7 +85,7 @@
     <text x="280" y="282" class="dg-teks-aksen">Pemisahan kewenangan</text>
     <text x="280" y="368">Domain hibah &amp; program</text>
     <text x="280" y="454">Basis data</text>
-    <text x="570" y="371" class="dg-judul-luar">PDPT</text>
+    <text x="570" y="371" class="dg-judul-luar">PDDikti</text>
   </g>
 
   <g class="dg-sub">

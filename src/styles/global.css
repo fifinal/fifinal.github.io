@@ -553,6 +553,9 @@ nav{gap:8px}
 
 /* Garis alur dan cabang */
 .dg-alur line{stroke:var(--line-kuat);stroke-width:1.5}
+/* Alur yang melengkung dipakai diagram berbentuk hub dan jalur balik.
+   Tetap garis tegas: yang putus-putus hanya percabangan. */
+.dg-alur path{fill:none;stroke:var(--line-kuat);stroke-width:1.5}
 .dg-panah-ujung{fill:var(--line-kuat)}
 .dg-cabang path{fill:none;stroke:var(--line-kuat);stroke-width:1;stroke-dasharray:4 4}
 

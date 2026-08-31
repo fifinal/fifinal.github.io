@@ -21,7 +21,8 @@ fitur:
 - Pengelolaan program kemahasiswaan dan hibah, dari pengusulan hingga penetapan penerima
 - Delapan peran pengguna dengan rute dan kewenangan terpisah — mahasiswa, dosen, reviewer, operator
   perguruan tinggi, pimpinan perguruan tinggi, pengelola LLDIKTI, admin kementerian, dan panitia PIMNAS
-- Terhubung dengan Pangkalan Data Perguruan Tinggi untuk verifikasi data mahasiswa dan institusi
+- Terhubung dengan Pangkalan Data Pendidikan Tinggi (PDDikti) untuk verifikasi data mahasiswa dan
+  institusi
 - Penugasan dan penilaian proposal oleh reviewer
 - Basis pengetahuan berjenjang untuk pertanyaan yang sering diajukan, disusun per kategori dan tahapan
 - Autentikasi berbasis token JWT dengan masa berlaku terkendali

@@ -26,7 +26,7 @@
   </g>
 
   <!-- Jalan pulang: pembatalan ikut menulis ke pangkalan data yang sama -->
-  <g class="dg-cabang">
+  <g class="dg-alur">
     <path d="M450,238 C520,238 620,238 620,142" marker-end="url(#sf-panah)" />
   </g>
 

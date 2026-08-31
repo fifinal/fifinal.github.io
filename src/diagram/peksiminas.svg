@@ -36,8 +36,8 @@
     <line x1="380" y1="348" x2="380" y2="376" marker-end="url(#pk-panah)" />
   </g>
 
-  <!-- Provinsi penyetor peserta -->
-  <g class="dg-kotak">
+  <!-- Provinsi penyetor peserta, di luar kendali sistem -->
+  <g class="dg-cip">
     <rect x="28"  y="24" width="104" height="32" rx="7" />
     <rect x="148" y="24" width="104" height="32" rx="7" />
     <rect x="268" y="24" width="104" height="32" rx="7" />

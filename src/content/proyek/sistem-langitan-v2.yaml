@@ -20,7 +20,7 @@ tags:
 live: null
 status: Dalam pengembangan — berdampingan dengan versi lama
 fitur:
-- Dua permukaan setara dari satu lapisan layanan — halaman web Inertia dan API JSON bervesi, tanpa
+- Dua permukaan setara dari satu lapisan layanan — halaman web Inertia dan API JSON berversi, tanpa
   logika yang digandakan
 - Empat belas peran pengguna dengan berkas rute dan kewenangan terpisah, dari mahasiswa dan dosen
   sampai keuangan, penjaminan mutu, dan rektor

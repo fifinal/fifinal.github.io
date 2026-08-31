@@ -19,14 +19,14 @@
   </defs>
 
   <!-- Masukan menyatu -->
-  <g class="dg-cabang">
+  <g class="dg-alur">
     <path d="M206,56  C240,56  240,144 270,144" marker-end="url(#un-panah)" />
     <path d="M206,144 C240,144 240,144 270,144" marker-end="url(#un-panah)" />
     <path d="M206,232 C240,232 240,144 270,144" marker-end="url(#un-panah)" />
   </g>
 
   <!-- Keluaran memancar -->
-  <g class="dg-cabang">
+  <g class="dg-alur">
     <path d="M480,144 C512,144 512,108 546,108" marker-end="url(#un-panah)" />
     <path d="M480,144 C512,144 512,204 546,204" marker-end="url(#un-panah)" />
   </g>

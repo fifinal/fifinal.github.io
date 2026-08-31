@@ -61,7 +61,7 @@ export const pengalaman = [
     periode: '2023 — Sekarang',
     tempat: 'Kementerian Pendidikan Tinggi, Sains, dan Teknologi · Remote',
     rincian: [
-      'Pengembang utama Simbelmawa API, tulang punggung sistem pengelolaan hibah dan program kemahasiswaan nasional. Melayani delapan jenis pengguna dengan hak akses berbeda dan terhubung ke Pangkalan Data Perguruan Tinggi.',
+      'Pengembang utama Simbelmawa API, tulang punggung sistem pengelolaan hibah dan program kemahasiswaan nasional. Melayani delapan jenis pengguna dengan hak akses berbeda dan terhubung ke Pangkalan Data Pendidikan Tinggi (PDDikti).',
       'Membangun sistem Magang serta platform penyelenggaraan Peksiminas dan MTQMN — ajang nasional yang diikuti perguruan tinggi dari seluruh Indonesia.',
       'Bekerja dalam tim lintas lembaga dengan alur rilis yang harus menyesuaikan jadwal kegiatan kementerian.',
     ],

@@ -42,7 +42,8 @@ diagram:
   file: sistem-langitan.svg
   keterangan: Alur satu permintaan, dari peramban sampai basis data. Lapisan bertanda hijau adalah
     resolusi multi-tenant — titik tempat satu basis kode menentukan sedang melayani perguruan tinggi
-    yang mana, lalu memuat identitas dan aturan akademiknya.
+    yang mana, lalu memuat identitas dan aturan akademiknya. Kotak putus-putus di kanan adalah
+    institusi yang dilayani, berada di luar kendali sistem dan sengaja tanpa nama asli.
 gambar:
 - file: sistem-langitan-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan pegawai asli.'

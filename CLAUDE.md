@@ -207,9 +207,16 @@ untuk melihatnya.
       | `slf-sync.svg` | jembatan satu arah dengan jalan pulang | jalur pembatalan |
       | `unisco.svg` | hub — masukan menyatu lalu memancar | sesi ujian |
 
-      Kosakata visual yang berlaku di kelimanya, ikuti bila menambah
-      diagram baru: garis putus-putus berarti di luar kendali sistem,
-      dan **hanya satu** elemen per diagram yang boleh diberi aksen
+      Kosakata visual yang berlaku di ketujuhnya, ikuti bila menambah
+      diagram baru. **Kotak** putus-putus (`.dg-cip`) berarti di luar
+      kendali sistem — sistem luar seperti PDDikti dan Feeder, juga
+      institusi penyetor seperti perguruan tinggi dan provinsi.
+      **Garis** putus-putus (`.dg-cabang`) tidak ada hubungannya dengan
+      kendali; artinya percabangan atau penempelan peran ke tahap. Alur
+      utama selalu garis tegas (`.dg-alur`), termasuk bila melengkung —
+      keliru memakai `.dg-cabang` untuk alur inti sudah pernah terjadi
+      di UNISCO dan SLF Sync, dan sudah dibetulkan. Dan **hanya satu**
+      elemen per diagram yang boleh diberi aksen
       hijau — pilih yang paling menjelaskan inti persoalannya, dan itu
       boleh berupa kendala, bukan hanya solusi. Pada v2 misalnya, yang
       diberi aksen adalah basis data warisannya, bukan lapisan layanan
