@@ -16,10 +16,11 @@ export const cv = {
   lokasi: 'Sidoarjo, Jawa Timur',
 
   /**
-   * Versi 360px dari foto.jpg — hanya ditampilkan 120px, dan foto asli
+   * Sengaja 360px: fotonya hanya ditampilkan 120px, dan versi aslinya
    * yang 1335px membuat berkas cv.pdf membengkak jadi setengah megabita.
-   * Aslinya tetap disimpan di public/gambar/foto.jpg.
-   * Kosongkan (null) bila tidak ingin ada foto sama sekali.
+   * Aslinya sudah dihapus dari public/ karena tidak terpakai — masih
+   * bisa diambil dari commit 588f210 bila suatu saat perlu potongan
+   * yang berbeda. Kosongkan (null) bila tidak ingin ada foto.
    */
   foto: '/gambar/foto-360.jpg',
 
