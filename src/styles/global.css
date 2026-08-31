@@ -670,6 +670,11 @@ nav{gap:8px}
 
   /* Animasi masuk tidak boleh menyisakan isi transparan di kertas */
   .reveal,.stagger > *,.label{opacity:1!important;transform:none!important}
+  /* animasi.js membungkus SEMUA h1/h2 dalam .mask-in yang tersembunyi
+     sampai animasinya berjalan. Tanpa dua baris ini, nama dan judul
+     bagian hilang dari kertas dan hanya menyisakan garis bawahnya. */
+  .mask{overflow:visible!important}
+  .mask-in{transform:none!important;opacity:1!important;transition:none!important}
   .timeline::before{transform:scaleY(1)!important}
   .timeline .item::before{transform:scale(1)!important;opacity:1!important}
 
