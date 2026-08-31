@@ -127,11 +127,22 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     Menambah satu pengalaman atau beberapa baris sorotan akan membuatnya
     tumpah ke halaman kedua — periksa jumlah halamannya setelah
     menjalankan `cv:pdf`. Dua hal yang mudah terlewat di blok
-    `@media print`: pemilih warnanya harus menyebut
-    `:root:not([data-tema="terang"])` (kalau tidak, mesin bertema gelap
-    mencetak CV berlatar hitam), dan aturan penyembunyi kerangka situs
-    harus tetap memakai `header:not(.cv-kepala)` — kepala CV juga
-    memakai tag `<header>`.
+    `@media print`, ketiganya sudah pernah menggigit:
+
+    1. Pemilih warnanya harus menyebut `:root:not([data-tema="terang"])`,
+       kalau tidak mesin bertema gelap mencetak CV berlatar hitam.
+    2. Aturan penyembunyi kerangka situs harus memakai
+       `header:not(.cv-kepala)` — kepala CV juga bertag `<header>`.
+    3. `animasi.js` membungkus **semua** `h1` dan `h2` dalam `.mask-in`
+       yang tersembunyi sampai animasi gulirnya jalan. Blok cetak wajib
+       memaksa `.mask{overflow:visible}` dan `.mask-in{transform:none;
+       transition:none}` — tanpa itu nama dan judul bagian hilang dari
+       kertas dan hanya menyisakan garis bawahnya.
+
+    Cara memeriksa PDF-nya tanpa memasang apa pun: `qlmanage -t -s 1400
+    -o <folder> dist/cv.pdf` menghasilkan PNG halaman pertama yang bisa
+    dilihat langsung. Jangan menilai hasil cetak dari halaman web-nya —
+    tiga kesalahan di atas semuanya tidak terlihat di layar.
 
 ## Struktur
 
