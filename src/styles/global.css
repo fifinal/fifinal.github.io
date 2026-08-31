@@ -570,9 +570,8 @@ nav{gap:8px}
 
 /* =========================================================
    HALAMAN CV  (/cv/)
-   Satu halaman, dua keadaan: dibaca di layar, dan dicetak ke A4.
-   Berkas /cv.pdf dibuat dari halaman ini juga (npm run cv:pdf),
-   jadi apa pun yang diubah di sini ikut terbawa ke PDF-nya.
+   Satu halaman, dua keadaan: dibaca di layar, dan dicetak ke A4
+   lewat dialog cetak peramban.
    ========================================================= */
 .cv-halaman{padding:64px 24px 96px}
 
@@ -642,9 +641,13 @@ nav{gap:8px}
 }
 
 /* =========================================================
-   CETAK — dipakai peramban saat mencetak, dan oleh skrip
-   pembuat /cv.pdf. Yang khas layar (header, footer, tombol,
-   animasi masuk) dibuang; tata letaknya tetap dua kolom.
+   CETAK — dipakai saat pengunjung menekan Cetak di peramban.
+   Yang khas layar (header, footer, tombol, animasi masuk) dibuang;
+   tata letaknya tetap dua kolom dan muat satu halaman A4.
+
+   Tombol "Unduh PDF" TIDAK memakai blok ini — ia memotret halaman
+   versi layar. Keduanya sengaja dipertahankan: yang satu menghasilkan
+   teks yang bisa disorot, yang satu lagi tidak.
    ========================================================= */
 @page{size:A4;margin:10mm}
 
@@ -678,7 +681,13 @@ nav{gap:8px}
   .timeline::before{transform:scaleY(1)!important}
   .timeline .item::before{transform:scale(1)!important;opacity:1!important}
 
-  .cv-halaman{padding:0;max-width:none}
+  .cv-halaman{padding:0;max-width:none;color:var(--text)}
+  /* Warna ditulis eksplisit, bukan diwariskan dari body. Selain lebih
+     aman saat mencetak, ini wajib untuk tombol "Unduh PDF":
+     html2canvas menggambar teks berwarna warisan sebagai putih, dan
+     nama serta judul jabatan hilang dari kertas putih. */
+  .cv-halaman h1,.cv-halaman h2,.cv-halaman h3{color:var(--text)}
+  .cv-halaman h2{color:var(--muted)}
   .cv-kepala{padding-bottom:9pt;margin-bottom:9pt;gap:12pt;grid-template-columns:auto 1fr}
   .cv-foto{width:50pt;height:50pt}
   .cv-kepala h1{font-size:16pt}
@@ -703,4 +712,15 @@ nav{gap:8px}
   .cv-keahlian{margin-bottom:9pt}
   .item,.cv-blok,.cv-sorotan li{break-inside:avoid;page-break-inside:avoid}
   a{color:inherit!important;text-decoration:none!important}
+}
+
+/* Lapisan penutup saat tombol "Unduh PDF" sedang bekerja. Halaman di
+   baliknya sementara dipaksa bertema terang dan bergaya cetak; tanpa
+   penutup ini pengunjung akan melihatnya berkedip beberapa detik.
+   Sengaja di luar blok @media print supaya tidak ikut terpotret. */
+.cv-lapisan{
+  position:fixed;inset:0;z-index:200;
+  display:grid;place-items:center;
+  background:var(--bg);color:var(--muted);
+  font-size:.9rem;letter-spacing:.02em;
 }

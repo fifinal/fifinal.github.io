@@ -110,24 +110,48 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     tidak diterbitkan**; yang tampil hanya email dan kota. Halaman ini
     publik dan terindeks mesin pencari.
 
-    PDF-nya **tidak disimpan di repositori.** Ia dicetak ulang tiap
-    penerbitan oleh langkah "Cetak CV ke PDF" di `deploy.yml`, yang
-    menjalankan `npm run cv:pdf -- --ke-dist` setelah build: menyalakan
-    `astro preview` di atas `dist/`, lalu mencetak `/cv/` dengan Chrome
-    tanpa jendela langsung ke `dist/cv.pdf`. Runner `ubuntu-latest`
-    sudah memuat Google Chrome di `/usr/bin/google-chrome` — kalau suatu
-    saat GitHub mencabutnya, penerbitan akan gagal terang-terangan di
-    langkah itu, bukan diam-diam menerbitkan tautan mati.
+    PDF-nya **dibuat di peramban pengunjung saat tombol ditekan** —
+    tidak ada berkas PDF yang disimpan di repositori maupun diterbitkan.
+    Pustakanya `html2pdf.js`, diimpor dinamis supaya hanya terunduh oleh
+    orang yang benar-benar menekan tombolnya.
 
-    Di mesin sendiri, `npm run cv:pdf` (tanpa argumen) membangun dulu
-    lalu menaruh hasilnya di `public/cv.pdf` — berguna untuk memeriksa
-    hasil cetaknya sebelum push, dan sudah masuk `.gitignore`.
+    Ini pilihan pemilik pada 31 Agustus 2026, menggantikan cara
+    sebelumnya (dicetak Chrome saat penerbitan). Harganya nyata dan
+    sudah diketahui: hasilnya PDF **raster** ±500 KB yang teksnya tidak
+    bisa disorot maupun dicari, sedangkan cara lama menghasilkan 197 KB
+    dengan teks utuh. Kalau suatu saat mau dikembalikan, skrip dan
+    langkah CI-nya ada di commit `53682cd`.
 
-    Gaya cetaknya sudah disetel supaya muat **tepat satu halaman A4**.
+    Kodenya di `src/pages/cv.astro` tidak sesederhana "potret lalu
+    simpan", dan ketiga kerumitannya wajib dipertahankan — masing-masing
+    lahir dari PDF yang terbukti salah:
+
+    1. Tema dipaksa terang **sebelum** memotret. html2canvas menyalin
+       gaya terhitung dari halaman; kalau pengunjung bertema gelap,
+       judul jadi putih di atas kertas putih. Menyetelnya di `onclone`
+       sudah terlambat.
+    2. Aturan `@media print` dipasang paksa dan lebarnya dikunci 718px.
+       Tanpa itu potretnya setinggi ±1450px dan terpotong dua halaman.
+    3. Penundanya memakai `setTimeout`, bukan `requestAnimationFrame` —
+       rAF berhenti total kalau tabnya tidak terlihat, dan prosesnya
+       menggantung sampai pengunjung kembali.
+
+    Satu jebakan lagi ada di sisi CSS: **html2canvas menggambar teks
+    berwarna warisan sebagai putih.** Karena itu blok cetak menulis
+    `color` eksplisit untuk `.cv-halaman` dan ketiga tingkat judulnya.
+    Jangan dihapus dengan alasan "kan sudah diwarisi dari body".
+
+    Memotret dari dalam `<iframe>` sudah dicoba dan **tidak bisa** —
+    hasilnya halaman kosong; html2canvas tidak memotret elemen di
+    dokumen lain. Karena itu yang dipotret halaman aslinya, ditutupi
+    lapisan `.cv-lapisan` selama proses berlangsung.
+
+    Gaya cetaknya disetel supaya muat **tepat satu halaman A4**, dan
+    dipakai dua-duanya: oleh dialog cetak peramban dan oleh tombol unduh.
     Menambah satu pengalaman atau beberapa baris sorotan akan membuatnya
-    tumpah ke halaman kedua — periksa jumlah halamannya setelah
-    menjalankan `cv:pdf`. Dua hal yang mudah terlewat di blok
-    `@media print`, ketiganya sudah pernah menggigit:
+    tumpah ke halaman kedua — periksa jumlah halamannya setelah berubah.
+    Tiga hal lain yang mudah terlewat di blok `@media print`, semuanya
+    sudah pernah menggigit:
 
     1. Pemilih warnanya harus menyebut `:root:not([data-tema="terang"])`,
        kalau tidak mesin bertema gelap mencetak CV berlatar hitam.
@@ -140,9 +164,11 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
        kertas dan hanya menyisakan garis bawahnya.
 
     Cara memeriksa PDF-nya tanpa memasang apa pun: `qlmanage -t -s 1400
-    -o <folder> dist/cv.pdf` menghasilkan PNG halaman pertama yang bisa
-    dilihat langsung. Jangan menilai hasil cetak dari halaman web-nya —
-    tiga kesalahan di atas semuanya tidak terlihat di layar.
+    -o <folder> berkas.pdf` menghasilkan PNG halaman pertama yang bisa
+    dilihat langsung. **Selalu periksa begitu.** Semua kesalahan di atas
+    tidak terlihat di halaman web, dan sebagian tidak terlihat pula dari
+    ukuran berkas atau jumlah halamannya — PDF 500 KB satu halaman pun
+    bisa kehilangan seluruh judulnya.
 
 ## Struktur
 

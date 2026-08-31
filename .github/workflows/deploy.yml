@@ -44,13 +44,6 @@ jobs:
       - name: Bangun situs
         run: npm run build
 
-      # PDF-nya tidak disimpan di repositori, melainkan dicetak di sini
-      # dari halaman /cv/ yang baru saja dibangun — jadi isinya tidak
-      # mungkin tertinggal dari halamannya. Runner ubuntu-latest sudah
-      # memuat Google Chrome di /usr/bin/google-chrome.
-      - name: Cetak CV ke PDF
-        run: npm run cv:pdf -- --ke-dist
-
       - name: Siapkan Pages
         uses: actions/configure-pages@v5
 

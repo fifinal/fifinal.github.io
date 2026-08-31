@@ -6,7 +6,3 @@ npm-debug.log*
 
 # Setelan lokal Claude Code — launch.json memuat path nvm mesin ini
 .claude/
-
-# Dicetak ulang tiap penerbitan dari halaman /cv/, jadi tidak disimpan.
-# Yang di sini hanya hasil `npm run cv:pdf` untuk diperiksa sendiri.
-public/cv.pdf
