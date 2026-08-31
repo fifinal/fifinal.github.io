@@ -12,6 +12,14 @@ import { profil, sosial } from '../data/situs';
 import { cv } from '../data/cv';
 
 const tautanHidup = sosial.filter((s) => s.url !== '#');
+
+// Alamat portofolio diambil dari `site` di astro.config, bukan dipaku —
+// kalau domainnya pindah, CV dan PDF-nya ikut tanpa perlu diedit.
+// Yang ditampilkan alamatnya sendiri, bukan kata "Portofolio": PDF ini
+// ikut dicetak di kertas, dan di kertas tautan tanpa alamat tidak ada
+// gunanya.
+const portofolio = Astro.site ?? new URL('https://fifinal.github.io/');
+const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, '');
 ---
 
 <Dasar
@@ -36,6 +44,7 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
           <ul class="cv-kontak">
             <li>{cv.lokasi}</li>
             <li><a href={`mailto:${profil.email}`}>{profil.email}</a></li>
+            <li><a href={portofolio.href}>{portofolioTeks}</a></li>
             {tautanHidup.map((s) => (
               <li>
                 <a href={s.url} target="_blank" rel="noopener">{s.teks}</a>
