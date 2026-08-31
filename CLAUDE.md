@@ -293,9 +293,15 @@ untuk melihatnya.
       Bukti visual kini hanya lewat galeri dan diagram.
 - [x] "Lulus 2019" terkonfirmasi — berkas CV pemilik menyebut Teknik
       Informatika 2015–2019.
-- [ ] Beda tanggal mulai di UMAHA: `situs.ts` menulis "2022 — Sekarang"
-      (disimpulkan dari commit pertama), sedangkan CV menyebut Juli 2021.
-      Halaman `/cv/` memakai angka CV. Samakan salah satunya.
+- [x] Beda tanggal mulai di UMAHA sudah disamakan ke **Juli 2021**
+      sesuai CV, bukan 2022 yang disimpulkan dari commit pertama.
+      Ringkasan hero ikut berubah jadi "Lima tahun terakhir".
+
+      Catatan bila nanti membaca ulang: `periode` di
+      `sistem-langitan.yaml` tetap "2022 — Sekarang" dan narasinya
+      menyebut "Ketika saya masuk pada 2022". Itu bukan salah — yang
+      2021 adalah mulai bekerja di UMAHA, yang 2022 adalah mulai
+      memegang Sistem Langitan. Jangan disamakan tanpa bertanya dulu.
 - [ ] `profil.status` masih berbunyi "Terbuka untuk peluang baru" —
       bawaan template, sementara pemilik sedang bekerja.
 

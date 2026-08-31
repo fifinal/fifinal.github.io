@@ -11,7 +11,7 @@ export const profil = {
   status: 'Terbuka untuk peluang baru',
   judulHero: 'Membangun web yang rapi, cepat, dan berguna.',
   ringkasHero:
-    'Halo, saya Fifin — web developer yang sehari-hari membangun sistem informasi pendidikan tinggi. Empat tahun terakhir saya mengerjakan perangkat lunak yang dipakai perguruan tinggi se-Indonesia, dari pengelolaan hibah mahasiswa sampai sistem akademik kampus.',
+    'Halo, saya Fifin — web developer yang sehari-hari membangun sistem informasi pendidikan tinggi. Lima tahun terakhir saya mengerjakan perangkat lunak yang dipakai perguruan tinggi se-Indonesia, dari pengelolaan hibah mahasiswa sampai sistem akademik kampus.',
   deskripsiSitus:
     'Portofolio Fifin Alamsyah, web developer. Kumpulan proyek, pengalaman, dan kontak.',
 };
@@ -50,7 +50,7 @@ export const skill = [
 export const pengalaman = [
   {
     posisi: 'Web Developer',
-    periode: '2022 — Sekarang',
+    periode: 'Juli 2021 — Sekarang',
     tempat: 'Universitas Maarif Hasyim Latif · Sidoarjo',
     rincian: [
       'Mengembangkan dan merawat Sistem Langitan, sistem informasi akademik multi-tenant yang melayani beberapa perguruan tinggi dari satu basis kode — lima puluh modul, dari pendaftaran mahasiswa baru sampai wisuda.',
@@ -60,7 +60,7 @@ export const pengalaman = [
   },
   {
     posisi: 'Web Developer (Freelance)',
-    periode: '2023 — Sekarang',
+    periode: 'Januari 2023 — Sekarang',
     tempat: 'Kementerian Pendidikan Tinggi, Sains, dan Teknologi · Remote',
     rincian: [
       'Pengembang utama Simbelmawa API, tulang punggung sistem pengelolaan hibah dan program kemahasiswaan nasional. Melayani delapan jenis pengguna dengan hak akses berbeda dan terhubung ke Pangkalan Data Pendidikan Tinggi (PDDikti).',
