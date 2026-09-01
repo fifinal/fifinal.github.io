@@ -53,30 +53,35 @@ export const cv = {
           judul: 'Sistem PKM — Program Kreativitas Mahasiswa',
           periode: 'Jan 2023 — Sekarang',
           tautan: '/proyek/simbelmawa/',
+          situs: 'https://simbelmawa.kemdiktisaintek.go.id/pkm',
           isi: 'Memindahkan sistem warisan ke REST API berbasis Laravel, dikerjakan bersama tim frontend React dan mobile Flutter yang memanggil API yang sama.',
         },
         {
           judul: 'Platform Magang Berdampak',
           periode: '2025',
           tautan: '/proyek/sistem-magang/',
+          situs: 'https://simbelmawa.kemdiktisaintek.go.id/magang',
           isi: 'Membangun alur lamaran magang dari hulu ke hilir — pendaftaran, verifikasi berbasis peran, pengelolaan dokumen, persetujuan bertingkat, hingga pelaporan — berikut optimasi kueri untuk volume data besar.',
         },
         {
           judul: 'Sistem MTQMN — Musabaqah Tilawatil Qur’an Mahasiswa Nasional',
           periode: 'Mei 2025 — Jul 2026',
           tautan: '/proyek/mtqmn/',
+          situs: 'https://simbelmawa.kemdiktisaintek.go.id/mtqmn',
           isi: 'Pendaftaran peserta dan kategori lomba, pengelolaan tim, verifikasi dokumen, penilaian, pelaporan, serta ekspor otomatis ke PDF dan lembar sebar.',
         },
         {
           judul: 'Peksiminas — Pekan Seni Mahasiswa Nasional',
           periode: 'Mei — Agu 2026',
           tautan: '/proyek/peksiminas/',
+          situs: 'https://simbelmawa.kemdiktisaintek.go.id/peksiminas',
           isi: 'Pendaftaran berjenjang dari administrator provinsi sampai panitia nasional, dengan jalur penjurian yang kewenangannya dipisah agar penilaian juri tidak bisa disentuh panitia maupun provinsi.',
         },
         {
           judul: 'Sistem Hibah Akreditasi Internasional',
           periode: 'Jan 2023 — Des 2024',
           tautan: null,
+          situs: null,
           isi: 'Pengelolaan program hibahnya — pengusulan, verifikasi berjenjang, sampai pelaporan. Yang dikelola dananya, bukan penilaian akreditasinya.',
         },
       ],
@@ -107,6 +112,7 @@ export const cv = {
     {
       nama: 'Sistem Langitan — Sistem Informasi Akademik',
       tautan: '/proyek/sistem-langitan/',
+      situs: 'https://langitan.umaha.ac.id',
       konteks: 'UMAHA · 2022 — Sekarang',
       ringkas:
         'SIAKAD multi-tenant: satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan lima puluh modul yang saling terhubung dan empat jenis pengguna yang bercabang menjadi lebih dari tiga puluh peran.',
@@ -119,6 +125,7 @@ export const cv = {
     {
       nama: 'Sistem Langitan v2 — Penulisan Ulang SIAKAD',
       tautan: '/proyek/sistem-langitan-v2/',
+      situs: null,
       konteks: 'UMAHA · Feb 2025 — Sekarang',
       ringkas:
         'Menulis ulang SIAKAD di atas basis data Oracle warisan yang tidak boleh diubah, karena skema yang sama masih melayani versi lama di produksi.',
@@ -131,6 +138,7 @@ export const cv = {
     {
       nama: 'SLF Sync — Penghubung ke Pangkalan Data Nasional',
       tautan: '/proyek/slf-sync/',
+      situs: null,
       konteks: 'UMAHA · 2022 — Sekarang',
       ringkas:
         'Alat sinkronisasi data akademik kampus ke pangkalan data nasional, berikut jalur pembatalan untuk menarik kembali kiriman yang keliru — karena kesalahan di sana tidak bisa sekadar ditimpa.',
@@ -144,6 +152,7 @@ export const cv = {
     {
       nama: 'UNISCO — Platform Kompetisi dan Ujian Daring',
       tautan: '/proyek/unisco/',
+      situs: 'https://unisco.umaha.ac.id',
       konteks: 'UMAHA · Jun — Agu 2026',
       ringkas:
         'Platform lomba dan olimpiade tingkat nasional yang diselenggarakan kampus. Satu alur pendaftaran bercabang menjadi dua jalur: lomba akademik diadu lewat ujian CBT serentak, lomba non-akademik lewat berkas persyaratan yang diverifikasi panitia. Babak finalnya luring, di luar sistem.',

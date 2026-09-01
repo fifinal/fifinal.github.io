@@ -5,24 +5,29 @@
  * Halaman detail hanya memanggil komponen ini bila berkas gambarnya
  * benar-benar ada di public/gambar/ — pemeriksaannya di `[slug].astro`.
  *
- * Catatan di bawah galeri sengaja menyebut apa yang benar-benar
- * dilakukan: layar yang dipilih memang hanya memuat data agregat.
- * Jangan diganti menjadi "data telah diganti dengan data contoh"
- * kecuali itu memang yang dikerjakan — lihat Keputusan No. 8.
+ * Bagian mana yang disensor disebutkan di keterangan tiap gambar,
+ * bukan lewat catatan umum di bawah galeri — catatan itu dihapus atas
+ * permintaan pemilik. Tulis apa adanya di keterangannya: kalau sebuah
+ * kolom ditutup, sebutkan kolomnya. Lihat Keputusan No. 8.
+ *
+ * Tiap gambar dibungkus <a> menuju berkas aslinya, lalu skrip di bawah
+ * membajak kliknya untuk membuka lightbox. Urutannya disengaja: kalau
+ * skripnya gagal dimuat, tautannya tetap bekerja membuka gambar ukuran
+ * penuh.
  */
 interface Props {
   gambar: { file: string; keterangan: string }[];
-  kerahasiaan: string;
 }
-const { gambar, kerahasiaan } = Astro.props;
+const { gambar } = Astro.props;
 const [utama, ...sisa] = gambar;
 ---
 
 <div class="gallery">
   <figure>
-    <div class="shot">
+    <a class="shot" href={`/gambar/${utama.file}`} data-lightbox>
       <img src={`/gambar/${utama.file}`} alt={utama.keterangan} loading="lazy" decoding="async" />
-    </div>
+      <span class="shot-perbesar" aria-hidden="true">Perbesar</span>
+    </a>
     <figcaption>{utama.keterangan}</figcaption>
   </figure>
 </div>
@@ -32,9 +37,10 @@ const [utama, ...sisa] = gambar;
     <div class="gallery gallery-2" style="margin-top:24px">
       {sisa.map((g) => (
         <figure>
-          <div class="shot">
+          <a class="shot" href={`/gambar/${g.file}`} data-lightbox>
             <img src={`/gambar/${g.file}`} alt={g.keterangan} loading="lazy" decoding="async" />
-          </div>
+            <span class="shot-perbesar" aria-hidden="true">Perbesar</span>
+          </a>
           <figcaption>{g.keterangan}</figcaption>
         </figure>
       ))}
@@ -42,7 +48,70 @@ const [utama, ...sisa] = gambar;
   )
 }
 
-<p class="note">
-  Nama, nomor induk, foto, dan data pribadi {kerahasiaan} ditutup pada tangkapan layar di atas. Layar
-  yang isinya tidak menyisakan apa pun setelah disensor tidak diterbitkan sama sekali.
-</p>
+<script>
+  /**
+   * Lightbox tangkapan layar.
+   *
+   * Gambarnya berupa dasbor selebar 1400px yang di kartu hanya tampil
+   * beberapa ratus piksel — tulisannya tidak terbaca. Mengkliknya
+   * membuka versi penuh di atas halaman.
+   *
+   * Ditutup lewat Esc, klik latar, atau tombol tutup. Fokus dikembalikan
+   * ke gambar yang tadi diklik supaya navigasi papan ketik tidak
+   * kehilangan arah.
+   */
+  const pemicu = document.querySelectorAll<HTMLAnchorElement>('a[data-lightbox]');
+
+  if (pemicu.length > 0) {
+    const lapisan = document.createElement('div');
+    lapisan.className = 'lightbox';
+    lapisan.setAttribute('role', 'dialog');
+    lapisan.setAttribute('aria-modal', 'true');
+    lapisan.hidden = true;
+    lapisan.innerHTML =
+      '<button class="lightbox-tutup" type="button" aria-label="Tutup">&times;</button>' +
+      '<figure class="lightbox-isi"><img alt="" /><figcaption></figcaption></figure>';
+    document.body.appendChild(lapisan);
+
+    const gambar = lapisan.querySelector('img') as HTMLImageElement;
+    const keterangan = lapisan.querySelector('figcaption') as HTMLElement;
+    const tombolTutup = lapisan.querySelector('.lightbox-tutup') as HTMLButtonElement;
+    let pemanggil: HTMLElement | null = null;
+
+    const buka = (tautan: HTMLAnchorElement) => {
+      pemanggil = tautan;
+      gambar.src = tautan.href;
+      gambar.alt = tautan.querySelector('img')?.alt ?? '';
+      keterangan.textContent =
+        tautan.closest('figure')?.querySelector('figcaption')?.textContent ?? '';
+      lapisan.hidden = false;
+      document.body.style.overflow = 'hidden';
+      tombolTutup.focus();
+    };
+
+    const tutup = () => {
+      lapisan.hidden = true;
+      gambar.removeAttribute('src');
+      document.body.style.overflow = '';
+      pemanggil?.focus();
+      pemanggil = null;
+    };
+
+    pemicu.forEach((t) =>
+      t.addEventListener('click', (e) => {
+        // Klik dengan penahan dibiarkan apa adanya: buka di tab baru.
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        buka(t);
+      })
+    );
+
+    tombolTutup.addEventListener('click', tutup);
+    lapisan.addEventListener('click', (e) => {
+      if (e.target === lapisan) tutup();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lapisan.hidden) tutup();
+    });
+  }
+</script>

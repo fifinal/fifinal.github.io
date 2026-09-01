@@ -40,7 +40,6 @@ const proyek = defineCollection({
     diagram: z.object({ file: z.string(), keterangan: z.string() }).optional(),
     tantangan: z.array(z.string()),
     belajar: z.string(),
-    kerahasiaan: z.string(),               // dipakai pada catatan di bawah galeri
   }),
 });
 

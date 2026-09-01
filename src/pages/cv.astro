@@ -25,7 +25,13 @@ const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, ''
 // ini ikut dicetak, dan di kertas alamatnya masih terbaca meski tidak
 // bisa diklik. Alamatnya mutlak supaya tetap hidup di dalam PDF.
 const kePortofolio = (jalur: string) => new URL(jalur, portofolio).href;
-const teksJalur = (jalur: string) => (portofolio.host + jalur).replace(/\/$/, '');
+// Cukup jalurnya: nama domainnya sudah tertulis di kepala CV, dan
+// mengulanginya di tiap baris membuat CV tumpah ke halaman ketiga.
+const teksJalur = (jalur: string) => jalur.replace(/\/$/, '');
+
+// Alamat sistem yang bisa dibuka publik. Ditulis tanpa protokol supaya
+// muat di baris yang sama, tapi tetap ditautkan penuh.
+const teksSitus = (alamat: string) => alamat.replace(/^https?:\/\//, '').replace(/\/$/, '');
 ---
 
 <Dasar
@@ -144,7 +150,17 @@ const teksJalur = (jalur: string) => (portofolio.host + jalur).replace(/\/$/, ''
                             </span>
                             <span class="cv-sorotan-periode">
                               {s.periode}
-                              {s.tautan && <> · {teksJalur(s.tautan)}</>}
+                              {/* Alamat studi kasusnya tidak diulang di sini: judul
+                                  sorotan sudah menautkannya, dan barisnya jadi
+                                  terlalu panjang sehingga CV tumpah ke halaman 3. */}
+                              {s.situs && (
+                                <>
+                                  {' · '}
+                                  <a href={s.situs} target="_blank" rel="noopener">
+                                    {teksSitus(s.situs)}
+                                  </a>
+                                </>
+                              )}
                             </span>
                             <span class="cv-sorotan-isi">{s.isi}</span>
                           </li>
@@ -189,9 +205,19 @@ const teksJalur = (jalur: string) => (portofolio.host + jalur).replace(/\/$/, ''
                     <dd>{x.integrasi}</dd>
                   </div>
                 )}
+                {x.situs && (
+                  <div>
+                    <dt>Situs</dt>
+                    <dd>
+                      <a href={x.situs} target="_blank" rel="noopener">
+                        {teksSitus(x.situs)}
+                      </a>
+                    </dd>
+                  </div>
+                )}
                 {x.tautan && (
                   <div>
-                    <dt>Studi kasus</dt>
+                    <dt>Portofolio</dt>
                     <dd>
                       <a href={kePortofolio(x.tautan)}>{teksJalur(x.tautan)}</a>
                     </dd>
