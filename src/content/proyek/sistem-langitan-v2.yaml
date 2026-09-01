@@ -43,10 +43,14 @@ diagram:
     layanannya, karena di situlah kendalanya. Kotak putus-putus di kanan adalah sistem lama yang masih
     melayani produksi di atas basis data yang sama, dan karena itu skemanya tidak bisa disentuh.
 gambar:
-- file: sistem-langitan-v2-1.png
-  keterangan: '[ISI] Sebutkan tampilan yang akan dipasang — pastikan tidak memuat data mahasiswa asli.'
-- file: sistem-langitan-v2-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+- file: sistem-langitan-v2-1.jpg
+  keterangan: Pusat unduhan formulir — dokumen resmi akademik dikelompokkan per keperluan, dari cuti
+    kuliah sampai bebas administrasi.
+- file: sistem-langitan-v2-2.jpg
+  keterangan: Jadwal kuliah per hari, lengkap dengan kode mata kuliah, bobot SKS, dan ruangnya.
+- file: sistem-langitan-v2-3.jpg
+  keterangan: Riwayat nilai dan performa akademik per semester. Tanpa nama maupun nomor induk, jadi
+    tidak menunjuk mahasiswa tertentu.
 tantangan:
 - '[ISI] Bagian tersulit dari mencocokkan perilaku v2 dengan v1 memakai data asli. Contoh yang paling
   membekas?'

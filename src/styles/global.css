@@ -330,7 +330,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
   color:var(--muted);font-size:.82rem;text-align:center;padding:24px;line-height:1.5;
 }
-.shot img{width:100%;height:100%;object-fit:cover;display:block}
+/* Tangkapan layar antarmuka ditampilkan utuh, bukan dipotong: yang
+   ingin dilihat perekrut justru seluruh layarnya. Latar bergaris
+   diagonal hanya muncul saat kotaknya kosong. */
+.shot:has(img){background:var(--bg-soft);padding:0}
+.shot img{width:100%;height:100%;object-fit:contain;display:block}
 .gallery figcaption{
   margin-top:12px;font-size:.88rem;color:var(--muted);
   padding-left:14px;border-left:2px solid var(--line);

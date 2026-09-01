@@ -10,3 +10,6 @@ npm-debug.log*
 # Dicetak ulang tiap penerbitan dari halaman /cv/, jadi tidak disimpan.
 # Yang di sini hanya hasil `npm run cv:pdf` untuk diperiksa sendiri.
 public/cv.pdf
+
+# Tangkapan layar mentah — banyak memuat data pribadi, jangan pernah terbit
+gambar-mentah/

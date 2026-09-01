@@ -1,4 +1,15 @@
 ---
+/**
+ * Galeri tangkapan layar.
+ *
+ * Halaman detail hanya memanggil komponen ini bila berkas gambarnya
+ * benar-benar ada di public/gambar/ — pemeriksaannya di `[slug].astro`.
+ *
+ * Catatan di bawah galeri sengaja menyebut apa yang benar-benar
+ * dilakukan: layar yang dipilih memang hanya memuat data agregat.
+ * Jangan diganti menjadi "data telah diganti dengan data contoh"
+ * kecuali itu memang yang dikerjakan — lihat Keputusan No. 8.
+ */
 interface Props {
   gambar: { file: string; keterangan: string }[];
   kerahasiaan: string;
@@ -10,24 +21,28 @@ const [utama, ...sisa] = gambar;
 <div class="gallery">
   <figure>
     <div class="shot">
-      {/* Ganti isi div ini dengan <img src={`/gambar/${utama.file}`} alt={utama.keterangan} /> */}
-      gambar/{utama.file}
+      <img src={`/gambar/${utama.file}`} alt={utama.keterangan} loading="lazy" decoding="async" />
     </div>
     <figcaption>{utama.keterangan}</figcaption>
   </figure>
 </div>
 
-<div class="gallery gallery-2" style="margin-top:24px">
-  {
-    sisa.map((g) => (
-      <figure>
-        <div class="shot">gambar/{g.file}</div>
-        <figcaption>{g.keterangan}</figcaption>
-      </figure>
-    ))
-  }
-</div>
+{
+  sisa.length > 0 && (
+    <div class="gallery gallery-2" style="margin-top:24px">
+      {sisa.map((g) => (
+        <figure>
+          <div class="shot">
+            <img src={`/gambar/${g.file}`} alt={g.keterangan} loading="lazy" decoding="async" />
+          </div>
+          <figcaption>{g.keterangan}</figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}
 
 <p class="note">
-  Data pada tangkapan layar telah diganti dengan data contoh untuk menjaga kerahasiaan informasi {kerahasiaan}.
+  Tangkapan layar yang ditampilkan sengaja dibatasi pada layar yang hanya memuat angka agregat. Layar
+  yang memuat data {kerahasiaan} tidak diterbitkan.
 </p>

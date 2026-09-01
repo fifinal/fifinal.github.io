@@ -38,9 +38,11 @@ diagram:
     penyetor peserta, berada di luar kendali sistem dan sengaja tanpa nama asli.
 gambar:
 - file: peksiminas-1.png
-  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'
+  keterangan: Dasbor panitia nasional — sebaran delegasi per tangkai lomba, dari baca puisi sampai vokal
+    grup, di tingkat daerah maupun nasional.
 - file: peksiminas-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+  keterangan: Tampilan yang sama dari sisi administrator provinsi — hanya delegasi provinsinya sendiri
+    yang terlihat, bukan seluruh Indonesia.
 tantangan:
 - '[ISI] Apa yang paling menegangkan dari membangun sistem dengan tenggat acara yang tidak bisa mundur?'
 - '[ISI] Adakah masalah yang muncul saat acara berlangsung? Bagaimana ditangani?'

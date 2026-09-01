@@ -44,9 +44,8 @@ diagram:
     sistemnya berhenti setelah penyisihan.
 gambar:
 - file: unisco-1.png
-  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'
-- file: unisco-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+  keterangan: Dasbor panitia — jumlah peserta terdaftar, butir soal, dan sesi ujian yang sedang
+    berjalan, berikut navigasi ke bank soal dan pemantauan langsung.
 tantangan:
 - '[ISI] Apa yang paling menegangkan saat hari pelaksanaan ujian? Adakah yang sempat bermasalah?'
 - '[ISI] Adakah fitur yang dibangun lalu ternyata tidak terpakai saat acara?'
