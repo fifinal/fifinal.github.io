@@ -1,10 +1,12 @@
 urutan: 7
 judul: UNISCO — Platform Kompetisi dan Ujian Daring
 tahun: 2026
-ringkas: Platform Computer Based Test untuk penyelenggaraan lomba dan olimpiade tingkat nasional, dari
-  pendaftaran dan pembayaran sampai pelaksanaan ujian dan pengumuman hasil.
-lead: Ujian daring tidak memberi kesempatan kedua. Semua peserta mengerjakan pada jam yang sama, dan
-  apa pun yang gagal saat itu tidak bisa diulang di hari lain.
+ringkas: Platform penyelenggaraan lomba dan olimpiade tingkat nasional, dari pendaftaran dan pembayaran
+  sampai babak penyisihan — lewat ujian CBT untuk lomba akademik, dan lewat unggahan berkas untuk lomba
+  non-akademik. Babak finalnya berlangsung luring, di luar sistem.
+lead: 'Satu alur pendaftaran, dua jalur lomba yang tidak bisa disamakan — yang satu diadu lewat ujian
+  serentak, yang lain lewat berkas yang diverifikasi panitia. Dan ujian daring tidak memberi kesempatan
+  kedua: apa pun yang gagal saat itu tidak bisa diulang di hari lain.'
 peran: Pengembang Utama
 periode: Jun — Agu 2026
 tim: 2 kontributor
@@ -21,22 +23,25 @@ fitur:
 - Pendaftaran peserta perorangan maupun kelompok, dengan syarat lomba dan syarat peserta yang bisa diatur
 - Pembayaran biaya pendaftaran dengan tarif berbeda per bidang lomba
 - Bank soal dengan opsi jawaban, disusun per bidang lomba dan per tahapan
-- Sesi ujian terjadwal, dengan jawaban peserta tersimpan selama pengerjaan
-- Penilaian dan pengumuman hasil ujian
+- Sesi ujian terjadwal untuk lomba akademik, dengan jawaban peserta tersimpan selama pengerjaan
+- Jalur non-akademik lewat unggahan berkas persyaratan, diverifikasi panitia tanpa penilaian di sistem
+- Penilaian dan pengumuman hasil babak penyisihan
 - Halaman informasi lomba beserta pertanyaan yang sering diajukan
 - Berjalan dalam kontainer Docker
 metrik:
 - angka: '85'
   keterangan: Commit atas nama saya — kontributor terbesar
-- angka: '4'
-  keterangan: Tahap dalam satu sistem — daftar, bayar, ujian, hasil
+- angka: '2'
+  keterangan: Jalur lomba dari satu pendaftaran — akademik lewat CBT, non-akademik lewat berkas
 - angka: 3 bulan
   keterangan: Dari commit pertama hingga penyelenggaraan
 diagram:
   file: unisco.svg
-  keterangan: Tiga masukan menyatu ke satu sesi ujian, lalu memancar menjadi jawaban dan hasil. Yang
-    bertanda hijau adalah sesi ujiannya — satu-satunya bagian yang tidak bisa diulang kalau gagal,
-    karena seluruh peserta mengerjakan pada jam yang sama.
+  keterangan: Satu pendaftaran bercabang menjadi dua jalur yang diperlakukan berbeda, lalu keduanya
+    bertemu lagi di babak final. Yang bertanda hijau adalah sesi ujiannya — satu-satunya bagian yang
+    tidak bisa diulang kalau gagal, karena seluruh peserta mengerjakan pada jam yang sama. Kotak
+    putus-putus di bawah adalah babak final yang berlangsung luring, di luar kendali sistem —
+    sistemnya berhenti setelah penyisihan.
 gambar:
 - file: unisco-1.png
   keterangan: '[ISI] Tampilan yang akan dipasang — hindari data peserta asli.'

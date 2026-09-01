@@ -3,13 +3,17 @@
   untuk portofolio publik. Tanpa nama peserta, isi soal, maupun
   topologi server.
 
-  Bentuknya sengaja berbeda dari enam diagram sebelumnya: ini satu-
-  satunya berbentuk hub — beberapa masukan menyatu ke satu titik, lalu
-  memancar lagi menjadi keluaran. Titik tengahnya diberi aksen karena
-  di situlah taruhannya: sesi ujian tidak bisa diulang.
+  Bentuknya percabangan yang bertemu kembali: satu pendaftaran memecah
+  jadi dua jalur yang diperlakukan berbeda — akademik diadu lewat ujian
+  serentak, non-akademik lewat berkas yang diverifikasi — lalu keduanya
+  bertemu lagi di babak final. Finalnya digambar putus-putus karena
+  berlangsung luring: di situlah sistem ini berhenti.
+
+  Yang diberi aksen tetap sesi ujiannya, karena di situ taruhannya —
+  jam yang sama untuk semua peserta, dan tidak bisa diulang.
 -->
-<svg viewBox="0 0 760 300" role="img" xmlns="http://www.w3.org/2000/svg">
-  <title>Masukan menyatu ke satu sesi ujian, lalu memancar menjadi jawaban dan hasil</title>
+<svg viewBox="0 0 760 440" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Satu pendaftaran bercabang jadi jalur ujian dan jalur berkas, lalu bertemu di babak final luring</title>
 
   <defs>
     <marker id="un-panah" viewBox="0 0 10 10" refX="9" refY="5"
@@ -18,45 +22,57 @@
     </marker>
   </defs>
 
-  <!-- Masukan menyatu -->
-  <g class="dg-alur">
-    <path d="M206,56  C240,56  240,144 270,144" marker-end="url(#un-panah)" />
-    <path d="M206,144 C240,144 240,144 270,144" marker-end="url(#un-panah)" />
-    <path d="M206,232 C240,232 240,144 270,144" marker-end="url(#un-panah)" />
+  <!-- Percabangan dua jalur -->
+  <g class="dg-cabang">
+    <path d="M380,84 C380,112 180,112 180,140" marker-end="url(#un-panah)" />
+    <path d="M380,84 C380,112 580,112 580,140" marker-end="url(#un-panah)" />
   </g>
 
-  <!-- Keluaran memancar -->
+  <!-- Alur inti tiap jalur, lalu menyatu ke babak final -->
   <g class="dg-alur">
-    <path d="M480,144 C512,144 512,108 546,108" marker-end="url(#un-panah)" />
-    <path d="M480,144 C512,144 512,204 546,204" marker-end="url(#un-panah)" />
+    <line x1="180" y1="236" x2="180" y2="268" marker-end="url(#un-panah)" />
+    <line x1="580" y1="236" x2="580" y2="268" marker-end="url(#un-panah)" />
+    <path d="M180,332 C180,358 250,372 330,372" marker-end="url(#un-panah)" />
+    <path d="M580,332 C580,358 510,372 430,372" marker-end="url(#un-panah)" />
   </g>
 
+  <!-- Pintu masuk yang sama untuk semua peserta -->
   <g class="dg-kotak">
-    <rect x="16"  y="24"  width="190" height="64" rx="10" />
-    <rect x="16"  y="112" width="190" height="64" rx="10" />
-    <rect x="16"  y="200" width="190" height="64" rx="10" />
-    <rect x="546" y="76"  width="198" height="64" rx="10" />
-    <rect x="546" y="172" width="198" height="64" rx="10" />
+    <rect x="285" y="20" width="190" height="64" rx="10" />
+  </g>
+
+  <!-- Jalur non-akademik dan kedua keluaran penyisihan -->
+  <g class="dg-kotak">
+    <rect x="440" y="140" width="280" height="96" rx="10" />
+    <rect x="40"  y="268" width="280" height="64" rx="10" />
+    <rect x="440" y="268" width="280" height="64" rx="10" />
   </g>
 
   <!-- Satu-satunya yang beraksen: jam yang tidak bisa diulang -->
-  <rect class="dg-kotak-aksen" x="270" y="94" width="210" height="100" rx="10" />
+  <rect class="dg-kotak-aksen" x="40" y="140" width="280" height="96" rx="10" />
+
+  <!-- Babak final berlangsung luring, di luar kendali sistem -->
+  <g class="dg-cip">
+    <rect x="230" y="372" width="300" height="56" rx="10" />
+  </g>
 
   <g class="dg-judul">
-    <text x="36"  y="52">Pendaftaran</text>
-    <text x="36"  y="140">Bank soal</text>
-    <text x="36"  y="228">Jadwal sesi</text>
-    <text x="290" y="138" class="dg-teks-aksen">Sesi ujian</text>
-    <text x="566" y="104">Jawaban peserta</text>
-    <text x="566" y="200">Hasil dan peringkat</text>
+    <text x="305" y="46">Pendaftaran &amp; pembayaran</text>
+    <text x="60"  y="176" class="dg-teks-aksen">Sesi ujian terjadwal</text>
+    <text x="460" y="176">Unggah berkas syarat</text>
+    <text x="60"  y="296">Nilai &amp; peringkat</text>
+    <text x="460" y="296">Verifikasi panitia</text>
+    <text x="250" y="400" class="dg-judul-luar">Babak final — luring</text>
   </g>
 
   <g class="dg-sub">
-    <text x="36"  y="72">beserta pembayaran biaya</text>
-    <text x="36"  y="160">per bidang dan tahapan</text>
-    <text x="36"  y="248">waktu dan kuota per sesi</text>
-    <text x="290" y="158" class="dg-sub-aksen">peserta mengerjakan serentak</text>
-    <text x="566" y="124">tersimpan selama pengerjaan</text>
-    <text x="566" y="220">penilaian dan pengumuman</text>
+    <text x="305" y="66">satu alur untuk semua peserta</text>
+    <text x="60"  y="196" class="dg-sub-aksen">jalur akademik · dikerjakan serentak</text>
+    <text x="60"  y="216" class="dg-sub-aksen">jawaban tersimpan selama pengerjaan</text>
+    <text x="460" y="196">jalur non-akademik</text>
+    <text x="460" y="216">berkas persyaratan peserta</text>
+    <text x="60"  y="316">hasil babak penyisihan</text>
+    <text x="460" y="316">kelengkapan berkas, tanpa penilaian</text>
+    <text x="250" y="418">di luar sistem — sistem berhenti di penyisihan</text>
   </g>
 </svg>

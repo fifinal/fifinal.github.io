@@ -130,10 +130,10 @@ export const cv = {
       nama: 'UNISCO — Platform Kompetisi dan Ujian Daring',
       konteks: 'UMAHA · Jun — Agu 2026',
       ringkas:
-        'Platform Computer Based Test untuk lomba dan olimpiade tingkat nasional yang diselenggarakan kampus.',
+        'Platform lomba dan olimpiade tingkat nasional yang diselenggarakan kampus. Satu alur pendaftaran bercabang menjadi dua jalur: lomba akademik diadu lewat ujian CBT serentak, lomba non-akademik lewat berkas persyaratan yang diverifikasi panitia. Babak finalnya luring, di luar sistem.',
       peran: 'Pengembang utama — kontributor terbesar, 85 commit',
       modul:
-        'Pendaftaran perorangan dan kelompok beserta pembayarannya, bank soal per bidang dan tahapan, sesi ujian terjadwal, penilaian dan pengumuman hasil.',
+        'Pendaftaran perorangan dan kelompok beserta pembayarannya, bank soal per bidang dan tahapan, sesi ujian CBT terjadwal, unggahan dan verifikasi berkas untuk jalur non-akademik, penilaian serta pengumuman hasil penyisihan.',
       teknologi: 'Laravel, PHP 8.2, Blade, Tailwind, Docker',
       integrasi: null,
     },

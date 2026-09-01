@@ -293,7 +293,7 @@ untuk melihatnya.
       | `peksiminas.svg` | penyempitan berjenjang | penjurian berjalur terpisah |
       | `sistem-langitan-v2.svg` | dua permukaan menyatu di atas basis data warisan | basis data warisan |
       | `slf-sync.svg` | jembatan satu arah dengan jalan pulang | jalur pembatalan |
-      | `unisco.svg` | hub — masukan menyatu lalu memancar | sesi ujian |
+      | `unisco.svg` | percabangan dua jalur yang bertemu lagi | sesi ujian |
 
       Kosakata visual yang berlaku di ketujuhnya, ikuti bila menambah
       diagram baru. **Kotak** putus-putus (`.dg-cip`) berarti di luar
