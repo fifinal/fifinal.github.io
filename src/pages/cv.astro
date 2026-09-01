@@ -25,9 +25,17 @@ const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, ''
 // ini ikut dicetak, dan di kertas alamatnya masih terbaca meski tidak
 // bisa diklik. Alamatnya mutlak supaya tetap hidup di dalam PDF.
 const kePortofolio = (jalur: string) => new URL(jalur, portofolio).href;
-// Cukup jalurnya: nama domainnya sudah tertulis di kepala CV, dan
-// mengulanginya di tiap baris membuat CV tumpah ke halaman ketiga.
-const teksJalur = (jalur: string) => jalur.replace(/\/$/, '');
+
+// Berkasnya tetap terbit sebagai /cv.pdf — alamat itu pendek dan mudah
+// dibagikan. Yang diubah hanya nama saat disimpan, lewat atribut
+// `download`, supaya di folder unduhan perekrut tidak tertimbun di
+// antara belasan berkas bernama cv.pdf.
+const namaBerkasUnduhan = `CV-${cv.namaLengkap.trim().replace(/\s+/g, '-')}.pdf`;
+// Alamat portofolio ditulis lengkap dengan domainnya, atas permintaan
+// pemilik: pembaca PDF yang mencetaknya harus bisa mengetiknya ulang
+// tanpa menebak. Muat karena alamat studi kasus tidak lagi diulang di
+// baris sorotan — kalau keduanya dipasang, CV tumpah ke halaman ketiga.
+const teksJalur = (jalur: string) => (portofolio.host + jalur).replace(/\/$/, '');
 
 // Alamat sistem yang bisa dibuka publik. Ditulis tanpa protokol supaya
 // muat di baris yang sama, tapi tetap ditautkan penuh.
@@ -66,7 +74,7 @@ const teksSitus = (alamat: string) => alamat.replace(/^https?:\/\//, '').replace
         </div>
 
         <div class="cv-aksi">
-          <a class="btn btn-primary" href={cv.berkasPdf} download>
+          <a class="btn btn-primary" href={cv.berkasPdf} download={namaBerkasUnduhan}>
             <svg viewBox="0 0 24 24" aria-hidden="true" class="cv-ikon">
               <path d="M12 3v12"></path>
               <path d="m7 11 5 5 5-5"></path>
