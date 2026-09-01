@@ -208,9 +208,15 @@ public/gambar/             foto profil; tangkapan layar proyek masih kosong
 Nama berkas YAML menjadi URL-nya: `simbelmawa.yaml` →
 `/proyek/simbelmawa/`. Menambah proyek cukup menyalin satu YAML.
 
-Tujuh studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
+Delapan studi kasus yang ada sekarang, urut sesuai kolom `urutan`:
 `simbelmawa`, `sistem-langitan`, `sistem-langitan-v2`, `slf-sync`,
-`sistem-magang`, `peksiminas`, `unisco`.
+`sistem-magang`, `peksiminas`, `mtqmn`, `unisco`.
+
+`mtqmn` ditambahkan 1 September 2026 — ia sebenarnya sudah ada di
+daftar proyek yang ingin ditampilkan sejak awal, tapi terlewat saat
+tiga lainnya digarap. Isinya digali dari repo `~/Sites/laravel/mtqmn`
+dan bagian orang pertamanya ditanyakan ke pemilik, jadi tidak ada
+penanda `[ISI]` di sana.
 
 Keluarga Langitan sengaja dikelompokkan di urutan 2–4 — v1, penulisan
 ulangnya, lalu alat sinkronisasinya — bukan diurutkan menurut jumlah
@@ -269,7 +275,7 @@ untuk melihatnya.
 - [ ] **27 penanda `[ISI]` di enam berkas YAML** — tersisa di kolom
       `tantangan` (10), `belajar` (5), dan keterangan `gambar` (12).
       Penanda ini **tampil di situs publik**, jadi ini pekerjaan paling
-      mendesak. `simbelmawa.yaml` sudah bersih.
+      mendesak. `simbelmawa.yaml` dan `mtqmn.yaml` sudah bersih.
 
       Dari 87 penanda semula: 23 sudah diisi lewat tanya-jawab dengan
       pemilik (`simbelmawa` 10, `sistem-langitan` 13), dan 37 sisanya
@@ -281,7 +287,7 @@ untuk melihatnya.
       memilih, lalu tulis prosanya dari pilihan itu. Jawaban "tidak ada
       yang berubah" atau "sudah stabil sejak awal" adalah jawaban sah —
       jangan didramatisasi menjadi cerita penyelamatan.
-- [x] Diagram arsitektur — **selesai untuk ketujuh proyek.** Masing-masing
+- [x] Diagram arsitektur — **selesai untuk kedelapan proyek.** Masing-masing
       sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
       informasi:
 
@@ -294,8 +300,9 @@ untuk melihatnya.
       | `sistem-langitan-v2.svg` | dua permukaan menyatu di atas basis data warisan | basis data warisan |
       | `slf-sync.svg` | jembatan satu arah dengan jalan pulang | jalur pembatalan |
       | `unisco.svg` | percabangan dua jalur yang bertemu lagi | sesi ujian |
+      | `mtqmn.svg` | lajur cabang bermuara ke satu penilaian | aturan per cabang |
 
-      Kosakata visual yang berlaku di ketujuhnya, ikuti bila menambah
+      Kosakata visual yang berlaku di kedelapannya, ikuti bila menambah
       diagram baru. **Kotak** putus-putus (`.dg-cip`) berarti di luar
       kendali sistem — sistem luar seperti PDDikti dan Feeder, juga
       institusi penyetor seperti perguruan tinggi dan provinsi.

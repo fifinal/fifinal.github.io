@@ -1,0 +1,63 @@
+urutan: 7
+judul: MTQMN — Musabaqah Tilawatil Qur’an Mahasiswa Nasional
+tahun: 2026
+ringkas: Platform penyelenggaraan musabaqah tingkat nasional — dari pendaftaran kelompok peserta dan
+  unggahan karya, sampai penilaian juri bertahap dan pelaporannya.
+lead: Musabaqah bukan satu lomba, melainkan banyak cabang yang aturannya tidak bisa disamakan — syarat
+  berkasnya berbeda, babaknya berbeda, cara menilainya pun berbeda. Semuanya harus dilayani dari satu
+  sistem.
+peran: Pengembang — salah satu dari tiga orang
+periode: Mei 2025 — Jul 2026
+tim: 3 kontributor
+tipe: Freelance · Kementerian
+tags:
+- Laravel 12
+- PHP 8.2
+- Inertia
+- Vue 3
+- PostgreSQL
+- Docker
+live: https://simbelmawa.kemdiktisaintek.go.id/mtqmn
+status: Produksi — sistem nasional
+fitur:
+- Empat peran dengan berkas rute terpisah — admin kementerian, admin panitia lokal, operator perguruan
+  tinggi, dan juri
+- Pendaftaran kelompok peserta beserta personilnya, per cabang lomba
+- Syarat berkas ditentukan per cabang lomba, bukan satu daftar seragam untuk semua
+- Unggahan karya dan berkas pendukung, ditinjau operator sebelum masuk ke penjurian
+- Penilaian juri bertahap, dari seleksi pra-nasional sampai seleksi nasional, dengan jadwal entri nilai
+  tersendiri di tiap tahap
+- Pencarian dan penyaringan peserta menurut nomor peserta
+- Ekspor data ke berkas lembar sebar
+- Berjalan dalam kontainer Docker
+metrik:
+- angka: '61'
+  keterangan: Commit atas nama saya, dijumlahkan dari dua akun
+- angka: '4'
+  keterangan: Peran pengguna dengan rute terpisah
+- angka: 14 bulan
+  keterangan: Rentang keterlibatan saya, Mei 2025 — Juli 2026
+diagram:
+  file: mtqmn.svg
+  keterangan: Banyak cabang lomba bermuara ke satu mekanisme penilaian. Yang bertanda hijau adalah
+    lapisan aturannya — syarat berkas, babak, dan pembobotan disimpan sebagai data per cabang, sehingga
+    perbedaan antarcabang tidak perlu dituliskan ulang sebagai cabang kode. Kotak putus-putus di kiri
+    adalah perguruan tinggi penyetor peserta, di luar kendali sistem.
+gambar:
+- file: mtqmn-1.png
+  keterangan: Dasbor admin kementerian — rekap lintas cabang lomba dan panitia lokal dalam angka
+    agregat, tanpa data per peserta.
+- file: mtqmn-2.png
+  keterangan: Pendaftaran kelompok peserta beserta personilnya, jalur yang paling ramai dipakai di awal
+    penyelenggaraan.
+tantangan:
+- 'Bagian yang paling menuntut adalah penilaiannya, bukan pendaftarannya. Tiap cabang punya babak dan
+  pembobotan sendiri, dan aturan itu masih bisa berubah mengikuti keputusan panitia — kadang ketika
+  juri sudah mulai memasukkan nilai.'
+- Menuliskan tiap perbedaan sebagai percabangan di kode akan membuat tiap keputusan panitia berubah
+  menjadi rilis baru. Jalan keluarnya menyimpan aturannya sebagai data, sehingga yang berubah isinya,
+  bukan kodenya.
+belajar: 'Pelajaran yang saya bawa dari sini: aturan penilaian harus menjadi data, bukan dipaku di
+  kode. Begitu bobot dan babak bisa diatur dari basis data, perubahan keputusan panitia berhenti
+  menjadi urusan pengembang — dan itu melegakan kedua pihak.'
+kerahasiaan: peserta dan penyelenggara
