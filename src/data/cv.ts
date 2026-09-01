@@ -68,6 +68,12 @@ export const cv = {
           isi: 'Pendaftaran peserta dan kategori lomba, pengelolaan tim, verifikasi dokumen, penilaian, pelaporan, serta ekspor otomatis ke PDF dan lembar sebar.',
         },
         {
+          judul: 'Peksiminas — Pekan Seni Mahasiswa Nasional',
+          periode: 'Mei — Agu 2026',
+          tautan: '/proyek/peksiminas/',
+          isi: 'Pendaftaran berjenjang dari administrator provinsi sampai panitia nasional, dengan jalur penjurian yang kewenangannya dipisah agar penilaian juri tidak bisa disentuh panitia maupun provinsi.',
+        },
+        {
           judul: 'Sistem Hibah Akreditasi Internasional',
           periode: 'Jan 2023 — Des 2024',
           tautan: null,
