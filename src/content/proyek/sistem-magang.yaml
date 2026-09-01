@@ -46,6 +46,13 @@ gambar:
   keterangan: Laporan bulanan peserta selama magang berjalan, tiap bulan disetujui terpisah. Identitas
     dan isi laporannya disensor.
 tantangan:
-- '[ISI] Apa yang paling sulit ketika satu data harus tampil berbeda bagi dua belas peran?'
-- '[ISI] Adakah fitur yang sempat dibangun lalu dibuang? Kenapa?'
-belajar: '[ISI] Satu hal yang kamu pelajari dari mengerjakan sistem sebesar ini hanya berdua.'
+- Yang paling rumit ternyata bukan menampilkan data yang sama secara berbeda, melainkan menyusun urutan
+  persetujuannya — siapa menyetujui setelah siapa, dan apa yang boleh berjalan sebelum persetujuan itu
+  turun. Tampilan tinggal mengikuti; urutannya yang menentukan.
+- Ada fitur yang sudah jadi lalu tidak terpakai karena kebijakan programnya berubah sebelum sempat
+  dipakai. Itu risiko yang melekat pada sistem yang mengikuti program tahunan, bukan kesalahan
+  rancangan.
+belajar: Petakan alur persetujuannya dulu sebelum menulis kode. Di sistem dengan dua belas peran,
+  urutan siapa menyetujui setelah siapa adalah rangkanya — kalau itu belum jelas, tiap perubahan kecil
+  merembet ke banyak layar sekaligus, dan yang tampak sebagai pekerjaan tampilan sebenarnya pekerjaan
+  alur.

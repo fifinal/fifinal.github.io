@@ -52,8 +52,11 @@ gambar:
   keterangan: Pengisian Kartu Rencana Studi — mata kuliah yang diambil, kelas, bobot SKS, jadwal, dan
     status persetujuannya, dengan sisa kuota SKS terhitung di atas. Nama dosen pengampu disensor.
 tantangan:
-- '[ISI] Bagian tersulit dari mencocokkan perilaku v2 dengan v1 memakai data asli. Contoh yang paling
-  membekas?'
-- '[ISI] Adakah keputusan arsitektur yang kemudian kamu ubah setelah dipakai beberapa modul?'
-belajar: '[ISI] Satu pelajaran dari menulis ulang sistem yang basis datanya tidak boleh disentuh —
-  sesuatu yang akan kamu bawa ke proyek migrasi berikutnya.'
+- 'Bagian tersulit adalah aturan yang tidak tertulis di mana pun kecuali di kode lamanya. Tidak ada
+  dokumen yang menyebutkannya, dan tidak ada yang mengingatnya — ia baru muncul ketika layar baru
+  memberi hasil berbeda dari layar lama untuk data yang sama.'
+- Sejauh ini belum ada keputusan arsitektur yang dibatalkan setelah beberapa modul berjalan. Rangkanya
+  masih yang disepakati di awal.
+belajar: 'Menulis ulang sistem berarti menemukan kembali aturan yang sudah lama tidak dibicarakan
+  siapa pun. Versi lama bukan sekadar acuan tampilan — ia satu-satunya tempat sebagian aturan itu masih
+  hidup, dan cara paling jujur memeriksanya adalah menjalankan keduanya di atas data yang sama.'

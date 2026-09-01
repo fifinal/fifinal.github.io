@@ -280,21 +280,21 @@ untuk melihatnya.
 
 ## Belum dikerjakan
 
-- [ ] **27 penanda `[ISI]` di enam berkas YAML** — tersisa di kolom
-      `tantangan` (10), `belajar` (5), dan keterangan `gambar` (12).
-      Penanda ini **tampil di situs publik**, jadi ini pekerjaan paling
-      mendesak. `simbelmawa.yaml` dan `mtqmn.yaml` sudah bersih.
+- [x] **Penanda `[ISI]` habis.** Dari 87 penanda semula: 37 ikut terhapus
+      bersama kolom `masalah`, `solusi`, dan `proses` (keputusan No. 9),
+      12 keterangan gambar terisi setelah tangkapan layarnya benar-benar
+      ada dan diperiksa, dan sisanya diisi lewat tanya-jawab dengan
+      pemilik pada 31 Agustus – 1 September 2026.
 
-      Dari 87 penanda semula: 23 sudah diisi lewat tanya-jawab dengan
-      pemilik (`simbelmawa` 10, `sistem-langitan` 13), dan 37 sisanya
-      ikut terhapus bersama kolom `masalah`, `solusi`, dan `proses` —
-      lihat keputusan No. 9.
+      **Cara mengisinya, kalau nanti ada proyek baru: tanya pemilik,
+      jangan mengarang.** Tawarkan beberapa kemungkinan jawaban yang
+      masuk akal agar ia tinggal memilih, lalu tulis prosanya dari
+      pilihan itu. Jawaban "tidak ada yang berubah", "tidak ada fitur
+      yang dibuang", atau "belum pernah" adalah jawaban sah dan beberapa
+      kali memang itu jawabannya — jangan didramatisasi menjadi cerita
+      penyelamatan. Satu pertanyaan malah dibuang seluruhnya karena
+      pemilik menilai perkaranya ada di pihak lain, bukan di sistemnya.
 
-      Cara mengisinya: **tanya pemilik, jangan mengarang.** Tawarkan
-      beberapa kemungkinan jawaban yang masuk akal agar ia tinggal
-      memilih, lalu tulis prosanya dari pilihan itu. Jawaban "tidak ada
-      yang berubah" atau "sudah stabil sejak awal" adalah jawaban sah —
-      jangan didramatisasi menjadi cerita penyelamatan.
 - [x] Diagram arsitektur — **selesai untuk kedelapan proyek.** Masing-masing
       sengaja berbeda bentuk, karena diagram yang seragam tidak menambah
       informasi:

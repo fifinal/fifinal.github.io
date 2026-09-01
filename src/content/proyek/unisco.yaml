@@ -47,7 +47,11 @@ gambar:
   keterangan: Dasbor panitia — jumlah peserta terdaftar, butir soal, dan sesi ujian yang sedang
     berjalan, berikut navigasi ke bank soal dan pemantauan langsung.
 tantangan:
-- '[ISI] Apa yang paling menegangkan saat hari pelaksanaan ujian? Adakah yang sempat bermasalah?'
-- '[ISI] Adakah fitur yang dibangun lalu ternyata tidak terpakai saat acara?'
-belajar: '[ISI] Satu pelajaran dari membangun sistem yang hanya dipakai beberapa jam, tapi tidak boleh
-  gagal di jam-jam itu.'
+- Yang paling menegangkan adalah menit-menit pertama tiap sesi, ketika seluruh peserta masuk dan
+  membuka soal pada saat yang sama. Beban sepanjang ujian tidak rata — ia menumpuk di awal, persis di
+  waktu yang paling tidak boleh gagal.
+- Tidak ada fitur yang terbuang. Semua yang dibangun terpakai saat penyelenggaraan, termasuk bagian
+  yang disiapkan untuk keadaan yang ternyata memang terjadi.
+belajar: Simpan pekerjaan peserta sedini mungkin, jangan menunggu tombol kirim. Di ujian serentak,
+  menunda penyimpanan berarti mempertaruhkan seluruh pekerjaan seseorang pada satu momen yang bisa saja
+  gagal — dan tidak ada kesempatan mengulang di hari lain.

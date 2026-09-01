@@ -44,6 +44,11 @@ gambar:
   keterangan: Tampilan yang sama dari sisi administrator provinsi — hanya delegasi provinsinya sendiri
     yang terlihat, bukan seluruh Indonesia.
 tantangan:
-- '[ISI] Apa yang paling menegangkan dari membangun sistem dengan tenggat acara yang tidak bisa mundur?'
-- '[ISI] Adakah masalah yang muncul saat acara berlangsung? Bagaimana ditangani?'
-belajar: '[ISI] Apa yang kamu pelajari tentang membangun sistem yang umurnya hanya satu musim acara?'
+- Yang menegangkan bukan tenggatnya, melainkan bahwa sistemnya mulai dipakai sebelum seluruhnya jadi.
+  Pendaftaran provinsi sudah berjalan sementara jenjang berikutnya masih dikerjakan — bagian yang belum
+  selesai dikejar sambil bagian lain sudah menanggung peserta sungguhan.
+- Sempat ada masalah ketika acara sedang berlangsung, dan diperbaiki hari itu juga. Ajang seperti ini
+  tidak memberi kemewahan menunda perbaikan sampai rilis berikutnya.
+belajar: Urutkan pekerjaan mengikuti urutan acaranya, bukan urutan yang enak dikerjakan. Ajang seperti
+  ini punya tahapan yang tidak bisa ditawar — apa yang dibuka lebih dulu harus siap lebih dulu, meski
+  bagian itu bukan yang paling menarik dibangun.
