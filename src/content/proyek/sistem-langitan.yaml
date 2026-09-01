@@ -49,9 +49,14 @@ diagram:
     institusi yang dilayani, berada di luar kendali sistem dan sengaja tanpa nama asli.
 gambar:
 - file: sistem-langitan-1.png
-  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan pegawai asli.'
+  keterangan: Kalender akademik yang dilihat mahasiswa — satu dari lima puluh modul yang saling
+    terhubung. Foto dan nama disensor.
 - file: sistem-langitan-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+  keterangan: Riwayat pembayaran per semester berikut status pelunasannya, bagian dari modul keuangan
+    mahasiswa.
+- file: sistem-langitan-3.png
+  keterangan: Kuisioner evaluasi kinerja dosen wali — modul penjaminan mutu yang saya rawat, bukan saya
+    bangun. Nama dosen dan identitas mahasiswa disensor.
 tantangan:
 - 'Yang paling sulit disentuh punya ciri yang sama: berkasnya raksasa dan tidak memisahkan apa pun —
   tampilan, logika, dan akses data berada dalam satu tempat — sementara sebagian aturannya justru tinggal

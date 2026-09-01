@@ -45,11 +45,11 @@ diagram:
     adalah perguruan tinggi penyetor peserta, di luar kendali sistem.
 gambar:
 - file: mtqmn-1.png
-  keterangan: Dasbor admin kementerian — rekap lintas cabang lomba dan panitia lokal dalam angka
-    agregat, tanpa data per peserta.
+  keterangan: Peserta perorangan per cabang musabaqah beserta status pengumpulan karyanya. Kolom nama
+    disensor.
 - file: mtqmn-2.png
-  keterangan: Pendaftaran kelompok peserta beserta personilnya, jalur yang paling ramai dipakai di awal
-    penyelenggaraan.
+  keterangan: Pendaftaran peserta beregu — satu regu memuat beberapa anggota, dan tiap cabang punya
+    ketentuan jumlahnya sendiri. Kolom nama anggota disensor.
 tantangan:
 - 'Bagian yang paling menuntut adalah penilaiannya, bukan pendaftarannya. Tiap cabang punya babak dan
   pembobotan sendiri, dan aturan itu masih bisa berubah mengikuti keputusan panitia — kadang ketika

@@ -40,9 +40,11 @@ diagram:
     di sana digambar putus-putus karena berada di luar kampus dan di luar kendali sistem.
 gambar:
 - file: sistem-magang-1.png
-  keterangan: '[ISI] Tampilan yang akan dipasang — hindari data mahasiswa dan mitra asli.'
+  keterangan: Pendaftar dari berbagai perguruan tinggi beserta status persetujuan berjenjangnya —
+    kepala program studi lebih dulu, lalu pimpinan. Kolom nama dan nomor induk disensor.
 - file: sistem-magang-2.png
-  keterangan: '[ISI] Tampilan kedua.'
+  keterangan: Laporan bulanan peserta selama magang berjalan, tiap bulan disetujui terpisah. Identitas
+    dan isi laporannya disensor.
 tantangan:
 - '[ISI] Apa yang paling sulit ketika satu data harus tampil berbeda bagi dua belas peran?'
 - '[ISI] Adakah fitur yang sempat dibangun lalu dibuang? Kenapa?'
