@@ -311,16 +311,17 @@ untuk melihatnya.
       yang dibangun untuk mengatasinya.
 - [x] Tautan `sosial` LinkedIn dan Instagram sudah terisi, diambil dari
       berkas CV pemilik.
-- [ ] Kolom `live` terisi di empat proyek — simbelmawa, sistem-langitan,
-      sistem-magang, unisco — dan sengaja dibiarkan `null` di tiga
-      sisanya karena URL-nya tidak lolos uji: `langitan-v2.umaha.ac.id`
-      mengembalikan halaman "Not Found", `slf-sync.umaha.ac.id` tidak
-      terjangkau dari luar, dan peksiminas belum punya URL.
+- [ ] Kolom `live` terisi di lima proyek — simbelmawa, peksiminas,
+      sistem-langitan, sistem-magang, unisco — dan sengaja dibiarkan
+      `null` di dua sisanya karena URL-nya tidak lolos uji:
+      `langitan-v2.umaha.ac.id` mengembalikan halaman "Not Found" dan
+      `slf-sync.umaha.ac.id` tidak terjangkau dari luar.
 
-      Dua catatan alamat, dikonfirmasi pemilik pada 31 Agustus 2026:
-      Simbelmawa memakai **`/pkm`**, bukan akar domainnya — akarnya
-      hanya portal, sedangkan `/pkm` masuk ke aplikasi PKM yang
-      dikerjakan. Dan Sistem Langitan punya **dua alamat hidup**,
+      Sistem kementerian berbagi satu domain, dibedakan oleh path:
+      `/pkm` (aplikasi PKM — akar domainnya hanya portal), `/peksiminas`,
+      `/magang`, dan `/mtqmn`. Keempatnya sudah diuji hidup pada
+      1 September 2026. MTQMN belum punya berkas YAML sendiri meski
+      sudah disebut di CV. Dan Sistem Langitan punya **dua alamat hidup**,
       `langitan.umaha.ac.id` dan `langitan.unulampung.ac.id`, keduanya
       terverifikasi dari judul halamannya.
 

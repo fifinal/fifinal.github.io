@@ -14,7 +14,7 @@ tags:
 - Blade
 - SCSS
 - Docker
-live: null
+live: https://simbelmawa.kemdiktisaintek.go.id/peksiminas
 status: Produksi — sistem nasional
 fitur:
 - Pendaftaran peserta berjenjang, dari administrator tingkat provinsi hingga panitia nasional
