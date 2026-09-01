@@ -15,7 +15,7 @@ tags:
 - PostgreSQL
 - JWT
 - Docker
-live: https://simbelmawa.kemdiktisaintek.go.id/
+live: https://simbelmawa.kemdiktisaintek.go.id/pkm
 status: Produksi — sistem nasional
 fitur:
 - Pengelolaan program kemahasiswaan dan hibah, dari pengusulan hingga penetapan penerima

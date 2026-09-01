@@ -68,6 +68,14 @@ const label = {
               <a class="live" href={d.live} target="_blank" rel="noopener">
                 Situs Live ↗
               </a>
+              {/* Sistem multi-tenant punya lebih dari satu alamat hidup.
+                  Ditampilkan berlabel institusi, karena di situlah letak
+                  buktinya: satu basis kode, beberapa kampus. */}
+              {d.liveLain?.map((l) => (
+                <a class="live" href={l.url} target="_blank" rel="noopener">
+                  {l.label} ↗
+                </a>
+              ))}
               <span class="status-teks">Kode sumber bersifat privat</span>
             </>
           ) : (

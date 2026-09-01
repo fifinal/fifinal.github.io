@@ -16,10 +16,13 @@ tags:
 - Docker
 - Legacy
 live: https://langitan.umaha.ac.id
+liveLain:
+- label: UNU Lampung
+  url: https://langitan.unulampung.ac.id
 status: Produksi — sistem internal
 fitur:
 - Satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan tampilan dan identitas terpisah
-  untuk tiap institusi
+  untuk tiap institusi — dua di antaranya bisa dibuka langsung, di UMAHA dan UNU Lampung
 - Lima puluh modul akademik yang saling terhubung — pendaftaran mahasiswa baru, perkuliahan, keuangan,
   kepegawaian, hingga wisuda
 - Empat jenis pengguna — pegawai, dosen, mahasiswa, dan orang tua — dengan lebih dari tiga puluh peran

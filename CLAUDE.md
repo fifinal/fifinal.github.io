@@ -317,6 +317,19 @@ untuk melihatnya.
       mengembalikan halaman "Not Found", `slf-sync.umaha.ac.id` tidak
       terjangkau dari luar, dan peksiminas belum punya URL.
 
+      Dua catatan alamat, dikonfirmasi pemilik pada 31 Agustus 2026:
+      Simbelmawa memakai **`/pkm`**, bukan akar domainnya — akarnya
+      hanya portal, sedangkan `/pkm` masuk ke aplikasi PKM yang
+      dikerjakan. Dan Sistem Langitan punya **dua alamat hidup**,
+      `langitan.umaha.ac.id` dan `langitan.unulampung.ac.id`, keduanya
+      terverifikasi dari judul halamannya.
+
+      Alamat kedua itu ditaruh di kolom baru `liveLain` (opsional, isi
+      `label` + `url`) dan tampil berlabel institusi di halaman detail.
+      Bagi sistem multi-tenant, dua alamat hidup adalah bukti klaimnya
+      — jauh lebih meyakinkan daripada kalimat "melayani beberapa
+      perguruan tinggi".
+
       **Uji dulu sebelum memasang tautan.** Domain UMAHA berada di
       belakang Cloudflare: `curl` selalu dijawab 403 meski situsnya
       hidup. Yang sahih adalah membukanya dengan peramban sungguhan.

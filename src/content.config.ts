@@ -22,6 +22,13 @@ const proyek = defineCollection({
     tags: z.array(z.string()),
 
     live: z.string().nullable(),           // null bila proyek tidak bisa diakses publik
+
+    // Alamat live tambahan, untuk sistem yang satu basis kodenya
+    // melayani lebih dari satu institusi. Tiap entri diberi label
+    // supaya pembaca tahu itu kampus yang mana.
+    liveLain: z
+      .array(z.object({ label: z.string(), url: z.string() }))
+      .optional(),
     status: z.string(),                    // label pengganti saat live bernilai null
 
     fitur: z.array(z.string()),
