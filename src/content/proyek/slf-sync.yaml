@@ -45,8 +45,13 @@ gambar:
   keterangan: Sinkronisasi aktivitas perkuliahan, membandingkan IPK dan SKS di kedua sistem sekaligus.
     Kolom identitas disensor.
 tantangan:
-- '[ISI] Pernahkah sinkronisasi mengirim data yang salah ke Feeder? Bagaimana ketahuannya, dan bagaimana
-  dipulihkan?'
-- '[ISI] Apa yang terjadi kalau Feeder tidak bisa dihubungi persis saat batas pelaporan mepet?'
-belajar: '[ISI] Satu pelajaran dari merawat alat kecil yang kalau gagal, dampaknya sampai ke pelaporan
-  nasional kampus.'
+- 'Pernah terjadi data yang terkirim ternyata keliru. Yang menarik: ketahuannya bukan dari pesan galat —
+  Feeder menjawab berhasil — melainkan dari <strong>selisih jumlah data</strong> antara sistem kampus dan
+  pangkalan data nasional ketika keduanya dibandingkan. Dari situ baru ditelusuri baris mana yang
+  menyimpang.'
+- Karena itu jalur pembatalan bukan fitur tambahan, melainkan syarat. Sistem yang menulis ke pangkalan
+  data pihak lain harus punya cara menarik kembali kirimannya — di sana kesalahan tidak bisa sekadar
+  ditimpa dengan data yang benar.
+belajar: 'Pelajaran yang paling terpakai di tempat lain: jangan percaya status "berhasil" dari sistem
+  yang bukan milik kita. Balasan sukses hanya berarti kirimannya diterima, bukan berarti datanya sama.
+  Yang menjamin kesamaan cuma satu — membandingkan kembali kedua sisi setelah kirim.'

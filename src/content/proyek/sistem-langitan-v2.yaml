@@ -49,8 +49,8 @@ gambar:
 - file: sistem-langitan-v2-2.jpg
   keterangan: Jadwal kuliah per hari, lengkap dengan kode mata kuliah, bobot SKS, dan ruangnya.
 - file: sistem-langitan-v2-3.jpg
-  keterangan: Riwayat nilai dan performa akademik per semester. Tanpa nama maupun nomor induk, jadi
-    tidak menunjuk mahasiswa tertentu.
+  keterangan: Pengisian Kartu Rencana Studi — mata kuliah yang diambil, kelas, bobot SKS, jadwal, dan
+    status persetujuannya, dengan sisa kuota SKS terhitung di atas. Nama dosen pengampu disensor.
 tantangan:
 - '[ISI] Bagian tersulit dari mencocokkan perilaku v2 dengan v1 memakai data asli. Contoh yang paling
   membekas?'
