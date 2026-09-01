@@ -59,7 +59,7 @@ export const pengalaman = [
     ],
   },
   {
-    posisi: 'Web Developer (Freelance)',
+    posisi: 'Web Developer (Anggota Tim IT)',
     periode: 'Januari 2023 — Sekarang',
     tempat: 'Kementerian Pendidikan Tinggi, Sains, dan Teknologi · Remote',
     rincian: [

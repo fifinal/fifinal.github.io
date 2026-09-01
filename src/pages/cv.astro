@@ -20,6 +20,12 @@ const tautanHidup = sosial.filter((s) => s.url !== '#');
 // gunanya.
 const portofolio = Astro.site ?? new URL('https://fifinal.github.io/');
 const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, '');
+
+// Tautan studi kasus ditulis sebagai alamat, bukan kata "lihat" — PDF
+// ini ikut dicetak, dan di kertas alamatnya masih terbaca meski tidak
+// bisa diklik. Alamatnya mutlak supaya tetap hidup di dalam PDF.
+const kePortofolio = (jalur: string) => new URL(jalur, portofolio).href;
+const teksJalur = (jalur: string) => (portofolio.host + jalur).replace(/\/$/, '');
 ---
 
 <Dasar
@@ -133,8 +139,13 @@ const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, ''
                       <ul class="cv-sorotan">
                         {p.sorotan.map((s) => (
                           <li>
-                            <span class="cv-sorotan-judul">{s.judul}</span>
-                            <span class="cv-sorotan-periode">{s.periode}</span>
+                            <span class="cv-sorotan-judul">
+                              {s.tautan ? <a href={kePortofolio(s.tautan)}>{s.judul}</a> : s.judul}
+                            </span>
+                            <span class="cv-sorotan-periode">
+                              {s.periode}
+                              {s.tautan && <> · {teksJalur(s.tautan)}</>}
+                            </span>
                             <span class="cv-sorotan-isi">{s.isi}</span>
                           </li>
                         ))}
@@ -176,6 +187,14 @@ const portofolioTeks = (portofolio.host + portofolio.pathname).replace(/\/$/, ''
                   <div>
                     <dt>Integrasi</dt>
                     <dd>{x.integrasi}</dd>
+                  </div>
+                )}
+                {x.tautan && (
+                  <div>
+                    <dt>Studi kasus</dt>
+                    <dd>
+                      <a href={kePortofolio(x.tautan)}>{teksJalur(x.tautan)}</a>
+                    </dd>
                   </div>
                 )}
               </dl>

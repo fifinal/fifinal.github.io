@@ -1,4 +1,6 @@
 ---
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Dasar from '../../layouts/Dasar.astro';
 import Seksi from '../../components/Seksi.astro';
@@ -37,14 +39,28 @@ const sebelum = sebelumnya
 const sesudah = berikutnya
   ? { url: `/proyek/${berikutnya.id}/`, judul: berikutnya.data.judul, arah: 'Proyek berikutnya' }
   : { url: '/#kontak', judul: 'Hubungi saya', arah: 'Selanjutnya' };
-// Bagian "Arsitektur" hanya muncul bila proyeknya memang punya diagram.
-// Nomor bagian sesudahnya ikut bergeser agar tidak ada nomor yang lompat.
+// Bagian "Arsitektur" hanya muncul bila proyeknya punya diagram, dan
+// bagian "Tampilan" hanya bila berkas gambarnya benar-benar ada di
+// public/gambar/. Tanpa pemeriksaan itu, galerinya menampilkan kotak
+// kosong bertuliskan nama berkas — terbaca seperti halaman rusak,
+// justru di halaman yang ditautkan dari CV.
+const berkasGambar = (nama: string) =>
+  existsSync(fileURLToPath(new URL(`../../../public/gambar/${nama}`, import.meta.url)));
+
+const gambarAda = d.gambar.filter((g) => berkasGambar(g.file));
 const adaDiagram = Boolean(d.diagram);
+const adaGaleri = gambarAda.length > 0;
+
+// Nomor dihitung dari bagian yang benar-benar tampil, supaya tidak ada
+// nomor yang lompat. Urutan properti di bawah menentukan urutannya.
+let urut = 0;
+const nomor = () => String(++urut).padStart(2, '0');
 const label = {
-  arsitektur: '02 — Arsitektur',
-  tampilan: adaDiagram ? '03 — Tampilan' : '02 — Tampilan',
-  dampak: adaDiagram ? '04 — Dampak' : '03 — Dampak',
-  refleksi: adaDiagram ? '05 — Refleksi' : '04 — Refleksi',
+  hasil: `${nomor()} — Hasil kerja`,
+  arsitektur: adaDiagram ? `${nomor()} — Arsitektur` : '',
+  tampilan: adaGaleri ? `${nomor()} — Tampilan` : '',
+  dampak: `${nomor()} — Dampak`,
+  refleksi: `${nomor()} — Refleksi`,
 };
 
 ---
@@ -97,7 +113,7 @@ const label = {
       </dl>
     </div>
 
-    <Seksi label="01 — Hasil kerja" judul="Fitur utama">
+    <Seksi label={label.hasil} judul="Fitur utama">
       <ul>{d.fitur.map((l) => <li set:html={l} />)}</ul>
     </Seksi>
 
@@ -109,9 +125,13 @@ const label = {
       )
     }
 
-    <Seksi label={label.tampilan} judul="Cuplikan antarmuka">
-      <Galeri gambar={d.gambar} kerahasiaan={d.kerahasiaan} />
-    </Seksi>
+    {
+      adaGaleri && (
+        <Seksi label={label.tampilan} judul="Cuplikan antarmuka">
+          <Galeri gambar={gambarAda} kerahasiaan={d.kerahasiaan} />
+        </Seksi>
+      )
+    }
 
     <Seksi label={label.dampak} judul="Hasil" lebar>
       <Metrik daftar={d.metrik} />

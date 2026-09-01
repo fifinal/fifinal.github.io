@@ -42,7 +42,7 @@ export const cv = {
 
   pengalaman: [
     {
-      posisi: 'Full-Stack / Back-End Engineer (Freelance)',
+      posisi: 'Full-Stack / Back-End Engineer (Anggota Tim IT)',
       periode: 'Jan 2023 — Sekarang',
       tempat: 'Direktorat Belmawa · Kemdiktisaintek',
       deskripsi:
@@ -52,21 +52,25 @@ export const cv = {
         {
           judul: 'Sistem PKM — Program Kreativitas Mahasiswa',
           periode: 'Jan 2023 — Sekarang',
+          tautan: '/proyek/simbelmawa/',
           isi: 'Memindahkan sistem warisan ke REST API berbasis Laravel, dikerjakan bersama tim frontend React dan mobile Flutter yang memanggil API yang sama.',
         },
         {
           judul: 'Platform Magang Berdampak',
           periode: '2025',
+          tautan: '/proyek/sistem-magang/',
           isi: 'Membangun alur lamaran magang dari hulu ke hilir — pendaftaran, verifikasi berbasis peran, pengelolaan dokumen, persetujuan bertingkat, hingga pelaporan — berikut optimasi kueri untuk volume data besar.',
         },
         {
           judul: 'Sistem MTQMN — Musabaqah Tilawatil Qur’an Mahasiswa Nasional',
-          periode: '2025',
+          periode: 'Mei 2025 — Jul 2026',
+          tautan: '/proyek/mtqmn/',
           isi: 'Pendaftaran peserta dan kategori lomba, pengelolaan tim, verifikasi dokumen, penilaian, pelaporan, serta ekspor otomatis ke PDF dan lembar sebar.',
         },
         {
           judul: 'Sistem Hibah Akreditasi Internasional',
           periode: 'Jan 2023 — Des 2024',
+          tautan: null,
           isi: 'Pengelolaan program hibahnya — pengusulan, verifikasi berjenjang, sampai pelaporan. Yang dikelola dananya, bukan penilaian akreditasinya.',
         },
       ],
@@ -92,8 +96,11 @@ export const cv = {
    * disebut sebagai dirawat — jangan diangkat jadi seolah dibangun.
    */
   sistemPT: [
+    // `tautan` menunjuk studi kasus di situs ini — perekrut yang membaca
+    // PDF bisa langsung membuka diagram, fitur, dan angkanya.
     {
       nama: 'Sistem Langitan — Sistem Informasi Akademik',
+      tautan: '/proyek/sistem-langitan/',
       konteks: 'UMAHA · 2022 — Sekarang',
       ringkas:
         'SIAKAD multi-tenant: satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan lima puluh modul yang saling terhubung dan empat jenis pengguna yang bercabang menjadi lebih dari tiga puluh peran.',
@@ -105,6 +112,7 @@ export const cv = {
     },
     {
       nama: 'Sistem Langitan v2 — Penulisan Ulang SIAKAD',
+      tautan: '/proyek/sistem-langitan-v2/',
       konteks: 'UMAHA · Feb 2025 — Sekarang',
       ringkas:
         'Menulis ulang SIAKAD di atas basis data Oracle warisan yang tidak boleh diubah, karena skema yang sama masih melayani versi lama di produksi.',
@@ -116,6 +124,7 @@ export const cv = {
     },
     {
       nama: 'SLF Sync — Penghubung ke Pangkalan Data Nasional',
+      tautan: '/proyek/slf-sync/',
       konteks: 'UMAHA · 2022 — Sekarang',
       ringkas:
         'Alat sinkronisasi data akademik kampus ke pangkalan data nasional, berikut jalur pembatalan untuk menarik kembali kiriman yang keliru — karena kesalahan di sana tidak bisa sekadar ditimpa.',
@@ -128,6 +137,7 @@ export const cv = {
     },
     {
       nama: 'UNISCO — Platform Kompetisi dan Ujian Daring',
+      tautan: '/proyek/unisco/',
       konteks: 'UMAHA · Jun — Agu 2026',
       ringkas:
         'Platform lomba dan olimpiade tingkat nasional yang diselenggarakan kampus. Satu alur pendaftaran bercabang menjadi dua jalur: lomba akademik diadu lewat ujian CBT serentak, lomba non-akademik lewat berkas persyaratan yang diverifikasi panitia. Babak finalnya luring, di luar sistem.',
