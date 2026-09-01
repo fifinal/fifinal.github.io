@@ -41,11 +41,8 @@ diagram:
     tergantung siapa yang memintanya. Kotak putus-putus di kanan adalah sistem di luar kendali kami.
 gambar:
 - file: simbelmawa-1.png
-  keterangan: Dasbor operator kementerian — rekap proposal, pendanaan, dan jumlah perguruan tinggi,
-    mahasiswa, serta dosen yang terlibat. Seluruhnya angka agregat.'
-- file: simbelmawa-2.png
-  keterangan: Dasbor yang sama pada periode berbeda — 37.893 proposal valid dan 4.120 didanai, dari 886
-    perguruan tinggi.
+  keterangan: Dasbor operator kementerian — 37.893 proposal valid, 4.120 di antaranya didanai, dari 886
+    perguruan tinggi. Seluruhnya angka agregat, tanpa data per mahasiswa.
 tantangan:
 - Bagian tersulit bukan membangun fiturnya, melainkan menahan lonjakan menjelang tenggat. Pengusulan
   menumpuk di hari-hari terakhir, dan beban dari ratusan perguruan tinggi datang hampir bersamaan.
