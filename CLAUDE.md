@@ -100,7 +100,7 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
    sebelum penghapusan ini. Penomoran bagian dihitung di `[slug].astro`
    dan sekarang mulai dari `01 — Hasil kerja`.
 
-10. **Halaman CV terbit di `/cv/`, dan `/cv.pdf` dibuat dari halaman itu
+10. **Halaman CV terbit di `/cv/`, dan PDF-nya dibuat dari halaman itu
     juga.** Disusun 31 Agustus 2026 dari berkas CV milik pemilik
     (`~/Sites/cv.html`), bukan dikarang, tapi digambar ulang dengan
     bahasa visual portofolio — bukan meniru gaya kuning-biru berkas
@@ -114,15 +114,23 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     penerbitan oleh langkah "Cetak CV ke PDF" di `deploy.yml`, yang
     menjalankan `npm run cv:pdf -- --ke-dist` setelah build: menyalakan
     `astro preview` di atas `dist/`, lalu mencetak `/cv/` dengan Chrome
-    tanpa jendela langsung ke `dist/cv.pdf`. Runner `ubuntu-latest`
+    tanpa jendela langsung ke `dist/CV-Slamet-Fifin-Alamsyah.pdf`.
+
+    **Nama berkasnya memakai nama lengkap pemilik**, bukan `cv.pdf` —
+    supaya di folder unduhan perekrut tidak tertimbun di antara belasan
+    berkas bernama sama. Nama itu ditulis di dua tempat: `NAMA_BERKAS`
+    di skripnya dan `berkasPdf` di `cv.ts`. Skripnya **menolak jalan**
+    bila keduanya berbeda — tanpa penjaga itu, mengganti nama di satu
+    tempat menghasilkan tombol unduh yang menunjuk berkas tidak ada,
+    sementara penerbitannya tetap sukses. Runner `ubuntu-latest`
     sudah memuat Google Chrome di `/usr/bin/google-chrome` — kalau suatu
     saat GitHub mencabutnya, penerbitan gagal terang-terangan di langkah
     itu, bukan diam-diam menerbitkan tautan mati.
 
     Di mesin sendiri, `npm run cv:pdf` (tanpa argumen) membangun dulu
-    lalu menaruh hasilnya di `public/cv.pdf` — untuk memeriksa hasil
-    cetaknya sebelum push; sudah masuk `.gitignore`. Ingat: `npm run
-    build` biasa **tidak** membuat PDF, jadi `/cv.pdf` akan 404 di dev.
+    lalu menaruh hasilnya di `public/` — untuk memeriksa hasil cetaknya
+    sebelum push; sudah masuk `.gitignore`. Ingat: `npm run build` biasa
+    **tidak** membuat PDF, jadi tautannya akan 404 di dev.
 
     Cara ini sempat diganti pembuatan di peramban dengan `html2pdf.js`
     pada 31 Agustus 2026, lalu dikembalikan di hari yang sama. Alasannya

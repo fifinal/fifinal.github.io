@@ -24,8 +24,12 @@ export const cv = {
    */
   foto: '/gambar/foto-360.jpg',
 
-  /** Dibuat lewat `npm run cv:pdf`; dicetak ulang tiap penerbitan. */
-  berkasPdf: '/cv.pdf',
+  /**
+   * Dibuat lewat `npm run cv:pdf`; dicetak ulang tiap penerbitan.
+   * Namanya harus sama persis dengan NAMA_BERKAS di
+   * scripts/buat-cv-pdf.mjs — skripnya menolak jalan bila berbeda.
+   */
+  berkasPdf: '/CV-Slamet-Fifin-Alamsyah.pdf',
 
   ringkas:
     'Full-Stack Engineer yang terbiasa membangun sistem multi-pengguna berskala besar. Fokus pada REST API, alur bisnis yang berlapis — kewenangan berbasis peran, persetujuan bertingkat — optimasi performa basis data, serta memindahkan sistem warisan ke arsitektur yang lebih modular dan mudah dirawat.',
