@@ -193,6 +193,51 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     ukuran berkas atau jumlah halamannya — PDF 500 KB satu halaman pun
     bisa kehilangan seluruh judulnya.
 
+11. **Cerita skala Simbelmawa dan Magang dikoreksi pada 5 September 2026.**
+    Jangan dikembalikan tanpa bertanya.
+
+    Refleksi Simbelmawa sebelumnya berbunyi "yang menyerah lebih dulu adalah
+    basis datanya… jalan keluarnya menaikkan spesifikasi server". Itu keliru.
+    Urutan sebenarnya: lonjakan menjelang tenggat → pemilik membedah sisi
+    aplikasi (login, kueri halaman ramai, pemanggilan berulang, pemenggalan
+    halaman, indeks) → optimasi → masih belum cukup di puncak beban →
+    **load balancer, dipasang tim DevOps**.
+
+    Magang punya cerita lanjutannya, dan sebelumnya belum ada di YAML sama
+    sekali: beban sudah dibagi lewat load balancer, tapi application server
+    justru masih longgar — **basis datanya yang tersendat** — dan DevOps
+    menjawabnya dengan replika baca.
+
+    Batas perannya wajib terbaca di kedua halaman: **pemilik menemukan letak
+    macetnya dan mengerjakan sisi aplikasi; load balancer dan replikasi
+    dikerjakan DevOps.** Jangan pernah menulisnya seolah pemilik yang
+    memasang keduanya.
+
+    Koreksi ini datang dari audit portofolio oleh ChatGPT yang dibaca pemilik
+    pada 5 September 2026, lalu ditanyakan ulang kepadanya dan dikonfirmasi.
+    Saran lain dari audit itu yang **ditolak**: mengembalikan struktur
+    Problem → Investigation → Solution (itu kolom `masalah`/`solusi`/`proses`
+    yang sengaja dihapus, keputusan No. 9), heading berbahasa Inggris, dan
+    menambahkan angka traffic yang tidak bisa ditunjuk sumbernya.
+
+12. **Posisi diri dinaikkan dari "Web Developer" ke "Backend / Full-stack
+    Developer"** pada 5 September 2026, juga dari audit yang sama. Diubah di
+    empat tempat sekaligus supaya tidak timpang: `profil.peran` (dipakai di
+    judul halaman), `deskripsiSitus` (meta description), fakta "Peran" di
+    bagian Tentang, dan pembuka `ringkasHero` yang tadinya berbunyi "web
+    developer".
+
+    Bersamaan dengan itu, `skill` bertambah kelompok keempat **"Arsitektur"**
+    — Multi-tenant · RBAC · Sistem legacy · Optimasi kueri · Integrasi sistem
+    — dan bagian Tentang bertambah satu paragraf soal fokus backend. Semua
+    isinya bisa ditunjuk ke proyek yang ada, bukan klaim baru.
+
+    Kartu skill jadi empat, jadi `.skills` tidak lagi `repeat(3,1fr)`
+    melainkan `auto-fit` dengan `minmax(220px,1fr)`, ditambah aturan 2×2 di
+    bawah 1000px. Tanpa aturan itu, di rentang 861–1000px kartu keempat
+    tertinggal sendirian di baris kedua. Sudah diperiksa di 1280, 940, dan
+    375 piksel.
+
 ## Struktur
 
 ```

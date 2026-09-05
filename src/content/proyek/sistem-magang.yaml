@@ -49,6 +49,11 @@ tantangan:
 - Yang paling rumit ternyata bukan menampilkan data yang sama secara berbeda, melainkan menyusun urutan
   persetujuannya — siapa menyetujui setelah siapa, dan apa yang boleh berjalan sebelum persetujuan itu
   turun. Tampilan tinggal mengikuti; urutannya yang menentukan.
+- 'Skalanya menuntut perhatian tersendiri. Beban sudah dibagi ke beberapa application server lewat
+  load balancer, tapi ketika dipantau ulang justru application server-nya yang masih longgar —
+  <strong>yang tersendat basis datanya</strong>. Temuan itu saya sampaikan ke tim DevOps, dan jalan
+  keluarnya replika baca untuk memikul beban pembacaan. Konfigurasi load balancer dan replikasinya
+  bukan pekerjaan saya; bagian saya menemukan letak macetnya dan merapikan sisi aplikasinya.'
 - Ada fitur yang sudah jadi lalu tidak terpakai karena kebijakan programnya berubah sebelum sempat
   dipakai. Itu risiko yang melekat pada sistem yang mengikuti program tahunan, bukan kesalahan
   rancangan.

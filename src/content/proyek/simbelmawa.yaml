@@ -46,10 +46,18 @@ gambar:
 tantangan:
 - Bagian tersulit bukan membangun fiturnya, melainkan menahan lonjakan menjelang tenggat. Pengusulan
   menumpuk di hari-hari terakhir, dan beban dari ratusan perguruan tinggi datang hampir bersamaan.
-- 'Yang menyerah lebih dulu adalah <strong>basis datanya</strong>, bukan aplikasinya. Jalan keluar yang
-  diambil saat itu adalah menaikkan spesifikasi server.'
-- Menariknya, tidak ada keputusan rancangan yang akhirnya dibatalkan. Yang berubah hanya kapasitas
-  mesinnya — bentuk sistemnya bertahan sejak versi pertama sampai sekarang.
+- 'Yang pertama saya periksa adalah <strong>aplikasinya sendiri</strong>, bukan mesinnya: proses login,
+  kueri di balik halaman-halaman yang paling ramai dibuka, pemanggilan berulang yang sebenarnya bisa
+  disatukan, cara daftar panjang dipenggal per halaman, dan kolom mana yang benar-benar butuh indeks.
+  Kueri yang paling berat saya tulis ulang, sebagian pindah ke query builder, dan indeks ditambahkan
+  secara terpilih mengikuti pola kueri yang memang dipakai.'
+- 'Itu membantu, tapi belum cukup di puncak beban. Sisanya sudah bukan persoalan aplikasi lagi: beban
+  request dibagi ke beberapa application server lewat load balancer. <strong>Pemasangannya dikerjakan
+  tim DevOps</strong> — bagian saya menemukan di mana macetnya dan membereskan yang ada di sisi
+  aplikasi.'
+- Menariknya, tidak ada keputusan rancangan yang akhirnya dibatalkan. Bentuk sistemnya bertahan sejak
+  versi pertama sampai sekarang; yang berubah adalah kueri di dalamnya dan jumlah mesin yang
+  melayaninya.
 belajar: 'Pelajaran yang paling terbawa ke proyek berikutnya: sistem yang sedang digantikan adalah dokumen
   kebutuhan paling jujur yang tersedia. Ia memuat aturan yang tidak pernah tertulis di mana pun, dan
   kebiasaan pengguna yang tidak akan disebutkan siapa pun dalam rapat karena sudah dianggap wajar.
