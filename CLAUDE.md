@@ -291,6 +291,19 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     CV ikut berubah, jadi PDF-nya dicetak ulang dan diperiksa: tetap dua
     halaman, judul bagian utuh di keduanya.
 
+15. **Peran Langitan v1 adalah "Kontributor Terbesar Kedua", bukan
+    "Pengembang Utama"** — diubah 5 September 2026 di `sistem-langitan.yaml`
+    dan di `cv.ts`, karena bertabrakan dengan baris pengalaman yang menyebut
+    kontributor terbesar kedua dari dua belas orang.
+
+    **Tapi jangan menyeret koreksi itu ke tempat lain.** Pembuka deskripsi
+    UMAHA di `cv.ts` — "Pemrogram utama Sistem Informasi Akademik" — tetap
+    benar dan sudah ditanyakan: di UMAHA pemilik memang pengembang utama,
+    sebab pekerjaannya tidak hanya Langitan v1. Begitu pula
+    `sistem-langitan-v2` yang tetap "Pengembang utama", dan satu sorotan CV
+    yang berbunyi "Pengembang utama — kontributor terbesar" (di sana kedua
+    hal itu sejalan, jadi tidak ada yang bertabrakan).
+
 ## Struktur
 
 ```
