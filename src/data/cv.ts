@@ -120,7 +120,7 @@ export const cv = {
       konteks: 'UMAHA · 2022 — Sekarang',
       ringkas:
         'SIAKAD multi-tenant: satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan empat belas modul aktif yang saling terhubung dan empat jenis pengguna yang bercabang menjadi lebih dari tiga puluh peran.',
-      peran: 'Pengembang utama — kontributor terbesar kedua dari dua belas orang, 484 commit',
+      peran: 'Kontributor terbesar kedua dari dua belas orang, 484 commit',
       modul:
         'Akademik inti (penerimaan mahasiswa baru, KRS, perkuliahan, nilai, transkrip, wisuda), keuangan mahasiswa, kepegawaian dan penugasan dosen, pelaporan serta cetak dokumen. Modul kuisioner evaluasi penjaminan mutu saya rawat, bukan saya bangun.',
       teknologi: 'PHP 8.1, Oracle, Smarty, Docker, GitHub Actions, PHPStan',
