@@ -17,6 +17,16 @@ tags:
 - Docker
 live: https://simbelmawa.kemdiktisaintek.go.id/magang
 status: Produksi — sistem nasional
+kontribusi:
+- Membangun sistemnya sebagai pengembang utama sekaligus kontributor terbesar — 664 commit atas nama
+  saya, dari commit pertama sampai rilis dalam tujuh bulan.
+- Menyusun alur persetujuan berjenjang untuk dua belas peran — siapa menyetujui setelah siapa, dan apa
+  yang boleh berjalan sebelum persetujuan itu turun.
+- Membangun perjalanan peserta dari pendaftaran, penempatan, sampai pemantauan dan laporan bulanan
+  selama magang berjalan, termasuk pengelolaan skema pendanaan beasiswa.
+- Mengerjakan antarmukanya dengan Vue dan Tailwind lewat Vite, di atas API Laravel yang sama.
+- Memantau ulang setelah beban dibagi lewat load balancer, menemukan basis data sebagai titik macet
+  berikutnya, lalu menyampaikannya ke tim DevOps yang menjawabnya dengan replika baca.
 fitur:
 - Dua belas peran pengguna terpisah — mahasiswa, dosen, kepala program studi, mentor, mitra industri,
   operator, pimpinan, reviewer, dan pengelola kementerian

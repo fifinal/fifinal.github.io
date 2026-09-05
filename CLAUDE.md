@@ -256,6 +256,13 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     satu ke pemilik. Untuk proyek lain, tempuh cara yang sama; jangan
     menyalin daftar fiturnya begitu saja.
 
+    `sistem-magang` menyusul pada hari yang sama, lewat cara yang sama.
+    Satu poinnya sengaja menyebut pengerjaan antarmuka Vue — itu
+    satu-satunya bukti full-stack yang konkret di seluruh situs, dan
+    pemilik mengonfirmasi bahwa di Magang ia **pengembang utama untuk
+    keseluruhannya**, bukan backend saja seperti di Simbelmawa. Tersisa
+    `sistem-langitan-v2` dan `sistem-langitan` bila mau dilanjutkan.
+
 ## Struktur
 
 ```
