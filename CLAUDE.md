@@ -304,6 +304,20 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     yang berbunyi "Pengembang utama — kontributor terbesar" (di sana kedua
     hal itu sejalan, jadi tidak ada yang bertabrakan).
 
+16. **Kelompok keahlian "Backend & Architecture" di CV dibatasi empat butir**
+    — RBAC, Multi-tenant, Optimasi kueri, Sistem legacy. Ditambahkan 5
+    September 2026 dan sengaja ditaruh paling atas: untuk posisi backend,
+    masalah yang pernah ditangani lebih menjual daripada daftar perkakas.
+
+    **Empat, bukan enam.** Percobaan pertama memuat enam butir dan langsung
+    memecah CV menjadi **tiga halaman** — kolom kirinya yang tumbuh, bukan
+    kolom kanannya. Kalau mau menambah butir di kelompok mana pun, cetak
+    ulang PDF-nya dan hitung halamannya sebelum push.
+
+    Bersamaan dengan itu, `ringkasHero` di `situs.ts` berbunyi "full-stack
+    developer dengan fokus backend" — kalimat pertama yang dipindai perekrut
+    kini menyebut backend, sesuai target lamaran.
+
 ## Struktur
 
 ```

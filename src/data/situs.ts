@@ -11,7 +11,7 @@ export const profil = {
   status: 'Terbuka untuk peluang baru',
   judulHero: 'Membangun web yang rapi, cepat, dan berguna.',
   ringkasHero:
-    'Halo, saya Fifin — full-stack developer yang sehari-hari membangun sistem informasi pendidikan tinggi. Lima tahun terakhir saya mengerjakan perangkat lunak yang dipakai perguruan tinggi se-Indonesia, dari pengelolaan hibah mahasiswa sampai sistem akademik kampus.',
+    'Halo, saya Fifin — full-stack developer dengan fokus backend, sehari-hari membangun sistem informasi pendidikan tinggi. Lima tahun terakhir saya mengerjakan perangkat lunak yang dipakai perguruan tinggi se-Indonesia, dari pengelolaan hibah mahasiswa sampai sistem akademik kampus.',
   deskripsiSitus:
     'Portofolio Fifin Alamsyah, backend / full-stack developer. Kumpulan proyek, pengalaman, dan kontak.',
 };

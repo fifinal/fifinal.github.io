@@ -38,6 +38,12 @@ export const cv = {
   // begitu di lowongan dan CV, dan beranda pun sudah memakai Frontend,
   // Backend, Tools. Sisa halaman tetap Bahasa Indonesia.
   keahlian: [
+    // Kelompok ini sengaja didahulukan: untuk posisi backend, masalah yang
+    // pernah ditangani lebih menjual daripada daftar perkakas.
+    {
+      judul: 'Backend & Architecture',
+      daftar: ['RBAC', 'Multi-tenant', 'Optimasi kueri', 'Sistem legacy'],
+    },
     { judul: 'Languages & Frameworks', daftar: ['PHP', 'Laravel', 'CodeIgniter', 'JavaScript', 'REST API', 'JWT'] },
     { judul: 'UI', daftar: ['Vue 3', 'Inertia.js', 'React', 'Blade', 'Tailwind'] },
     { judul: 'Databases', daftar: ['PostgreSQL', 'Oracle', 'MySQL'] },
