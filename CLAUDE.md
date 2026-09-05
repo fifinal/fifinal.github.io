@@ -238,6 +238,24 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     tertinggal sendirian di baris kedua. Sudah diperiksa di 1280, 940, dan
     375 piksel.
 
+13. **Kolom `kontribusi` (opsional) dan bagian "Bagian saya di sistem ini"**
+    ditambahkan 5 September 2026, sementara baru diisi di `simbelmawa`.
+
+    Alasannya: daftar fitur menggambarkan **sistemnya**, bukan orangnya, dan
+    perekrut tidak bisa menjawab "Fifin mengerjakan apa di sini" dari sana.
+    Bagiannya ditaruh paling depan — jadi `01 — Kontribusi` dan menggeser
+    sisanya — karena justru itu yang perlu terbaca lebih dulu. Perilakunya
+    sama seperti `diagram`: halaman tanpa kolom itu penomorannya tidak
+    berubah sama sekali.
+
+    **Isinya wajib dikonfirmasi pemilik sebelum ditulis.** Memindahkan
+    kalimat dari `fitur` ke `kontribusi` mengubah artinya — dari "sistem ini
+    punya X" menjadi "saya yang mengerjakan X" — dan repo-repo ini punya
+    banyak kontributor. Kelima poin Simbelmawa disusun dari `peran`, metrik,
+    daftar fitur, dan refleksi yang sudah tayang, lalu dikonfirmasi satu per
+    satu ke pemilik. Untuk proyek lain, tempuh cara yang sama; jangan
+    menyalin daftar fiturnya begitu saja.
+
 ## Struktur
 
 ```

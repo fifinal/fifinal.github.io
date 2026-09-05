@@ -31,6 +31,13 @@ const proyek = defineCollection({
       .optional(),
     status: z.string(),                    // label pengganti saat live bernilai null
 
+    // Kontribusi pribadi, opsional. Menjawab "bagian mana yang
+    // dikerjakan pemilik" — pertanyaan yang tidak terjawab oleh daftar
+    // fitur, karena fitur menggambarkan sistemnya, bukan orangnya.
+    // Isinya wajib dikonfirmasi pemilik: di repo dengan banyak
+    // kontributor, menyebut fitur orang lain sebagai milik sendiri
+    // adalah kekeliruan yang paling mahal saat ditanya di wawancara.
+    kontribusi: z.array(z.string()).optional(),
     fitur: z.array(z.string()),
     metrik: z.array(z.object({ angka: z.string(), keterangan: z.string() })),
     gambar: z.array(z.object({ file: z.string(), keterangan: z.string() })),

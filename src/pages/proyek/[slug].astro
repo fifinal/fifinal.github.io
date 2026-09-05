@@ -48,6 +48,7 @@ const berkasGambar = (nama: string) =>
   existsSync(fileURLToPath(new URL(`../../../public/gambar/${nama}`, import.meta.url)));
 
 const gambarAda = d.gambar.filter((g) => berkasGambar(g.file));
+const adaKontribusi = Boolean(d.kontribusi?.length);
 const adaDiagram = Boolean(d.diagram);
 const adaGaleri = gambarAda.length > 0;
 
@@ -56,6 +57,7 @@ const adaGaleri = gambarAda.length > 0;
 let urut = 0;
 const nomor = () => String(++urut).padStart(2, '0');
 const label = {
+  kontribusi: adaKontribusi ? `${nomor()} — Kontribusi` : '',
   hasil: `${nomor()} — Hasil kerja`,
   arsitektur: adaDiagram ? `${nomor()} — Arsitektur` : '',
   tampilan: adaGaleri ? `${nomor()} — Tampilan` : '',
@@ -112,6 +114,14 @@ const label = {
         <div><dt>Tipe</dt><dd>{d.tipe}</dd></div>
       </dl>
     </div>
+
+    {
+      d.kontribusi && d.kontribusi.length > 0 && (
+        <Seksi label={label.kontribusi} judul="Bagian saya di sistem ini">
+          <ul>{d.kontribusi.map((l) => <li set:html={l} />)}</ul>
+        </Seksi>
+      )
+    }
 
     <Seksi label={label.hasil} judul="Fitur utama">
       <ul>{d.fitur.map((l) => <li set:html={l} />)}</ul>

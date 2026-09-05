@@ -17,6 +17,17 @@ tags:
 - Docker
 live: https://simbelmawa.kemdiktisaintek.go.id/pkm
 status: Produksi — sistem nasional
+kontribusi:
+- Merancang dan mengembangkan API-nya sebagai pengembang utama sisi backend — 1.265 commit atas nama
+  saya di repositori inti.
+- Memisahkan kewenangan delapan jenis pengguna, masing-masing dengan berkas rutenya sendiri, sehingga
+  data yang sama tampil berbeda tergantung siapa yang memintanya.
+- Menyiapkan autentikasi berbasis token JWT dengan masa berlaku terkendali.
+- Menyambungkan sistem ke Pangkalan Data Pendidikan Tinggi (PDDikti) untuk verifikasi data mahasiswa
+  dan institusi.
+- 'Menelusuri dan mengoptimasi sisi aplikasi saat lonjakan menjelang tenggat — kueri berat, pemanggilan
+  berulang, pemenggalan halaman, indeks — lalu menyerahkan sisanya ke tim DevOps ketika macetnya sudah
+  berada di ranah infrastruktur.'
 fitur:
 - Pengelolaan program kemahasiswaan dan hibah, dari pengusulan hingga penetapan penerima
 - Delapan peran pengguna dengan rute dan kewenangan terpisah — mahasiswa, dosen, reviewer, operator
