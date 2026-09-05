@@ -261,7 +261,12 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     satu-satunya bukti full-stack yang konkret di seluruh situs, dan
     pemilik mengonfirmasi bahwa di Magang ia **pengembang utama untuk
     keseluruhannya**, bukan backend saja seperti di Simbelmawa. Tersisa
-    `sistem-langitan-v2` dan `sistem-langitan` bila mau dilanjutkan.
+    `sistem-langitan` bila mau dilanjutkan.
+
+    `sistem-langitan-v2` menyusul juga. Satu poinnya menyebut **106 model**
+    sebagai pekerjaan pemilik, padahal repo itu punya lima kontributor —
+    risikonya sempat diajukan terang-terangan dan pemilik menegaskan angka
+    itu memang miliknya. Jangan diperhalus tanpa bertanya lagi.
 
 ## Struktur
 

@@ -19,6 +19,17 @@ tags:
 - Pest
 live: null
 status: Dalam pengembangan — berdampingan dengan versi lama
+kontribusi:
+- Merancang lapisan layanan yang dipakai bersama halaman web Inertia dan API JSON berversi, sehingga
+  logikanya tidak digandakan di dua tempat.
+- Memetakan skema Oracle warisan ke model Laravel — 106 model — tanpa mengubah satu pun tabelnya,
+  karena sistem lama masih melayani produksi di atas basis data yang sama.
+- Menyusun empat belas peran pengguna dengan berkas rute dan kewenangan terpisah, dari mahasiswa dan
+  dosen sampai keuangan, penjaminan mutu, dan rektor.
+- Menyiapkan autentikasi ganda — sesi untuk halaman web, token JWT untuk klien mobile yang sudah
+  berjalan.
+- Merekam keputusan arsitektur sebagai ADR dan menegakkannya lewat berkas uji Pest, termasuk aturan
+  penamaan rute yang pelanggarannya tidak memunculkan galat apa pun.
 fitur:
 - Dua permukaan setara dari satu lapisan layanan — halaman web Inertia dan API JSON berversi, tanpa
   logika yang digandakan
