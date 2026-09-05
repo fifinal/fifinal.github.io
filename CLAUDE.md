@@ -268,6 +268,29 @@ Jangan diubah tanpa alasan — ini hasil diskusi, bukan bawaan template.
     risikonya sempat diajukan terang-terangan dan pemilik menegaskan angka
     itu memang miliknya. Jangan diperhalus tanpa bertanya lagi.
 
+    `sistem-langitan` menutup keempatnya. Dua poin sengaja **tidak**
+    diklaim: arsitektur multi-tenant-nya sudah ada sebelum pemilik masuk
+    pada 2022, dan modul kuisioner penjaminan mutu hanya dirawat.
+
+14. **Angka modul Langitan diturunkan dari 50 ke 14** pada 5 September 2026,
+    atas keterangan pemilik: folder `modul/` di repo v1 memang berisi tepat
+    lima puluh, tapi sebagian sudah tidak dipakai — yang benar-benar dipakai
+    adalah yang kini diimplementasikan ulang di v2.
+
+    Diubah di enam tempat: `ringkas`, daftar fitur, metrik, dan keterangan
+    gambar di `sistem-langitan.yaml`; baris pengalaman UMAHA di `situs.ts`;
+    sorotan Langitan di `cv.ts`; serta label di `sistem-langitan.svg`. Angka
+    lima puluh **sengaja masih disebut sekali** di daftar fitur, sebagai isi
+    repositorinya — bukan sebagai klaim skala.
+
+    Angka 14 berasal dari pemilik, bukan dari hitungan sendiri. Pemetaan
+    folder v1 ke area v2 sempat dicoba dan hasilnya tidak bisa dipakai:
+    `manajemen-mutu`, `gpm`, dan `spm` sama-sama bisa menjadi asal
+    `PenjaminMutu` di v2. Kalau angkanya perlu diubah lagi, tanya pemilik.
+
+    CV ikut berubah, jadi PDF-nya dicetak ulang dan diperiksa: tetap dua
+    halaman, judul bagian utuh di keduanya.
+
 ## Struktur
 
 ```

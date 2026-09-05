@@ -2,7 +2,8 @@ urutan: 2
 judul: Sistem Langitan — Sistem Informasi Akademik Multi-Kampus
 tahun: 2026
 ringkas: Sistem informasi akademik multi-tenant yang melayani beberapa perguruan tinggi sekaligus dari
-  satu basis kode, mencakup lima puluh modul dari pendaftaran mahasiswa baru sampai wisuda.
+  satu basis kode, dengan empat belas modul akademik yang aktif dipakai — dari pendaftaran mahasiswa
+  baru sampai wisuda.
 lead: Satu basis kode yang harus melayani beberapa kampus sekaligus — masing-masing dengan identitas,
   aturan akademik, dan datanya sendiri — sambil terus berjalan tanpa boleh berhenti sehari pun.
 peran: Pengembang Utama
@@ -20,11 +21,25 @@ liveLain:
 - label: UNU Lampung
   url: https://langitan.unulampung.ac.id
 status: Produksi — sistem internal
+kontribusi:
+- Merawat dan mengembangkan sistemnya selama empat tahun — 484 commit atas nama saya di repositori
+  intinya.
+- Menjalankan migrasi bertahap ke PHP 8.1, berikut perkakas pemeriksa kompatibilitas yang bisa
+  dijalankan berulang sebelum tiap rilis.
+- Memasang jaring pengaman yang sebelumnya tidak ada di basis kode lawas — analisis statis PHPStan,
+  pemeriksaan gaya kode otomatis, dan rilis otomatis lewat GitHub Actions di atas lingkungan
+  terkontainer Docker multi-tahap.
+- Mengerjakan pelaporan data akademik ke PDDikti, berikut pembuatan dokumen cetak dan berkas lembar
+  sebarnya.
+- 'Menggarap modul dengan ruang coba-coba paling sempit: keuangan dan tagihan, karena salahnya
+  berurusan dengan uang, serta perhitungan nilai dan KRS yang menyimpan aturan akademik bertumpuk
+  bertahun-tahun.'
 fitur:
 - Satu basis kode melayani beberapa perguruan tinggi sekaligus, dengan tampilan dan identitas terpisah
   untuk tiap institusi — dua di antaranya bisa dibuka langsung, di UMAHA dan UNU Lampung
-- Lima puluh modul akademik yang saling terhubung — pendaftaran mahasiswa baru, perkuliahan, keuangan,
-  kepegawaian, hingga wisuda
+- Empat belas modul akademik yang aktif dipakai dan saling terhubung — pendaftaran mahasiswa baru,
+  perkuliahan, keuangan, kepegawaian, hingga wisuda. Basis kodenya sendiri memuat lima puluh folder
+  modul; sisanya peninggalan yang sudah tidak dipakai lagi
 - Empat jenis pengguna — pegawai, dosen, mahasiswa, dan orang tua — dengan lebih dari tiga puluh peran
   turunan
 - Kewenangan tiap peran ditentukan lewat pemetaan modul dan menu di basis data, bukan dipaku di kode
@@ -35,8 +50,8 @@ fitur:
 - Pelaporan data akademik ke PDDikti, serta pembuatan dokumen cetak dan berkas lembar sebar
 - Lingkungan terkontainer Docker multi-tahap dengan rilis otomatis lewat GitHub Actions
 metrik:
-- angka: '50'
-  keterangan: Modul akademik dalam satu basis kode
+- angka: '14'
+  keterangan: Modul akademik yang aktif dipakai
 - angka: 30+
   keterangan: Peran pengguna dengan kewenangan berbeda
 - angka: '484'
@@ -49,8 +64,8 @@ diagram:
     institusi yang dilayani, berada di luar kendali sistem dan sengaja tanpa nama asli.
 gambar:
 - file: sistem-langitan-1.png
-  keterangan: Kalender akademik yang dilihat mahasiswa — satu dari lima puluh modul yang saling
-    terhubung. Foto dan nama disensor.
+  keterangan: Kalender akademik yang dilihat mahasiswa — satu dari empat belas modul yang aktif
+    dipakai. Foto dan nama disensor.
 - file: sistem-langitan-2.png
   keterangan: Riwayat pembayaran per semester berikut status pelunasannya, bagian dari modul keuangan
     mahasiswa.
